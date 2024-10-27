@@ -42,88 +42,33 @@
 
                         <h1 class="card-title">Estrutura de Arquivos do GNU/Linux</h1>
     <ul>
-        <li>/ - Diretório raiz, ponto de partida de toda a estrutura de arquivos.</li>
-        <ul>
-            <li><strong>/bin</strong>: Contém executáveis essenciais do sistema, como comandos básicos (ex: `<code>ls</code>`, `<code>cp</code>`, `<code>mv</code>`).</li>
-            <li><strong>/boot</strong>: Armazena arquivos necessários para a inicialização do sistema, incluindo o kernel do Linux e o carregador de inicialização.</li>
-            <li><strong>/dev</strong>: Contém arquivos de dispositivo que representam hardware no sistema, como discos rígidos e terminais.</li>
-            <li><strong>/etc</strong>: Armazena arquivos de configuração do sistema e de aplicativos, como configurações de rede e serviços.</li>
-            <li><strong>/home</strong>: Diretórios pessoais dos usuários, onde cada usuário pode armazenar seus arquivos e configurações pessoais.</li>
-            <li><strong>/lib</strong>: Contém bibliotecas essenciais que são necessárias para os executáveis em <code>/bin</code> e <code>/sbin</code> funcionarem corretamente.</li>
-            <li><strong>/media</strong>:Ponto de montagem para dispositivos removíveis, como pen drives e CDs, que são montados automaticamente aqui.</li>
-            <li><strong>/mnt</strong>: Ponto de montagem temporário para sistemas de arquivos, usado para montar manualmente dispositivos.</li>
-            <li><strong>/opt</strong>: Contém pacotes de software adicionais que não fazem parte da distribuição padrão do sistema, geralmente usados para software de terceiros.</li>
-            <li><strong>/proc</strong>: Sistema de arquivos virtual que fornece informações sobre processos em execução e o estado do sistema, permitindo acesso a dados do kernel.</li>
-            <li><strong>/root</strong>: Diretório home do usuário root (administrador do sistema), onde o root armazena seus arquivos pessoais.</li>
-            <li><strong>/run</strong>: Contém informações sobre o sistema em tempo de execução, como arquivos de PID e sockets, que são criados durante a inicialização.</li>
-            <li><strong>/srv</strong>: Contém dados para serviços fornecidos pelo sistema, como arquivos de sites para um servidor web.</li>
-            <li><strong>/sys</strong>: Sistema de arquivos virtual que fornece informações sobre dispositivos e outros recursos do kernel, permitindo interação com o hardware.</li>
-            <li><strong>/tmp</strong>: Diretório para arquivos temporários, onde os aplicativos podem armazenar dados temporários que podem ser excluídos a qualquer momento.</li>
-            <li><strong>/usr</strong>: Contém dados de usuário e aplicativos, subdividido em:
-                <ul>
-                    <li><strong>/usr/bin</strong>: Executáveis de usuário, incluindo programas e utilitários disponíveis para todos os usuários.</li>
-                    <li><strong>/usr/lib</strong>: Bibliotecas de aplicativos que suportam os executáveis em <code>/usr/bin</code>.</li>
-                    <li><strong>/usr/share</strong>: Dados compartilhados, como documentação, arquivos de configuração e outros recursos que não são específicos de um aplicativo.</li>
-                </ul>
-            </li>
-            <li><strong>/var</strong>: Contém arquivos variáveis, como logs do sistema, arquivos de spool (como e-mails) e caches, que podem mudar frequentemente.</li>
-        </ul>
-    </ul>
 
+<pre>
 
+    /
+├── bin           # Executáveis essenciais do sistema
+├── boot          # Armazena arquivos necessários para a inicialização do sistema
+├── dev           # Arquivos de dispositivo que representam hardware
+├── etc           # Arquivos de configuração do sistema e de aplicativos
+├── home          # Diretórios pessoais dos usuários
+├── lib           # Bibliotecas essenciais para executáveis
+├── media         # Ponto de montagem para dispositivos removíveis
+├── mnt           # Ponto de montagem temporário para sistemas de arquivos
+├── opt           # Pacotes de software adicionais
+├── proc          # Sistema de arquivos virtual com informações sobre processos
+├── root          # Diretório home do usuário root
+├── run           # Informações sobre o sistema em tempo de execução
+├── srv           # Dados para serviços fornecidos pelo sistema
+├── sys           # Sistema de arquivos virtual com informações sobre dispositivos
+├── tmp           # Diretório para arquivos temporários
+├── usr           # Dados de usuário e aplicativos
+│   ├── bin       # Executáveis de usuário
+│   ├── lib       # Bibliotecas de aplicativos
+│   └── share     # Dados compartilhados
+└── var           # Arquivos variáveis, como logs e caches
+</pre>
 
-                        <!--
-                            <h1 class="card-title">Diretório /boot no Linux</h1>
-    <p>O diretório <code>/boot</code> no Linux é um componente crucial da estrutura de arquivos do sistema, pois contém os arquivos necessários para a inicialização do sistema operacional. Aqui estão alguns detalhes sobre o que você pode encontrar dentro do diretório <code>/boot</code>:</p>
-
-    <h2>Conteúdo Comum do Diretório /boot</h2>
-    <ul>
-        <li><strong>Kernel do Linux</strong>:
-            O arquivo do kernel geralmente tem um nome que começa com <code>vmlinuz</code> (por exemplo, <code>vmlinuz-5.4.0-42-generic</code>). Este é o núcleo do sistema operacional, responsável por gerenciar o hardware e fornecer serviços essenciais para os aplicativos.
-        </li>
-        <li><strong>Initramfs/initrd</strong>:
-            Arquivos como <code>initrd.img</code> ou <code>initramfs.img</code> são imagens de sistema de arquivos que são carregadas na memória durante a inicialização. Eles contêm os drivers e scripts necessários para montar o sistema de arquivos raiz e iniciar o processo de inicialização.
-        </li>
-        <li><strong>Configurações do Kernel</strong>:
-            O arquivo <code>config-<versão_do_kernel></code> contém as configurações usadas para compilar o kernel. Isso pode ser útil para desenvolvedores ou administradores que desejam entender como o kernel foi configurado.
-        </li>
-        <li><strong>System.map</strong>:
-            O arquivo <code>System.map-<versão_do_kernel></code> é um mapa de símbolos do kernel, que relaciona endereços de memória a nomes de funções e variáveis. É útil para depuração e análise de problemas.
-        </li>
-        <li><strong>Carregador de Inicialização</strong>:
-            Dependendo da distribuição, você pode encontrar arquivos relacionados ao carregador de inicialização, como o GRUB (Grand Unified Bootloader). Isso pode incluir arquivos de configuração, como <code>grub.cfg</code>, que define as opções de inicialização disponíveis.
-        </li>
-        <li><strong>Outros Arquivos</strong>:
-            Algumas distribuições podem incluir outros arquivos ou diretórios dentro de <code>/boot</code>, como imagens de inicialização para sistemas de recuperação ou arquivos de configuração adicionais.
-        </li>
-    </ul>
-
-    <h2>Estrutura Típica do Diretório /boot</h2>
-    <p>Aqui está um exemplo de como a estrutura do diretório <code>/boot</code> pode parecer:</p>
-    <pre>
-/boot
-├── config-5.4.0-42-generic
-├── grub
-│   └── grub.cfg
-├── initrd.img-5.4.0-42-generic
-├── System.map-5.4.0-42-generic
-└── vmlinuz-5.4.0-42-generic
-    </pre>
-
-    <h2>Importância do Diretório /boot</h2>
-    <ul>
-        <li><strong>Inicialização do Sistema</strong>: O diretório <code>/boot</code> é essencial para o processo de inicialização do sistema. Sem os arquivos contidos nele, o sistema não conseguiria carregar o kernel e, portanto, não poderia iniciar.</li>
-        <li><strong>Gerenciamento de Múltiplos Kernels</strong>: Muitas distribuições Linux permitem que você tenha várias versões do kernel instaladas. O diretório <code>/boot</code> facilita a seleção e o gerenciamento dessas versões durante a inicialização.</li>
-        <li><strong>Recuperação e Diagnóstico</strong>: Os arquivos de configuração e os mapas de símbolos são úteis para diagnosticar problemas de inicialização e para realizar tarefas de recuperação.</li>
-    </ul>
-
-    <h2>Considerações de Segurança</h2>
-    <ul>
-        <li><strong>Proteção do Diretório</strong>: Devido à sua importância, o diretório <code>/boot</code> deve ser protegido contra acessos não autorizados. Normalmente, apenas usuários com privilégios de administrador (root) têm permissão para modificar os arquivos nesse diretório.</li>
-        <li><strong>Backup</strong>: É uma boa prática fazer backup dos arquivos críticos em <code>/boot</code>, especialmente antes de atualizar o kernel ou o carregador de inicialização.</li>
-    </ul>
--->
-                        </div>
+                                </div>
                     </div>
 
                     <nav aria-label="Pagination">
