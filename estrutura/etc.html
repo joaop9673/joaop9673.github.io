@@ -15,11 +15,10 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
@@ -38,15 +37,39 @@
                     <!-- Featured blog post-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h1 class="card-title">titulo do artigo</h1>
+                            <h1 class="card-title">Diretório /etc</h1>
+                            <p>O diretório <code>/etc</code> é um dos diretórios mais importantes em sistemas operacionais Unix e Linux. Ele armazena arquivos de configuração do sistema e de aplicativos.</p>
 
+                            <h2>1. Função do Diretório /etc</h2>
+                            <p>O <code>/etc</code> contém arquivos que controlam o comportamento do sistema e dos serviços que ele executa. Esses arquivos são geralmente de texto e podem ser editados por administradores do sistema para ajustar configurações.</p>
+
+                            <h2>2. Estrutura Comum de Arquivos em /etc</h2>
+                            <p>Dentro do diretório <code>/etc</code>, você encontrará uma variedade de arquivos e subdiretórios, incluindo:</p>
+                            <ul>
+                                <li><code>/etc/passwd</code>: Contém informações sobre os usuários do sistema, como nome de usuário, UID, GID e diretório home.</li>
+                                <li><code>/etc/shadow</code>: Armazena senhas de usuários de forma segura, com informações sobre a expiração das senhas.</li>
+                                <li><code>/etc/group</code>: Contém informações sobre grupos de usuários no sistema.</li>
+                                <li><code>/etc/fstab</code>: Define as partições e dispositivos que devem ser montados automaticamente durante a inicialização.</li>
+                                <li><code>/etc/hosts</code>: Mapeia endereços IP para nomes de host, permitindo a resolução de nomes localmente.</li>
+                                <li><code>/etc/network/interfaces</code>: Configurações de rede para interfaces de rede em sistemas Debian e derivados.</li>
+                                <li><code>/etc/apt/sources.list</code>: Lista de repositórios de pacotes para gerenciar software em sistemas baseados em Debian.</li>
+                            </ul>
+
+                            <h2>3. Importância da Segurança</h2>
+                            <p>Os arquivos em <code>/etc</code> são críticos para a operação do sistema, e a segurança desses arquivos é fundamental. Apenas usuários com permissões adequadas, geralmente administradores, devem ter acesso para editar esses arquivos.</p>
+
+                            <h2>4. Edição de Arquivos de Configuração</h2>
+                            <p>Os arquivos em <code>/etc</code> podem ser editados usando editores de texto como <code>vim</code>, <code>nano</code> ou <code>gedit</code>. É importante ter cuidado ao editar esses arquivos, pois configurações incorretas podem afetar o funcionamento do sistema.</p>
+
+                            <h2>5. Backup de Configurações</h2>
+                            <p>É uma boa prática fazer backup dos arquivos de configuração antes de realizar alterações significativas. Isso permite restaurar as configurações anteriores em caso de problemas.</p>
                         </div>
                     </div>
 
                     <nav aria-label="Pagination">
                         <hr class="my-0" />
                         <div class="d-flex justify-content-center my-4">
-                            <a class="btn btn-primary me-2" href="index.html" aria-label="Previous">Anterior</a>
+                            <a class="btn btn-primary me-2" href="../AEstrutura.html" aria-label="Previous">Anterior</a>
                             <a class="btn btn-primary" href="#!" aria-label="Next">Próximo</a>
                         </div>
                     </nav>
@@ -66,21 +89,32 @@
                     </div>
                     <!-- Categories widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Categories</div>
+                        <div class="card-header text-center">Mais detalhes</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
+                                        <li><a href="#!">Diretorio Raiz</a></li>
+                                        <li><a href="bin.html">/bin</a></li>
+                                        <li><a href="boot.html">/boot</a></li>
+                                        <li><a href="dev.html">/dev</a></li>
+                                        <li><a href="etc.html">/etc</a></li>
+                                        <li><a href="home.html">/home</a></li>
+                                        <li><a href="lib.html">/lib</a></li>
+                                        <li><a href="media.html">/media</a></li>
+                                        <li><a href="mnt">/mnt</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">JavaScript</a></li>
-                                        <li><a href="#!">CSS</a></li>
-                                        <li><a href="#!">Tutorials</a></li>
+                                        <li><a href="opt">/opt</a></li>
+                                        <li><a href="proc">/proc</a></li>
+                                        <li><a href="root">/root</a></li>
+                                        <li><a href="run">/run</a></li>
+                                        <li><a href="srv">/srv</a></li>
+                                        <li><a href="tmp">/tmp</a></li>
+                                        <li><a href="usr">/usr</a></li>
+                                        <li><a href="var">/var</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -90,7 +124,7 @@
                     <div class="card mb-4">
                         <div class="card-header text-center">Relogio Online</div>
                         <!-- <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div> -->
-                       <h2 class="text-center">Relógio Online</h2>
+                        <h2 class="text-center">Relógio Online</h2>
                         <iframe
                                 width="340"
                                 height="180"
