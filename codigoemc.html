@@ -37,116 +37,50 @@
                     <!-- Featured blog post-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h1 class="card-title">Compilação de C no Linux Usando o Terminal</h1>
-                            <p>Para compilar códigos em C no Linux usando o terminal, você pode usar o compilador <strong>gcc</strong> (GNU Compiler Collection). Aqui estão os passos básicos para compilar e executar um programa em C:</p>
-                            </header>
+                            <h1 class="card-title">História do Código Aberto e do GNU</h1>
+
                             <section>
-                                <h2 class="card-title">Compilar Códigos em C Usando o Vim</h1>
-                                <p>Compilar códigos em C é um processo que envolve a conversão do código-fonte escrito em C para um executável que pode ser executado pelo sistema operacional. Aqui estão os passos básicos para compilar um programa em C, usando o compilador GCC (GNU Compiler Collection) e o editor de texto Vim.</p>
+                                <h4>Anos 1980: O Início do Movimento GNU</h4>
+                                <p>
+                                Em setembro de 1983, <strong>Richard Stallman</strong> anunciou o <strong>Projeto GNU</strong> (GNU's Not Unix) com o objetivo de criar um sistema operacional completamente livre. Stallman acreditava que o software deveria ser livre para ser usado, modificado e distribuído. Ele começou a desenvolver ferramentas essenciais, como o editor de texto <em>Emacs</em> e o compilador <em>GCC</em> (GNU Compiler Collection).
+                                </p>
+                                <p>
+                                Para garantir que o software GNU permanecesse livre, Stallman criou a <strong>Licença Pública Geral GNU (GPL)</strong> em 1989. Essa licença permitia que os usuários usassem, modificassem e redistribuíssem o software, desde que as mesmas liberdades fossem preservadas nas versões modificadas.
+                                </p>
+                            </section>
 
-                                <h2 class="card-title">1. Instalar o GCC</h2>
-                                <p>Se você ainda não tem o GCC instalado, você pode instalá-lo usando o gerenciador de pacotes do seu sistema. Aqui estão alguns exemplos:</p>
-                                <ul>
-                                    <li><strong>Ubuntu/Debian</strong>:
-                                        <pre>
-sudo apt update
-sudo apt install build-essential
-                                        </pre>
-                                    </li>
-                                    <li><strong>Fedora</strong>:
-                                        <pre>
-sudo dnf install gcc
-                                        </pre>
-                                    </li>
-                                    <li><strong>Arch Linux</strong>:
-                                        <pre>
-sudo pacman -S gcc
-                                        </pre>
-                                    </li>
-                                    <li><strong>Windows</strong>: Você pode instalar o MinGW ou usar o WSL (Windows Subsystem for Linux) para ter um ambiente Linux no Windows.</li>
-                                </ul>
+                            <section>
+                                <h4>Anos 1990: A Ascensão do Linux</h4>
+                                <p>
+                                Em 1991, <strong>Linus Torvalds</strong>, um estudante da Universidade de Helsinque, começou a desenvolver o <strong>Linux</strong>, um núcleo (kernel) de sistema operacional inspirado no Unix. Torvalds lançou a primeira versão do Linux (0.01) e, em seguida, tornou-o disponível sob a Licença Pública Geral (GPL), permitindo que outros contribuíssem e melhorassem o código.
+                                </p>
+                                <p>
+                                Com o tempo, várias <strong>distribuições Linux</strong> começaram a surgir, combinando o kernel Linux com ferramentas GNU e outros softwares. Exemplos incluem <em>Debian</em>, <em>Red Hat</em> e <em>Slackware</em>.
+                                </p>
+                            </section>
 
-                                <h2 class="card-title">2. Escrever o Código em C com o Vim</h2>
-                                <p>Abra o terminal e inicie o Vim para criar um arquivo de texto com a extensão <code>.c</code>. Por exemplo, para criar <code>programa.c</code>, use o seguinte comando:</p>
-                                <pre>
-vim programa.c
-                                </pre>
-                                <p>Dentro do Vim, pressione <code>i</code> para entrar no modo de inserção e escreva o seguinte código:</p>
-                                <pre>
-#include &lt;stdio.h&gt;
+                            <section>
+                                <h4>Anos 2000: Crescimento e Adoção</h4>
+                                <p>
+                                Durante os anos 2000, o Linux começou a ser adotado por empresas e organizações, especialmente em servidores e ambientes de computação em nuvem. A estabilidade e a segurança do Linux o tornaram uma escolha popular para servidores.
+                                </p>
+                                <p>
+                                Em 1998, a <strong>Open Source Initiative (OSI)</strong> foi fundada para promover o conceito de software de código aberto, ajudando a popularizar o termo e a criar definições e certificações para software que atende a esses critérios.
+                                </p>
+                            </section>
 
-int main() {
-    printf("Olá, Mundo!\n");
-    return 0;
-}
-                                </pre>
-                                <p>Depois de escrever o código, pressione <code>Esc</code> para sair do modo de inserção, e então digite <code>:wq</code> para salvar e sair do Vim.</p>
-
-                                <h2 class="card-title">3. Compilar o Código</h2>
-                                <p>Abra o terminal e navegue até o diretório onde o arquivo <code>programa.c</code> está localizado. Use o seguinte comando para compilar o código:</p>
-                                <pre>
-gcc programa.c -o programa
-                                </pre>
-                                <p>- <code>gcc</code> é o comando para chamar o compilador.<br>
-                                - <code>programa.c</code> é o nome do arquivo de código-fonte.<br>
-                                - <code>-o programa</code> especifica o nome do arquivo executável que será gerado (neste caso, <code>programa</code>).</p>
-
-                                <h2 class="card-title">4. Executar o Programa</h2>
-                                <p>Após a compilação, você pode executar o programa gerado. Siga os passos abaixo:</p>
-
-                                <ol>
-                                    <li>
-                                        <p>Abra o terminal, se ainda não estiver aberto.</p>
-                                    </li>
-                                    <li>
-                                        <p>Navegue até o diretório onde o arquivo executável foi gerado. Se você seguiu o exemplo anterior e compilou o programa com o nome <code>programa</code>, use o comando <code>cd</code> para mudar para o diretório correto. Por exemplo:</p>
-                                        <pre>
-cd /caminho/para/o/diretorio
-                                        </pre>
-                                    </li>
-                                    <li>
-                                        <p>Para executar o programa, digite o seguinte comando no terminal:</p>
-                                        <pre>
-./programa
-                                        </pre>
-                                        <p>O <code>./</code> indica que o programa está localizado no diretório atual. Se você não usar <code>./</code>, o sistema pode não encontrar o executável.</p>
-                                    </li>
-                                    <li>
-                                        <p>Se tudo estiver correto, você verá a saída do programa no terminal. Por exemplo, se o seu programa imprime "Olá, Mundo!", a saída será:</p>
-                                        <pre>
-Olá, Mundo!
-                                        </pre>
-                                    </li>
-                                    <li>
-                                        <p>Se o programa não executar corretamente, verifique se houve erros durante a compilação e se o código-fonte está correto. Você pode precisar voltar ao código, corrigir os erros e recompilar.</p>
-                                    </li>
-                                </ol>
-                                <h2 class="card-title">5. Compilação com Opções Adicionais</h2>
-                                <p>Você pode usar várias opções ao compilar seu código:</p>
-                                <ul>
-                                    <li><code>-Wall</code>: Ativa todos os avisos.</li>
-                                    <li><code>-g</code>: Gera informações de depuração.</li>
-                                    <li><code>-O2</code>: Ativa otimizações.</li>
-                                </ul>
-                                <p>Por exemplo:</p>
-                                <pre>
-gcc -Wall -g -O2 programa.c -o programa
-                                </pre>
-                                <h2 class="card-title">6. Compilação de Múltiplos Arquivos</h2>
-                                <p>Se você tiver múltiplos arquivos de código-fonte, você pode compilá-los juntos. Por exemplo, se você tiver dois arquivos, <code>arquivo1.c</code> e <code>arquivo2.c</code>, você pode usar o seguinte comando:</p>
-                                <pre>
-gcc arquivo1.c arquivo2.c -o programa
-                                </pre>
-                                <p>Isso irá compilar ambos os arquivos e gerar um executável chamado <code>programa</code>.</p>
-
-                                <h2 class="card-title">7. Erros de Compilação</h2>
-                                <p>Se houver erros no seu código, o GCC exibirá mensagens de erro no terminal. Essas mensagens geralmente incluem a linha do erro e uma descrição do que está errado. Você precisará corrigir esses erros no seu código-fonte e tentar compilar novamente.</p>
-                                <p>Por exemplo, se você esquecer de incluir um ponto e vírgula no final de uma linha, o GCC pode mostrar uma mensagem de erro semelhante a:</p>
-                                <pre>
-error: expected ‘;’ before ‘return’
-                                </pre>
-                                <p>Após corrigir os erros, você pode tentar compilar novamente usando o mesmo comando <code>gcc</code>.</p>
-
+                            <section>
+                                <h4>Anos 2010 e Além: O Futuro do Código Aberto</h4>
+                                <p>
+                                O movimento de código aberto continuou a crescer, com muitas empresas adotando modelos de negócios baseados em software livre. Projetos como <em>Apache</em>, <em>Mozilla Firefox</em> e o sistema de gerenciamento de pacotes <em>APT</em> (usado em distribuições Debian e Ubuntu) se tornaram populares.
+                                </p>
+                                <p>
+                                A colaboração em projetos de código aberto se expandiu com plataformas como <em>GitHub</em>, que facilitam o compartilhamento e a contribuição de código, levando a um aumento na inovação e na criação de software.
+                                </p>
+                                <p>
+                                Hoje, o Linux é um dos sistemas operacionais mais utilizados no mundo, especialmente em servidores, dispositivos móveis (Android é baseado no kernel Linux) e sistemas embarcados.
+                                </p>
+                            </section>
                         </div>
                     </div>
                     <!--  paginaçao -->
@@ -198,7 +132,7 @@ error: expected ‘;’ before ‘return’
                         <div class="card-header text-center">Relógio Online</div>
                         <!-- <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div> -->
 
-                       <iframe
+                        <iframe
                                 width="340"
                                 height="180"
                                 src="https://relogioonline.com.br/embed/horario/são-paulo/#theme=0&ampm=0&showdate=1"
