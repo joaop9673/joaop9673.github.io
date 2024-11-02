@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>TechTalks</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-4">
+        </header>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h1 class="card-title">Criptografia GPG</h1>
+                            <p>A criptografia GPG (GNU Privacy Guard) é uma implementação do padrão OpenPGP (Pretty Good Privacy), que é um método amplamente utilizado para criptografar e assinar digitalmente dados e comunicações. O GPG é uma ferramenta de código aberto que permite a criptografia de arquivos e mensagens, garantindo a confidencialidade e a autenticidade das informações. Aqui estão os principais conceitos e funcionalidades da criptografia GPG:</p>
+
+                            <h2 class="card-title">1. Chaves Criptográficas</h2>
+                            <ul>
+                                <li><strong>Chave Pública</strong>: É usada para criptografar dados. Você pode compartilhar sua chave pública com qualquer pessoa que deseje enviar mensagens criptografadas para você.</li>
+                                <li><strong>Chave Privada</strong>: É usada para descriptografar dados que foram criptografados com sua chave pública. A chave privada deve ser mantida em segredo e nunca deve ser compartilhada.</li>
+                            </ul>
+
+                            <h2 class"card-title">2. Criptografia Assimétrica</h2>
+                            <p>O GPG utiliza criptografia assimétrica, que envolve um par de chaves (pública e privada). Isso significa que, enquanto a chave pública pode ser distribuída livremente, a chave privada deve ser mantida em segredo. Quando alguém deseja enviar uma mensagem segura, eles a criptografam com a chave pública do destinatário. Apenas o destinatário, que possui a chave privada correspondente, pode descriptografar a mensagem.</p>
+
+                            <h2>3. Assinatura Digital</h2>
+                            <p>O GPG também permite a assinatura digital de mensagens e arquivos. Isso é feito usando a chave privada do remetente. A assinatura digital garante a autenticidade da mensagem, permitindo que o destinatário verifique se a mensagem realmente veio do remetente e não foi alterada durante a transmissão.</p>
+
+                            <h2>4. Integridade dos Dados</h2>
+                            <p>Além de garantir a confidencialidade e a autenticidade, o GPG também assegura a integridade dos dados. Isso significa que, se uma mensagem for alterada de alguma forma, a assinatura digital não será mais válida, alertando o destinatário sobre a possível manipulação.</p>
+
+                            <h2>5. Uso do GPG</h2>
+                            <p>O GPG pode ser usado em várias situações, incluindo:</p>
+                            <ul>
+                                <li>Criptografar e assinar e-mails.</li>
+                                <li>Proteger arquivos sensíveis em disco.</li>
+                                <li>Garantir a integridade de pacotes de software e atualizações.</li>
+                            </ul>
+
+                            <h2>6. Exemplo de Uso</h2>
+                            <p>Aqui está um exemplo básico de como usar o GPG na linha de comando:</p>
+                            <pre>
+    # Gerar um par de chaves
+    gpg --full-generate-key
+
+    # Listar chaves
+    gpg --list-keys
+
+    # Criptografar um arquivo
+    gpg -e -r "Nome do Destinatário" arquivo.txt
+
+    # Descriptografar um arquivo
+    gpg -d arquivo.txt.gpg
+
+    # Assinar um arquivo
+    gpg -s arquivo.txt
+
+    # Verificar uma assinatura
+    gpg --verify arquivo.txt.sig
+                            </pre>
+
+                            <h2>7. Considerações de Segurança</h2>
+                            <ul>
+                                <li><strong>Proteção da Chave Privada</strong>: É crucial proteger a chave privada com uma senha forte e armazená-la em um local seguro.</li>
+                                <li><strong>Revogação de Chaves</strong>: Se uma chave privada for comprometida, é importante revogar a chave pública correspondente para evitar o uso indevido.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Pagination">
+                        <hr class="my-0" />
+                        <div class="d-flex justify-content-center my-4">
+                            <a class="btn btn-primary me-2" href="index.html" aria-label="Previous">Anterior</a>
+                            <a class="btn btn-primary" href="#!" aria-label="Next">Próximo</a>
+                        </div>
+                    </nav>
+
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">Web Design</a></li>
+                                        <li><a href="#!">HTML</a></li>
+                                        <li><a href="#!">Freebies</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">JavaScript</a></li>
+                                        <li><a href="#!">CSS</a></li>
+                                        <li><a href="#!">Tutorials</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header text-center">Relogio Online</div>
+                        <!-- <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div> -->
+                        <h2 class="text-center">Relógio Online</h2>
+                        <iframe
+                                width="340"
+                                height="180"
+                                src="https://relogioonline.com.br/embed/horario/são-paulo/#theme=0&ampm=0&showdate=1"
+                                frameborder="1"
+                                allowfullscreen
+                                style="pointer-events: none;">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Este projeto está licenciado sob a <a href="https://opensource.org/licenses/MIT" >Licença MIT</a>. Veja o <a href="LICENSE" >arquivo de licença</a> para mais detalhes.</p></div>
+        </footer>
+    </body>
+</html>
