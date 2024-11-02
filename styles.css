@@ -10844,3 +10844,24 @@ code {
 ul {
   margin: 10px 0;
 }
+
+
+/* Estilos para o modo escuro */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode a {
+  color: #fff;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+  color: #fff;
+}
+
+
+
+
+
+
