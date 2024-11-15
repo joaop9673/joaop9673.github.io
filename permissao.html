@@ -38,60 +38,121 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h1 class="card-title">Entendendo as Permissões no Linux: Protegendo Seus Dados</h1>
-                            <p>No Linux, as permissões de arquivos e diretórios desempenham um papel crucial na segurança e no controle de acesso do sistema. Elas são essenciais para garantir que apenas usuários autorizados possam interagir com arquivos e diretórios, protegendo assim dados sensíveis e evitando alterações indesejadas. As permissões definem três tipos principais de ações que podem ser realizadas em um arquivo ou diretório: leitura, escrita e execução</p>
 
-                            <h2 class="card-title">Tipos de Permissões</h2>
+                            <h2 class="card-title">Introdução</h2>
+
+                            <p>As permissões no GNU/Linux são fundamentais para garantir a segurança e integridade do sistema. Elas definem o que um usuário pode fazer com um arquivo ou diretório, controlando o acesso e prevenindo danos acidentais ou mal-intencionados. Neste artigo, vamos explorar conceitos básicos, tipos de permissões e como alterá-las.</p>
+
+                            <h2 class="card-title">1: Conceitos Básicos</h2>
+
+                            <p>Antes de mergulhar nas permissões, é importante entender alguns conceitos básicos:</p>
+
                             <ul>
-                                <li><strong>Leitura (r)</strong>: Permite que o usuário leia o conteúdo do arquivo ou liste o conteúdo de um diretório.</li>
-                                <li><strong>Escrita (w)</strong>: Permite que o usuário modifique o conteúdo do arquivo ou adicione/remova arquivos em um diretório.</li>
-                                <li><strong>Execução (x)</strong>: Permite que o usuário execute um arquivo como um programa ou acesse um diretório.</li>
+                                <li><strong>Permissões</strong>: definem o que um usuário pode fazer com um arquivo ou diretório.</li>
+                                <li><strong>Proprietário</strong>: o usuário que criou o arquivo ou diretório.</li>
+                                <li><strong>Grupo</strong>: um conjunto de usuários que compartilham permissões.</li>
+                                <li><strong>Outros</strong>: todos os demais usuários do sistema.</li>
+                                <li><strong>UID (User ID)</strong>: identificador único do usuário.</li>
+                                <li><strong>GID (Group ID)</strong>: identificador único do grupo.</li>
                             </ul>
 
-                            <h2 class="card-title">Classes de Usuários</h2>
+                            <h2 class="card-title">2: Tipos de Permissões</h2>
+
+                            <p>Existem três tipos principais de permissões:</p>
+
                             <ul>
-                                <li><strong>Usuário (u)</strong>: O proprietário do arquivo.</li>
-                                <li><strong>Grupo (g)</strong>: Os usuários que pertencem ao mesmo grupo que o proprietário do arquivo.</li>
-                                <li><strong>Outros (o)</strong>: Todos os outros usuários que não são o proprietário nem pertencem ao grupo.</li>
+                                <li><strong>Leitura (r)</strong>: permite visualizar o conteúdo de um arquivo ou lista os arquivos em um diretório.</li>
+                                <li><strong>Escrita (w)</strong>: permite modificar ou excluir um arquivo ou diretório.</li>
+                                <li><strong>Execução (x)</strong>: permite executar um arquivo como um programa ou acessar um diretório.</li>
                             </ul>
 
-                            <h2 class="card-title">Visualizando Permissões</h2>
-                            <p>Você pode visualizar as permissões de arquivos e diretórios usando o comando <code>ls -l</code>. A saída será algo como:</p>
+                            <p>Além disso, existem permissões especiais:</p>
+
+                            <ul>
+                                <li><strong>setuid</strong>: executa um programa com permissões do proprietário.</li>
+                                <li><strong>setgid</strong>: executa um programa com permissões do grupo.</li>
+                                <li><strong>sticky bit</strong>: impede exclusão de arquivos em diretórios compartilhados.</li>
+                            </ul>
+
+                            <h2 class="card-title">3: Visualizando Permissões</h2>
+
+                            <p>Para visualizar as permissões de um arquivo ou diretório, use o comando <code>ls -l</code>:</p>
+
                             <pre>
--rwxr-xr-- 1 user group 1234 Jan 01 12:00 arquivo.txt
+ls -l arquivo.txt
                             </pre>
-                            <p>A primeira coluna indica as permissões:</p>
+
+                            <p>Saída:</p>
+
+                            <pre>
+-rw-r--r-- 1 usuario grupo 1024 jan 10 15:30 arquivo.txt
+                            </pre>
+
+                            <p>Nesse exemplo:</p>
+
                             <ul>
-                                <li>O primeiro caractere indica o tipo de arquivo (<code>-</code> para arquivo regular, <code>d</code> para diretório, etc.).</li>
-                                <li>Os próximos nove caracteres são divididos em três grupos de três:</li>
-                                <ul>
-                                    <li>O primeiro grupo (posições 2-4) mostra as permissões do usuário (u).</li>
-                                    <li>O segundo grupo (posições 5-7) mostra as permissões do grupo (g).</li>
-                                    <li>O terceiro grupo (posições 8-10) mostra as permissões para outros (o).</li>
-                                </ul>
+                                <li><code>-rw-r--r--</code> representa as permissões.</li>
+                                <li><code>usuario</code> é o proprietário.</li>
+                                <li><code>grupo</code> é o grupo.</li>
+                                <li><code>1024</code> é o tamanho do arquivo.</li>
+                                <li><code>jan 10 15:30</code> é a data de modificação.</li>
                             </ul>
 
-                            <h2 class="card-title">Modificando Permissões</h2>
-                            <p>Você pode modificar as permissões usando o comando <code>chmod</code>. Existem duas maneiras de usar o <code>chmod</code>: a notação simbólica e a notação octal.</p>
+                            <h2 class="car-title"> 4: Alterando Permissões</h2>
 
-                            <h3 class="card-title">Notação Simbólica</h3>
+                            <p>Para alterar permissões, use o comando <code>chmod</code>:</p>
+
+                            <pre>
+chmod 755 arquivo.txt
+                            </pre>
+
+                            <p>Nesse exemplo:</p>
+
                             <ul>
-                                <li>Para adicionar uma permissão: <code>chmod u+x arquivo.txt</code> (adiciona permissão de execução para o usuário).</li>
-                                <li>Para remover uma permissão: <code>chmod g-w arquivo.txt</code> (remove permissão de escrita para o grupo).</li>
+                                <li><code>755</code> é o código de permissão.</li>
+                                <li><code>arquivo.txt</code> é o arquivo que será modificado.</li>
                             </ul>
 
-                            <h3 class="card-title">Notação Octal</h3>
-                            <p>As permissões são representadas por números:</p>
+                            <p>Outros exemplos de uso do comando <code>chmod</code>:</p>
+
                             <ul>
-                                <li>Leitura = 4</li>
-                                <li>Escrita = 2</li>
-                                <li>Execução = 1</li>
+                                <li><code>chmod u+x arquivo.txt</code>: adiciona permissão de execução para o proprietário.</li>
+                                <li><code>chmod g+w arquivo.txt</code>: adiciona permissão de escrita para o grupo.</li>
+                                <li><code>chmod o-r arquivo.txt</code>: remove permissão de leitura para outros.</li>
                             </ul>
-                            <p>Você pode somar esses valores para definir permissões. Por exemplo, <code>chmod 755 arquivo.txt</code> define:</p>
+
+                            <h2 class="card-title"> 5: Código de Permissão</h2>
+
+                            <p>O código de permissão é um número de três dígitos que representa as permissões:</p>
+
                             <ul>
-                                <li>Usuário: leitura, escrita e execução (4+2+1=7)</li>
-                                <li>Grupo: leitura e execução (4+1=5)</li>
-                                <li>Outros: leitura e execução (4+1=5)</li>
+                                <li>Primeiro dígito: permissões do proprietário.</li>
+                                <li>Segundo dígito: permissões do grupo.</li>
+                                <li>Terceiro dígito: permissões de outros.</li>
                             </ul>
+
+                            <p>Valores:</p>
+
+                            <ul>
+                                <li><code>0</code>: nenhum acesso.</li>
+                                <li><code>1</code>: execução.</li>
+                                <li><code>2</code>: escrita.</li>
+                                <li><code>4</code>: leitura.</li>
+                                <li><code>5</code>: leitura e execução.</li>
+                                <li><code>6</code>: leitura e escrita.</li>
+                                <li><code>7</code>: leitura, escrita e execução.</li>
+                            </ul>
+
+                            <h2 class="card-title"> 6: Exemplos Práticos</h2>
+
+                            <p>Aqui estão alguns exemplos práticos de uso do comando <code>chmod</code>:</p>
+
+                            <ul>
+                                <li><code>chmod 755 /bin/meu_programa</code>: define permissões de execução para o proprietário e grupo, e leitura e execução para outros.</li>
+                                <li><code>chmod 644 /etc/meu_arquivo</code>: define permissões de leitura e escrita para o proprietário, e leitura para o grupo e outros.</li>
+                                <li><code>chmod 777 /tmp/meu_diretorio</code>: define permissões de leitura, escrita e execução para todos.</li>
+                            </ul>
+
                         </div>
                     </div>
 
