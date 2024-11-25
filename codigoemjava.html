@@ -93,56 +93,56 @@
                                 <p>Para instalar o Vim em distribuições baseadas no Debian, como o Ubuntu, siga os passos abaixo:</p> 
                                 <ol>
                                     <li>Abra o terminal.</li>
-                                    <li>Atualize a lista de pacotes:<pre> sudo apt update</pre> </li>
-                                    <li>Instale o Vim:<pre>sudo apt install vim</pre> </li>
+                                    <li>Atualize a lista de pacotes:<pre class="code"> sudo apt update</pre> </li>
+                                        <li>Instale o Vim:<pre class="code">sudo apt install vim</pre> </li>
                                 </ol>
-                                <p>Após a instalação, você pode verificar se o Vim foi instalado corretamente executando o seguinte comando:<pre>vim --version</pre></p>
+                                <p>Após a instalação, você pode verificar se o Vim foi instalado corretamente executando o seguinte comando:<pre class="code">vim --version</pre></p>
 
-                                    <h4 class="card-title">Instalando o Vim no Fedora</h4> 
-                                    <p>Para usuários do Fedora, o processo de instalação é igualmente simples:</p> 
-                                    <ol>
-                                        <li>Abra o terminal.</li>
-                                        <li>Instale o Vim usando o DNF: <pre>sudo dnf install vim</pre> </li>
-                                        <li>Assim como no Ubuntu, você pode verificar a instalação com: <pre>vim --version</pre> </li>
-                                    </ol>
-                                    <h4 class="card-title">Instalando o Vim no Arch Linux</h4> 
-                                    <p>Os usuários do Arch Linux podem instalar o Vim usando o gerenciador de pacotes Pacman</p>
-                                    <ol>
-                                        <li>Abra o terminal.</li>
-                                        <li>Instale o Vim: <pre>sudo pacman -S vim</pre> </li>
-                                         <li>Verifique a instalação com:<pre>vim --version</pre></li>
-                                    </ol>
-                                    <h4 class="card-title">Instalando o Vim em Outras Distribuições</h4> 
-                                    <p>Para outras distribuições, o Vim pode estar disponível em seus respectivos repositórios de pacotes. Aqui estão alguns exemplos:</p> 
-                                    <ol>
-                                        <li>OpenSUSE:<pre>sudo zypper install vim</pre></li> 
-                                        <li>Gentoo:<pre>sudo emerge app-editors/vim</pre></li> 
-                                     </ol>
-                                     <p>Se você não tiver certeza de como instalar o Vim em sua distribuição específica, consulte a documentação oficial ou o site da distribuição para obter instruções detalhadas.</p> 
-                                     <h4 class="card-title">Verificando a Instalação</h4> 
-                                     <p>Após a instalação, é sempre uma boa prática verificar se o Vim foi instalado corretamente. Execute o seguinte comando no terminal:<pre>vim --version</pre> Esse comando exibirá a versão do Vim instalada, juntamente com informações sobre as funcionalidades disponíveis. Se você vir a versão do Vim e não houver mensagens de erro, a instalação foi bem-sucedida.</p> 
+                                <h4 class="card-title">Instalando o Vim no Fedora</h4> 
+                                <p>Para usuários do Fedora, o processo de instalação é igualmente simples:</p> 
+                                <ol>
+                                    <li>Abra o terminal.</li>
+                                    <li>Instale o Vim usando o DNF: <pre class="code">sudo dnf install vim</pre> </li>
+                                        <li>Assim como no Ubuntu, você pode verificar a instalação com: <pre class="code">vim --version</pre> </li>
+                                </ol>
+                                <h4 class="card-title">Instalando o Vim no Arch Linux</h4> 
+                                <p>Os usuários do Arch Linux podem instalar o Vim usando o gerenciador de pacotes Pacman</p>
+                                <ol>
+                                    <li>Abra o terminal.</li>
+                                    <li>Instale o Vim: <pre class="code">sudo pacman -S vim</pre> </li>
+                                        <li>Verifique a instalação com:<pre class="code">vim --version</pre></li>
+                                </ol>
+                                <h4 class="card-title">Instalando o Vim em Outras Distribuições</h4> 
+                                <p>Para outras distribuições, o Vim pode estar disponível em seus respectivos repositórios de pacotes. Aqui estão alguns exemplos:</p> 
+                                <ol>
+                                    <li>OpenSUSE:<pre class="code">sudo zypper install vim</pre></li>
+                                        <li>Gentoo:<pre class="code">sudo emerge app-editors/vim</pre></li>
+                                </ol>
+                                <p>Se você não tiver certeza de como instalar o Vim em sua distribuição específica, consulte a documentação oficial ou o site da distribuição para obter instruções detalhadas.</p> 
+                                <h4 class="card-title">Verificando a Instalação</h4> 
+                                <p>Após a instalação, é sempre uma boa prática verificar se o Vim foi instalado corretamente. Execute o seguinte comando no terminal:<pre class="code">vim --version</pre> Esse comando exibirá a versão do Vim instalada, juntamente com informações sobre as funcionalidades disponíveis. Se você vir a versão do Vim e não houver mensagens de erro, a instalação foi bem-sucedida.</p>
                             </section>
                             <section>
-                                <h2 class="card-title">Código em C</h2>
-                                <pre>
-#include &lt;stdio.h&gt;
-
-int main() {
-    printf("Hello, World from C!\\n");
-    return 0;
-}
-                                </pre>
-
-                                <h3>Compilação e Execução em C</h3>
+                                <div class="vim-container">
+                                    <h4 class="card-title">Código em C</h2>
+                                    <pre class="code">
+ <span class="linha">1</span> #include &lt;stdio.h&gt;
+ <span class="linha">2</span> int main() {
+ <span class="linha">3</span> printf("Hello, World from C!\\n");
+ <span class="linha">4</span> return 0;
+ <span class="linha">5</span> }
+                                    </pre>
+                                </div>
+                                <h3 class="card-title">Compilação e Execução em C</h3>
                                 <p>Para compilar e executar o código em C, siga os passos abaixo:</p>
                                 <ol>
                                     <li>Abra o terminal.</li>
                                     <li>Navegue até o diretório onde o arquivo <code>exemplo.c</code> está localizado.</li>
                                     <li>Compile o código usando o comando:</li>
-                                    <pre>gcc exemplo.c -o exemplo_c</pre>
+                                    <pre class="code">gcc exemplo.c -o exemplo_c</pre>
                                     <p>Este comando utiliza o GCC (GNU Compiler Collection) para compilar o arquivo <code>exemplo.c</code> e gerar um executável chamado <code>exemplo_c</code>.</p>
                                     <li>Execute o programa compilado com o comando:</li>
-                                    <pre>./exemplo_c</pre>
+                                    <pre class="code">./exemplo_c</pre>
                                     <p>Este comando executa o arquivo gerado, e você verá a saída no terminal.</p>
                                 </ol>
 
@@ -157,26 +157,27 @@ int main() {
                             </section>
 
                             <section>
-                                <h2>Código em C++</h2>
-                                <pre>
-#include &lt;iostream&gt;
-
-int main() {
-    std::cout &lt;&lt; "Hello, World from C++!" &lt;&lt; std::endl;
-    return 0;
-}
+                                <div class="vim-container">
+                                <h2 class="card-title">Código em C++</h2>
+                                <pre class="code">
+<span class="linha">1</span>#include &lt;iostream&gt;
+<span class="linha">2</span>
+<span class="linha">3</span>int main() {
+<span class="linha">4</span>   std::cout &lt;&lt; "Hello, World from C++!" &lt;&lt; std::endl;
+<span class="linha">5</span>   return 0;
+<span class="linha">6</span>{
                                 </pre>
-
+                                </div>
                                 <h3>Compilação e Execução em C++</h3>
                                 <p>Para compilar e executar o código em C++, siga os passos abaixo:</p>
                                 <ol>
                                     <li>Abra o terminal.</li>
                                     <li>Navegue até o diretório onde o arquivo <code>exemplo.cpp</code> está localizado.</li>
                                     <li>Compile o código usando o comando:</li>
-                                    <pre>g++ exemplo.cpp -o exemplo_cpp</pre>
+                                    <pre class="code">g++ exemplo.cpp -o exemplo_cpp</pre>
                                     <p>Este comando utiliza o G++ (GNU C++ Compiler) para compilar o arquivo <code>exemplo.cpp</code> e gerar um executável chamado <code>exemplo_cpp</code>.</p>
                                     <li>Execute o programa compilado com o comando:</li>
-                                    <pre>./exemplo_cpp</pre>
+                                    <pre class="code">./exemplo_cpp</pre>
                                     <p>Este comando executa o arquivo gerado, e você verá a saída no terminal.</p>
                                 </ol>
 
@@ -191,25 +192,26 @@ int main() {
                             </section>
 
                             <section>
-                                <h2>Código em Java</h2>
-                                <pre>
-public class Exemplo {
-    public static void main(String[] args) {
-        System.out.println("Hello, World from Java!");
-    }
-}
+                                <div class="vim-container">
+                                <h2 class="card-title" >Código em Java</h2>
+                                <pre class="code">
+<span class="linha">1</span>public class Exemplo {
+<span class="linha">2</span>   public static void main(String[] args) {
+<span class="linha">3</span>       System.out.println("Hello, World from Java!");
+<span class="linha">4</span>   }
+<span class="linha">5</span>}
                                 </pre>
-
+                                </div>
                                 <h3>Compilação e Execução em Java</h3>
                                 <p>Para compilar e executar o código em Java, siga os passos abaixo:</p>
                                 <ol>
                                     <li>Abra o terminal.</li>
                                     <li>Navegue até o diretório onde o arquivo <code>Exemplo.java</code> está localizado.</li>
                                     <li>Compile o código usando o comando:</li>
-                                    <pre>javac Exemplo.java</pre>
+                                    <pre class="code">javac Exemplo.java</pre>
                                     <p>Este comando utiliza o <code>javac</code> (Java Compiler) para compilar o arquivo <code>Exemplo.java</code> e gerar um arquivo de bytecode chamado <code>Exemplo.class</code>.</p>
                                     <li>Execute o programa compilado com o comando:</li>
-                                    <pre>java Exemplo</pre>
+                                    <pre class="code">java Exemplo</pre>
                                     <p>Este comando executa o bytecode gerado, e você verá a saída no terminal.</p>
                                 </ol>
 
@@ -227,7 +229,7 @@ public class Exemplo {
                             <section>
                                 <h2>4. Compilação em Python</h2>
                                 <h2>Código em Python</h2>
-                                <pre>
+                                <pre class="code">
 print("Hello, World from Python!")
                                 </pre>
 
@@ -237,7 +239,7 @@ print("Hello, World from Python!")
                                     <li>Abra o terminal.</li>
                                     <li>Navegue até o diretório onde o arquivo <code>exemplo.py</code> está localizado.</li>
                                     <li>Execute o programa com o comando:</li>
-                                    <pre>python exemplo.py</pre>
+                                    <pre class="code">python exemplo.py</pre>
                                     <p>Este comando executa o arquivo <code>exemplo.py</code>, e você verá a saída no terminal.</p>
                                 </ol>
 
@@ -249,9 +251,9 @@ print("Hello, World from Python!")
 
                                 <h3>Observações</h3>
                                 <p>Certifique-se de que o Python está instalado em seu sistema. Você pode verificar isso executando o comando:</p>
-                                <pre>python --version</pre>
+                                <pre class="code">python --version</pre>
                                 <p>ou</p>
-                                <pre>python3 --version</pre>
+                                <pre class="code">python3 --version</pre>
                                 <p>Dependendo da sua instalação, você pode precisar usar <code>python3</code> em vez de <code>python</code>.</p>
                             </section>
 

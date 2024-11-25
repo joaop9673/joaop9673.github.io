@@ -257,26 +257,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none;
 }
 
-pre,
-code,
-kbd,
-samp {
-  font-family: var(--bs-font-monospace);
-  font-size: 1em;
-}
 
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
-  font-size: 0.875em;
-}
-pre code {
-  font-size: inherit;
-  color: inherit;
-  word-break: normal;
-}
 
 code {
   font-size: 0.875em;
@@ -10836,32 +10817,37 @@ pre {
   font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada */
   margin: 10px 0; /* Margem superior e inferior */
 }
-code {
-  background-color: #e7f3ff; /* Fundo azul claro para código inline */
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-ul {
+
+.ul {
   margin: 10px 0;
 }
 
 
-/* Estilos para o modo escuro */
-.dark-mode {
-  background-color: #333;
-  color: #fff;
+
+.vim-container {
+
+  padding: 20px;
+
 }
 
-.dark-mode a {
-  color: #fff;
+.card-title {
+  margin-bottom: 10px;
 }
 
-.dark-mode h1, .dark-mode h2, .dark-mode h3 {
-  color: #fff;
+.code {
+  font-family: monospace;
+  background-color: #e7f3ff;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-
-
+.linha {
+  display: inline-block;
+  width: 20px;
+  text-align: right;
+  padding-right: 10px;
+  color: #666;
+}
 
 
 
