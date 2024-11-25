@@ -37,12 +37,12 @@
                     <!-- Featured blog post-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h1>Compila códigos no Linux para transformar suas ideias em programas funcionais.</h1>
-                            <h4>O que é Compilar?</h4>
+                            <h1 class="card-title"> Compila códigos no Linux para transformar suas ideias em programas funcionais.</h1>
+                            <h4 class="card-title">O que é Compilar?</h4>
 
                             <p>Compilar é o processo de traduzir código-fonte escrito em uma linguagem de programação de alto nível (como C, C++, Java, etc.) para uma linguagem de baixo nível, geralmente código de máquina ou bytecode, que pode ser executado por um computador.</p>
 
-                            <h4>Como Funciona a Compilação?</h4>
+                            <h4 class="card-title">Como Funciona a Compilação?</h4>
                             <p>O processo de compilação geralmente envolve várias etapas:</p>
                             <ol>
                                 <li><strong>Análise Léxica:</strong> O compilador lê o código-fonte e o divide em tokens, que são as unidades básicas de significado (como palavras-chave, identificadores, operadores, etc.).</li>
@@ -52,15 +52,78 @@
                                 <li><strong>Otimização:</strong> O compilador pode aplicar várias otimizações para melhorar a eficiência do código gerado, como reduzir o uso de memória ou aumentar a velocidade de execução.</li>
                             </ol>
 
-                            <h4>Por que Compilar?</h4>
+                            <h4 class="card-title">Por que Compilar?</h4>
                             <p>A compilação é importante por várias razões:</p>
                             <ul>
                                 <li><strong>Desempenho:</strong> O código compilado geralmente é mais rápido do que o código interpretado, pois é traduzido diretamente para a linguagem de máquina.</li>
                                 <li><strong>Verificação de Erros:</strong> O processo de compilação ajuda a identificar erros de sintaxe e semântica antes da execução do programa, tornando mais fácil depurar o código.</li>
                                 <li><strong>Distribuição:</strong> O código compilado pode ser distribuído como um executável, que pode ser executado em sistemas que não têm o código-fonte disponível.</li>
                             </ul>
+
                             <section>
-                                <h2>Código em C</h2>
+                                <h4 class="card-title">O que é o Vim </h4>
+                                <p>O Vim (Vi IMproved) é um editor de texto altamente configurável e eficiente, amplamente utilizado por programadores e desenvolvedores em
+                                todo o mundo. Criado por Bram Moolenaar em 1991, o Vim é uma versão aprimorada do editor Vi, que já era popular entre os usuários de
+                                sistemas Unix. O Vim é conhecido por sua velocidade, leveza e por permitir que os usuários editem texto de forma rápida e eficiente, sem a
+                                necessidade de usar o mouse.</p>
+                                <h4 class="card-title"> História e Evolução do Vim </h4>
+                                <p> O Vim foi desenvolvido inicialmente como uma melhoria do Vi, que era um editor de texto padrão em muitos sistemas Unix. Desde sua criação, o Vim passou por várias atualizações e melhorias, incorporando novas funcionalidades e plugins que aumentam sua versatilidade. Hoje, o Vim é um dos editores de texto mais populares, especialmente entre desenvolvedores que trabalham em ambientes de linha de comando.</p>
+                                <h4 class="card-title">Comparação com Outros Editore de Texto </h4>
+                                <p> Embora existam muitos editores de texto disponíveis, como Nano, Emacs e editores gráficos como Visual Studio Code e Sublime Text, o Vim se
+                                destaca por algumas características únicas:  </p>
+                                <ul>  
+                                    <li> <strong>Modos de Operação:</strong> O Vim possui diferentes modos de operação, como o modo normal, modo de inserção e modo visual, permitindo uma edição de texto mais eficiente. </li>
+                                    <li> <strong>Atalhos de Teclado:</strong> O Vim é projetado para ser usado principalmente com o teclado, o que pode aumentar a produtividade ao evitar a necessidade de alternar entre o teclado e o mouse.</li>
+                                    <li> <strong>Personalização:</strong> O Vim é altamente personalizável, permitindo que os usuários ajustem sua configuração e instalem plugins para atender às suas necessidades específicas. </li>
+                                </ul>
+
+                                <h4 class="card-title">Vantagens do Vim</h4> 
+                                <ul>
+                                    <li><strong>Leveza:</strong> O Vim é um editor de texto leve que pode ser executado em sistemas com recursos limitados, tornando-o ideal para servidores e ambientes de desenvolvimento minimalistas.</li>
+                                    <li><strong>Eficiência:</strong>A estrutura de comandos do Vim permite que os usuários realizem tarefas complexas com poucos toques de tecla, o que pode acelerar significativamente o fluxo de trabalho.</li>
+                                    <li><strong>Personalização:</strong>Os usuários podem personalizar o Vim de acordo com suas preferências, utilizando um arquivo de configuração chamado <code>.vimrc</code>. Isso permite que cada usuário crie um ambiente de edição que se adapte ao seu estilo de programação.</li>
+                                    <li><strong>Comunidade Ativa:</strong> O Vim possui uma comunidade ativa de desenvolvedores e usuários que contribuem com plugins, tutoriais e suporte, tornando mais fácil para os iniciantes aprenderem e se adaptarem ao editor.</li>
+                                    <li><strong>Portabilidade:</strong> O Vim está disponível em praticamente todas as distribuições Linux e também pode ser instalado em sistemas Windows e macOS, permitindo que os usuários mantenham um ambiente de edição consistente em diferentes plataformas.</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h4 class="card-title">Instalando o Vim no GNU/Linux</h4> 
+                                <p>A instalação do Vim é um processo simples e direto, que pode ser realizado através do gerenciador de pacotes da sua distribuição GNU/Linux. O Vim está disponível na maioria das distribuições, e a instalação pode ser feita com apenas alguns comandos no terminal. Nesta seção, abordaremos como instalar o Vim em algumas das distribuições mais populares.</p>
+                                <h4 class="card-title">Instalando o Vim no Ubuntu/Debian</h4> 
+                                <p>Para instalar o Vim em distribuições baseadas no Debian, como o Ubuntu, siga os passos abaixo:</p> 
+                                <ol>
+                                    <li>Abra o terminal.</li>
+                                    <li>Atualize a lista de pacotes:<pre> sudo apt update</pre> </li>
+                                    <li>Instale o Vim:<pre>sudo apt install vim</pre> </li>
+                                </ol>
+                                <p>Após a instalação, você pode verificar se o Vim foi instalado corretamente executando o seguinte comando:<code><pre>vim --version</pre></code></p>
+
+                                    <h4 class="card-title">Instalando o Vim no Fedora</h4> 
+                                    <p>Para usuários do Fedora, o processo de instalação é igualmente simples:</p> 
+                                    <ol>
+                                        <li>Abra o terminal.</li>
+                                        <li>Instale o Vim usando o DNF: <pre>sudo dnf install vim</pre> </li>
+                                        <li>Assim como no Ubuntu, você pode verificar a instalação com: <pre>vim --version</pre> </li>
+                                    </ol>
+                                    <h4 class="card-title">Instalando o Vim no Arch Linux</h4> 
+                                    <p>Os usuários do Arch Linux podem instalar o Vim usando o gerenciador de pacotes Pacman</p>
+                                    <ol>
+                                        <li>Abra o terminal.</li>
+                                        <li>Instale o Vim: <pre>sudo pacman -S vim</pre> </li>
+                                         <li>Verifique a instalação com:<pre>vim --version</pre></li>
+                                    </ol>
+                                    <h4 class="card-title">Instalando o Vim em Outras Distribuições</h4> 
+                                    <p>Para outras distribuições, o Vim pode estar disponível em seus respectivos repositórios de pacotes. Aqui estão alguns exemplos:</p> 
+                                    <ol>
+                                        <li>OpenSUSE:<pre>sudo zypper install vim</pre></li> 
+                                        <li>Gentoo:<pre>sudo emerge app-editors/vim</pre></li> 
+                                     </ol>
+                                     <p>Se você não tiver certeza de como instalar o Vim em sua distribuição específica, consulte a documentação oficial ou o site da distribuição para obter instruções detalhadas.</p> 
+                                     <h4 class="card-title">Verificando a Instalação</h4> 
+                                     <p>Após a instalação, é sempre uma boa prática verificar se o Vim foi instalado corretamente. Execute o seguinte comando no terminal:<pre>vim --version</pre> Esse comando exibirá a versão do Vim instalada, juntamente com informações sobre as funcionalidades disponíveis. Se você vir a versão do Vim e não houver mensagens de erro, a instalação foi bem-sucedida.</p> 
+                            </section>
+                            <section>
+                                <h2 class="card-title">Código em C</h2>
                                 <pre>
 #include &lt;stdio.h&gt;
 
