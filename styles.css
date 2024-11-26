@@ -10850,20 +10850,30 @@ textarea.form-control-lg {
 }
 
 
-/* Novo estilo com fundo escuro */
-.code-dark {
- font-family: monospace;
- background-color: #333;
- padding: 10px;
- border: 1px solid #555;
- color: #fff;
-}
-code-terminal {
-  background-color: #000; /* Preto */
-  color: #fff; /* Branco */
+
+
+
+.terminal {
+  background-color: #e7f3ff;
+  color: #fff;
   font-family: 'Monaco', monospace;
   padding: 10px;
   border: 1px solid #333;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.terminal pre {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+.prompt {
+  color: #008000; /* Verde */
+}
+
+.cmd {
+  color: #000; /* Azul claro */
 }

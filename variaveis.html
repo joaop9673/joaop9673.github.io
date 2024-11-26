@@ -67,54 +67,48 @@
 
                             <h3 class="card-title">Herança:</h3>
                             <p>Quando um processo é iniciado, ele herda as variáveis de ambiente do processo pai. Isso significa que se você definir uma variável em um terminal, todos os programas iniciados a partir desse terminal terão acesso a essa variável.</p>
-
                             <h2 class="card-title">Como visualizar variáveis de ambiente</h2>
                             <p>Para visualizar todas as variáveis de ambiente definidas no seu sistema, você pode usar o comando <code>printenv</code> ou <code>env</code> no terminal:</p>
                             <p>Para visualizar uma variável específica, você pode usar o comando <code>echo</code>:</p>
-                            <pre><code>echo $NOME_DA_VARIAVEL</code></pre>
-
+                            <pre class="code">echo $NOME_DA_VARIAVEL</pre>
                             <h2 class="card-title">Como definir e modificar variáveis de ambiente</h2>
                             <h3 class="card-title">Definindo uma variável temporariamente:</h3>
                             <p>Para definir uma variável de ambiente temporariamente (válida apenas para essa sessão atual do terminal), você pode usar o comando <code>export</code>:</p>
-                            <pre><code>export NOME_DA_VARIAVEL=valor</code></pre>
+                            <pre class="code">export NOME_DA_VARIAVEL=valor</pre>
                             <p>Exemplo:</p>
-                            <pre><code>export MEU_VAR="Olá, Mundo!"</code></pre>
-
+                            <pre class="code">export MEU_VAR="Olá, Mundo!"</pre>
                             <h3 class="card-title">Acessar a variável:</h3>
                             <p>Para acessar o valor da variável que você definiu, use:</p>
-                            <pre><code>echo $MEU_VAR</code></pre>
-
+                            <pre class="code">echo $MEU_VAR</pre>
                             <h3 class="card-title">Definir uma variável permanentemente:</h3>
                             <p>Para tornar uma variável de ambiente permanente, você pode adicioná-la ao arquivo de configuração de seu shell, como <code>~/.bashrc</code> ou <code>~/.bash_profile</code> para bash, ou <code>~/.zshrc</code> para zsh.</p>
-
                             <p>Abra o arquivo de configuração do shell:</p>
                             <ul>
                                 <li>Se você estiver usando o bash, abra o arquivo <code>~/.bashrc</code>:</li>
-                                <pre><code>vim ~/.bashrc</code></pre>
+                                <pre class="code">vim ~/.bashrc</pre>
                                 <li>Se você estiver usando o zsh, abra o arquivo <code>~/.zshrc</code>:</li>
-                                <pre><code>vim ~/.zshrc</code></pre>
+                                <pre class="code">vim ~/.zshrc</pre>
                             </ul>
-
                             <h3 class="card-title">Entrar no modo de inserção:</h3>
                             <p>No Vim, pressione <code>i</code> para entra no modode inserção,onde você pode editar o texto.</p>
-                            <h3 class="card-title">Adicionando a Variável de Ambiente</h2>
+                            <h3 class="card-title">Adicionando a Variável de Ambiente</h3>
                             <p>No final do arquivo, adicione a linha para definir a variável de ambiente. Por exemplo, se você quiser uma variável chamada <code>MEU_VAR</code> com o valor “Olá, Mundo!”, adicione a seguinte linha:</p>
-                            <pre><code>export MEU_VAR="Olá, Mundo!"</code></pre>
+                            <pre class="code">export MEU_VAR="Olá, Mundo!"</pre>
 
-                            <h3 class="card-title">Salvando e Saindo do Vim</h2>
+                            <h3 class="card-title">Salvando e Saindo do Vim</h3>
                             <p>Para salvar e sair do Vim, pressione <code>Esc</code> para sair do modo de inserção. Em seguida, digite <code>:wq</code> e pressione <code>Enter</code> para salvar as alterações e sair do Vim.</p>
 
-                            <h3 class="card-title">Carregando as Alterações</h2>
+                            <h3 class="card-title">Carregando as Alterações</h3>
                             <p>Para que as alterações tenham efeito na sessão atual do terminal, você pode usar o comando <code>source</code> para carregar o arquivo de configuração:</p>
-                            <pre><code>source ~/.bashrc</code></pre>
+                            <pre class="code">source ~/.bashrc</pre>
                             <p>Ou, se editou o <code>~/.zshrc</code>, use:</p>
-                            <pre><code>source ~/.zshrc</code></pre>
+                            <pre class="code">source ~/.zshrc</pre>
 
                             <h2 class="card-title">Verificando a Variável</h2>
                             <p>Para verificar se a variável foi definida corretamente, você pode usar o comando <code>echo</code>:</p>
-                            <pre><code>echo $MEU_VAR</code></pre>
+                            <pre class="code">echo $MEU_VAR</pre>
                             <p>Se tudo estiver correto, você verá a saída:</p>
-                            <pre><code>Olá, Mundo!</code></pre>
+                            <pre class="code">Olá, Mundo!</pre>
 
                         </div>
                     </div>
