@@ -10804,18 +10804,18 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+
 }
 
 
-
-pre {
+.pre {
   background-color: #f4f4f4;
   padding: 15px;
   border: 2px solid #007BFF; /* Borda azul */
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 10px; /* Bordas arredondadas */
   overflow-x: auto;
   font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada */
-  margin: 10px 0; /* Margem superior e inferior */
+  margin: 1px 0; /* Margem superior e inferior */
 }
 
 .ul {
@@ -10850,4 +10850,20 @@ pre {
 }
 
 
-
+/* Novo estilo com fundo escuro */
+.code-dark {
+ font-family: monospace;
+ background-color: #333;
+ padding: 10px;
+ border: 1px solid #555;
+ color: #fff;
+}
+code-terminal {
+  background-color: #000; /* Preto */
+  color: #fff; /* Branco */
+  font-family: 'Monaco', monospace;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
