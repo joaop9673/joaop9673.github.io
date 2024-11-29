@@ -10877,3 +10877,14 @@ textarea.form-control-lg {
 .cmd {
   color: #000; /* Azul claro */
 }
+
+
+.code-terminal{
+background-color: #f0f0f0;
+padding: 10px;
+border: 1px solid #ddd;
+font-family: monospace;
+font-size: 12px;
+}
+
+
