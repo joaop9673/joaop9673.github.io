@@ -221,7 +221,7 @@ Esses comandos tornam o processo de comentar e descomentar código muito mais r�
 
 Agora que você instalou e configurou o Vim, é hora de aprender a escrever código de forma eficiente. Nesta seção, abordaremos a navegação básica no Vim, os diferentes modos de operação e comandos essenciais para edição de texto.
 
-### 1. Modos de Operação do Vim
+#### 1. Modos de Operação do Vim
 
 O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
 
@@ -234,45 +234,45 @@ O Vim possui diferentes modos de operação, cada um com suas próprias funciona
 A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
 - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
-- `h`: mover para a esquerda
-- `j`: mover para baixo
-- `k`: mover para cima
-- `l`: mover para a direita
+  - `h`: mover para a esquerda
+  - `j`: mover para baixo
+  - `k`: mover para cima
+  - `l`: mover para a direita
 
 - **Palavras e Linhas:**
-- `w`: mover para o início da próxima palavra
-- `b`: mover para o início da palavra anterior
-- `0`: mover para o início da linha
-- `$`: mover para o final da linha
-- `G`: mover para o final do arquivo
-- `gg`: mover para o início do arquivo
+  - `w`: mover para o início da próxima palavra
+  - `b`: mover para o início da palavra anterior
+  - `0`: mover para o início da linha
+  - `$`: mover para o final da linha
+  - `G`: mover para o final do arquivo
+  - `gg`: mover para o início do arquivo
 
-### 3. Comandos Essenciais para Edição de Texto
+#### 3. Comandos Essenciais para Edição de Texto
 
 Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
 - **Inserir Texto:**
-- `i`: entrar no modo de inserção antes do cursor
-- `a`: entrar no modo de inserção após o cursor
-- `o`: abrir uma nova linha abaixo e entrar no modo de inserção
+    - `i`: entrar no modo de inserção antes do cursor
+    - `a`: entrar no modo de inserção após o cursor
+    - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
 
 - **Salvar e Sair:**
-- `:w`: salvar o arquivo
-- `:q`: sair do Vim sem salva
-- `:wq`: salvar e sair
-- `:q!`: sair sem salvar
-- `:x` : Salva e fecha 
-- `:e!`: reabre o arquivo
+    - `:w`: salvar o arquivo
+    - `:q`: sair do Vim sem salva
+    - `:wq`: salvar e sair
+    - `:q!`: sair sem salvar
+    - `:x` : Salva e fecha 
+    - `:e!`: reabre o arquivo
 
 - **Deletar e Copiar Texto:**
-- `dd`: deletar a linha atual
-- `yy`: copiar a linha atual
-- `p`: colar o texto copiado ou deletado após o cursor
-- `P`: colar o texto copiado ou deletado antes do cursor
+    - `dd`: deletar a linha atual
+    - `yy`: copiar a linha atual
+    - `p`: colar o texto copiado ou deletado após o cursor
+    - `P`: colar o texto copiado ou deletado antes do cursor
 
 - **Desfazer e Refazer:**
-- `u`: desfazer a última ação
-- `Ctrl + r`: refazer a última ação desfeita
+    - `u`: desfazer a última ação
+    - `Ctrl + r`: refazer a última ação desfeita
 
 ### 4. Exemplo Prático: Criando um Programa Simples em C
 
@@ -283,7 +283,8 @@ Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos 
 vim hello.c
 ```
 
-2. **No modo de inserção, escreva o seguinte código:**
+2. **No modo de inserção, escreva o seguinte código**:
+
 ```c
 #include <stdio.h>
 
@@ -294,8 +295,8 @@ return 0;
 ```
 
 3. **Salve e saia do Vim:**
-- Pressione `Esc` para voltar ao modo normal.
-- Digite `:wq` e pressione `Enter`.
+    - Pressione `Esc` para voltar ao modo normal.
+    - Digite `:wq` e pressione `Enter`.
 
 ### 5. Compilando o Código
 
