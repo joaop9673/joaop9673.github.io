@@ -365,7 +365,7 @@ após executar o comando anterior, você pode executar o programa com:
 ./hello
 ```
 - A saída esperada será:
-```
+```bash
 Hello, World!
 ```
 - Opções Adicionais 
@@ -393,15 +393,15 @@ Vamos criar um exemplo de um programa com um erro de sintaxe para ilustrar como 
 vim erro.c
 ```
 
-2. **Escreva o seguinte código com um erro de sintaxe:**
+2. **Escreva o seguinte código com um erro de sintaxe**:
+
 ```c
 #include <stdio.h>
-
 int main() {
     printf("Hello, World!\n"  // Falta o fechamento do parêntese
             return 0;
-            }
-            ```
+}
+```
 
             3. **Salve e saia do Vim:**
             - Pressione `Esc`, digite `:wq` e pressione `Enter`.
