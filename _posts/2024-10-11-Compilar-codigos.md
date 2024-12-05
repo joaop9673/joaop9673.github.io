@@ -432,14 +432,14 @@ gcc erro.c -o erro
 
 #### 5. Dicas e Truques para Iniciantes
 
-    - **Atalhos de Teclado Úteis no Vim:**
-    - `u`: desfaz a última ação.
-    - `Ctrl + r`: refaz a última ação desfeita.
-    - `:set hlsearch`: destaca as buscas.
+   - **Atalhos de Teclado Úteis no Vim:**
+   - `u`: desfaz a última ação.
+   - `Ctrl + r`: refaz a última ação desfeita.
+   - `:set hlsearch`: destaca as buscas.
 
-    - **Recursos Adicionais:**
-    - Utilize a documentação do Vim com o comando `:help` para aprender mais sobre suas funcionalidades.
-    - Explore tutoriais online e vídeos para aprofundar seu conhecimento sobre programação em C e o uso do Vim.
+   - **Recursos Adicionais:**
+   - Utilize a documentação do Vim com o comando `:help` para aprender mais sobre suas funcionalidades.
+   - Explore tutoriais online e vídeos para aprofundar seu conhecimento sobre programação em C e o uso do Vim.
 
     ---
 
