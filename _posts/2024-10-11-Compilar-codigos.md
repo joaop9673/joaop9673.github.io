@@ -319,7 +319,7 @@ Hello, World!
 
 ---
 
-### Parte 5: Compilando Código no GNU/Linux
+#### Parte 5: Compilando Código no GNU/Linux
 
 Agora que você aprendeu a escrever código no Vim, é hora de entender como compilar e executar esse código no ambiente GNU/Linux. Nesta seção, abordaremos o uso do GCC (GNU Compiler Collection) para compilar programas, além de dicas sobre como lidar com erros de compilação.
 
@@ -345,18 +345,18 @@ cd /caminho/para/o/diretorio
 gcc hello.c -o hello
 ```
 - Aqui, `hello.c` é o arquivo de código-fonte e `-o hello` especifica o nome do arquivo executável que será gerado.
-- opções Utilizadas
+ opções Utilizadas:
  - **gcc**: chamada ao compilador GNU C.
  - **nome_arquivo**: Arquivo de entrada com código-fonte em C.
  - **-o nome_executavel**: Especifica o nome do arquivo de saída.
 
- - O processo de compilação
+#### O processo de compilação
 
- 1. -Leitura do arquivo C.
- 2. -Análise de sintaxe e verificações de erros.
- 3. -Geração de código objeto intermediário.
- 4. -Linkagem de bibliotecas necessárias.
- 5. -Criação do executável.
+ 1. Leitura do arquivo C.
+ 2. Análise de sintaxe e verificações de erros.
+ 3. Geração de código objeto intermediário.
+ 4. Linkagem de bibliotecas necessárias.
+ 5. Criação do executável.
 
 
 4. **Execute o programa compilado:**
