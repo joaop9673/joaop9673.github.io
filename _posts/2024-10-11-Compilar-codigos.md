@@ -403,32 +403,32 @@ int main() {
 }
 ```
 
-            3. **Salve e saia do Vim:**
-            - Pressione `Esc`, digite `:wq` e pressione `Enter`.
+3. **Salve e saia do Vim:**
+- Pressione `Esc`, digite `:wq` e pressione `Enter`.
 
-            4. **Tente compilar o programa:**
-            ```bash
-            gcc erro.c -o erro
-            ```
+4. **Tente compilar o programa:**
+```bash
+gcc erro.c -o erro
+```
 
-            5. **Observe a mensagem de erro:**
-            ```
-            erro.c: In function 'main':
-            erro.c:4:1: error: expected ';' before 'return'
-            ```
+5. **Observe a mensagem de erro:**
+```bash
+erro.c: In function 'main':
+erro.c:4:1: error: expected ';' before 'return'
+```
 
-            6. **Corrija o erro no Vim:**
-            - Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
+6. **Corrija o erro no Vim:**
+- Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
 
-    7. **Compile novamente:**
-    ```bash
-    gcc erro.c -o erro
-    ```
+7. **Compile novamente:**
+```bash
+gcc erro.c -o erro
+```
 
-    8. **Execute o programa corrigido:**
-    ```bash
-    ./erro
-    ```
+8. **Execute o programa corrigido:**
+```bash
+./erro
+ ```
 
 #### 5. Dicas e Truques para Iniciantes
 
