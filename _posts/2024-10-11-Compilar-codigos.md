@@ -150,27 +150,27 @@ O arquivo de configuração do Vim, chamado `.vimrc`, é onde você pode definir
 2. **Use o Vim para criar ou editar o arquivo**:
    ```bash
    vim ~/.vimrc
-   ```ZZ
+   ```
 
 #### 2. Sugestões de Configurações Úteis
 
 Aqui estão algumas configurações recomendadas que podem melhorar sua experiência ao programar:
 
 ```vim
-syntax on          " Ativa o realce de sintaxe
-set number         " Exibe números de linha
-set relativenumber  "Exibe numeros relativos em relação a linha atual
-set scrolloff=2     "Define uma margem de rolagem
+syntax on           " Ativa o realce de sintaxe
+set number          " Exibe números de linha
+set relativenumber  " Exibe numeros relativos em relação a linha atual
+set scrolloff=2     " Define uma margem de rolagem
 set wrap            " Ativa quebra de linha
-set tabstop=4      " Define o tamanho do tab como 4 espaços
+set tabstop=4       " Define o tamanho do tab como 4 espaços
 set shiftwidth=4    " Define o recuo como 4 espaços
-set expandtab      " Converte tabs em espaços
-set autoindent     " Ativa o recuo automático
-set smartindent    " Ativa o recuo inteligente
-set hlsearch       " Destaca as buscas
-set incsearch      " Mostra resultados de busca enquanto digita
-set showcmd        " Exibe comandos enquanto são digitados
-set cursorline     " Destaca a linha atual
+set expandtab       " Converte tabs em espaços
+set autoindent      " Ativa o recuo automático
+set smartindent     " Ativa o recuo inteligente
+set hlsearch        " Destaca as buscas
+set incsearch       " Mostra resultados de busca enquanto digita
+set showcmd         " Exibe comandos enquanto são digitados
+set cursorline      " Destaca a linha atual
 ```
 
 Essas configurações ajudam a tornar o Vim mais amigável para programação, melhorando a legibilidade do código e facilitando a navegação.
