@@ -179,37 +179,38 @@ Essas configurações ajudam a tornar o Vim mais amigável para programação, m
 
 O Vim permite a instalação de plugins que podem adicionar funcionalidades extras. Um dos gerenciadores de plugins mais populares é o `vim-plug`. Para instalá-lo e adicionar alguns plugins úteis, siga os passos abaixo:
 
-1. **Instale o `vim-plug`:**
+1. Instale o `vim-plug`:
 Adicione o seguinte código ao seu arquivo `.vimrc` para configurar o `vim-plug`:
+
 ```vim
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'  " Gerenciador de arquivos
 Plug 'vim-airline/vim-airline'  " Barra de status
     Plug 'scrooloose/nerdcommenter'  " Comentários de código
 call plug#end()
-    ```
+```
 
-    2. **Instale os plugins:**
+2. **Instale os plugins:**
     Após adicionar os plugins ao seu `.vimrc`, abra o Vim e execute o comando:
-    ```vim
-    :PlugInstall
-    ```
+```vim
+:PlugInstall
+```
 
 #### 4. Usando o NERDTree
 
-    O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
-    ```vim
-    :NERDTreeToggle
-    ```
+   O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
+```vim
+:NERDTreeToggle
+```
     Isso abrirá uma janela lateral com a estrutura de diretórios do seu projeto, permitindo que você navegue facilmente entre os arquivos.
 
 #### 5. Usando o Vim-Airline
 
-    O Vim-Airline é um plugin que melhora a barra de status do Vim, fornecendo informações úteis sobre o arquivo atual, como o modo de edição, número de linhas e colunas, e muito mais. Ele é ativado automaticamente após a instalação e não requer configuração adicional.
+   O Vim-Airline é um plugin que melhora a barra de status do Vim, fornecendo informações úteis sobre o arquivo atual, como o modo de edição, número de linhas e colunas, e muito mais. Ele é ativado automaticamente após a instalação e não requer configuração adicional.
 
 #### 6. Comentando Código com o NerdCommenter
 
-    O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
+   O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
     ```vim
     ,cc  " Comentar
     ,cu  " Descomentar
@@ -224,68 +225,68 @@ call plug#end()
 
 #### 1. Modos de Operação do Vim
 
-    O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
+   O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
 
-    - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
-    - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
-    - **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
+   - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
+   - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
+   - **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
 
 #### 2. Navegação Básica no Vim
 
-    A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
+   A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
-    - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
-    - `h`: mover para a esquerda
-    - `j`: mover para baixo
-    - `k`: mover para cima
-    - `l`: mover para a direita
+   - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
+   - `h`: mover para a esquerda
+   - `j`: mover para baixo
+   - `k`: mover para cima
+   - `l`: mover para a direita
 
-    - **Palavras e Linhas:**
-    - `w`: mover para o início da próxima palavra
-    - `b`: mover para o início da palavra anterior
-    - `0`: mover para o início da linha
-    - `$`: mover para o final da linha
-    - `G`: mover para o final do arquivo
-    - `gg`: mover para o início do arquivo
+   - **Palavras e Linhas:**
+   - `w`: mover para o início da próxima palavra
+   - `b`: mover para o início da palavra anterior
+   - `0`: mover para o início da linha
+   - `$`: mover para o final da linha
+   - `G`: mover para o final do arquivo
+   - `gg`: mover para o início do arquivo
 
 #### 3. Comandos Essenciais para Edição de Texto
 
     Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
-    - **Inserir Texto:**
-    - `i`: entrar no modo de inserção antes do cursor
-    - `a`: entrar no modo de inserção após o cursor
-    - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
+   - **Inserir Texto:**
+   - `i`: entrar no modo de inserção antes do cursor
+   - `a`: entrar no modo de inserção após o cursor
+   - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
 
-    - **Salvar e Sair:**
-    - `:w`: salvar o arquivo
-    - `:q`: sair do Vim sem salva
-    - `:wq`: salvar e sair
-    - `:q!`: sair sem salvar
-    - `:x` : Salva e fecha 
-    - `:e!`: reabre o arquivo
+   - **Salvar e Sair:**
+   - `:w`: salvar o arquivo
+   - `:q`: sair do Vim sem salva
+   - `:wq`: salvar e sair
+   - `:q!`: sair sem salvar
+   - `:x` : Salva e fecha 
+   - `:e!`: reabre o arquivo
 
-    - **Deletar e Copiar Texto:**
-    - `dd`: deletar a linha atual
-    - `yy`: copiar a linha atual
-    - `p`: colar o texto copiado ou deletado após o cursor
-    - `P`: colar o texto copiado ou deletado antes do cursor
+   - **Deletar e Copiar Texto:**
+   - `dd`: deletar a linha atual
+   - `yy`: copiar a linha atual
+   - `p`: colar o texto copiado ou deletado após o cursor
+   - `P`: colar o texto copiado ou deletado antes do cursor
 
-    - **Desfazer e Refazer:**
-    - `u`: desfazer a última ação
-    - `Ctrl + r`: refazer a última ação desfeita
+   - **Desfazer e Refazer:**
+   - `u`: desfazer a última ação
+   - `Ctrl + r`: refazer a última ação desfeita
 
 #### 4. Exemplo Prático: Criando um Programa Simples em C
 
     Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos um programa simples em C que imprime "Hello, World!" na tela.
 
-    1. **Abra o Vim e crie um novo arquivo:**
-    ```bash
-    vim hello.c
-    ```
+   1. **Abra o Vim e crie um novo arquivo:**
+   ```bash
+   vim hello.c
+   ```
 
-    2. **No modo de inserção, escreva o seguinte código:**
-    ```c
+   2. **No modo de inserção, escreva o seguinte código:**
+   ```c
 #include <stdio.h>
 
     int main() {
