@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "História do Código Aberto e do GNU"
 date: 2023-10-01
 categories: [tecnologia, código aberto]
