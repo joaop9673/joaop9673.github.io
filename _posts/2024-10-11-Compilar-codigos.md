@@ -3,12 +3,10 @@ layout: post
 title: "Compila códigos no Linux para transformar suas ideias em programas funcionais."
 date: 2024-10-01
 categories: [tecnologia, código aberto]
+description: compilar e executar códigos pelo terminal GNU/linux. Aqui estão alguns passos para compilar e executar um programas usando o terminal.
 ---
 
 
-
-
-### Compila códigos no Linux para transformar suas ideias em programas funcionais.
 ### O que é Compilar?
 Compilar é o processo de traduzir código-fonte escrito em uma linguagem de programação de alto nível (como C, C++, Java, etc.) para uma linguagem de baixo nível, geralmente código de máquina ou bytecode, que pode ser executado por um computador.
 
