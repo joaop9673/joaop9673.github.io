@@ -359,7 +359,7 @@ vim erro.c
 int main() {
     printf("Hello, World!\n"  // Falta o fechamento do parêntese
             return 0;
-            }
+}
 ```
 
 3. **Salve e saia do Vim:**
@@ -377,8 +377,7 @@ int main() {
 ```
 
 6. **Corrija o erro no Vim:**
-            - Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
-```
+- Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
 
 7. **Compile novamente:**
 ```bash
@@ -386,9 +385,9 @@ int main() {
 ```
 
 8. **Execute o programa corrigido:**
-    ```bash
+```bash
  ./erro
-    ```
+```
 ### Codigo em java
 ```bash
     public class Exemplo {
