@@ -414,6 +414,7 @@ int main() {
 
             6. **Corrija o erro no Vim:**
             - Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
+```
 
     7. **Compile novamente:**
     ```bash
