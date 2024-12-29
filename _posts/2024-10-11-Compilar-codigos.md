@@ -176,7 +176,7 @@ Essas configurações ajudam a tornar o Vim mais amigável para programação, m
 
 O Vim permite a instalação de plugins que podem adicionar funcionalidades extras. Um dos gerenciadores de plugins mais populares é o `vim-plug`. Para instalá-lo e adicionar alguns plugins úteis, siga os passos abaixo:
 
-1. Instale o `vim-plug`:
+1. **Instale o `vim-plug`:**
 Adicione o seguinte código ao seu arquivo `.vimrc` para configurar o `vim-plug`:
 
 ```vim
@@ -187,7 +187,7 @@ Plug 'vim-airline/vim-airline'  " Barra de status
 call plug#end()
 ```
 
-   2. **Instale os plugins:**
+2. **Instale os plugins:**
     Após adicionar os plugins ao seu `.vimrc`, abra o Vim e execute o comando:
 ```vim
  :PlugInstall
@@ -195,23 +195,23 @@ call plug#end()
 
 ### 4. Usando o NERDTree
 
-    O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
+O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
 ```vim
  :NERDTreeToggle
 ```
-    Isso abrirá uma janela lateral com a estrutura de diretórios do seu projeto, permitindo que você navegue facilmente entre os arquivos.
+Isso abrirá uma janela lateral com a estrutura de diretórios do seu projeto, permitindo que você navegue facilmente entre os arquivos.
 
 ### 5. Usando o Vim-Airline
 
-    O Vim-Airline é um plugin que melhora a barra de status do Vim, fornecendo informações úteis sobre o arquivo atual, como o modo de edição, número de linhas e colunas, e muito mais. Ele é ativado automaticamente após a instalação e não requer configuração adicional.
+O Vim-Airline é um plugin que melhora a barra de status do Vim, fornecendo informações úteis sobre o arquivo atual, como o modo de edição, número de linhas e colunas, e muito mais. Ele é ativado automaticamente após a instalação e não requer configuração adicional.
 
 ### 6. Comentando Código com o NerdCommenter
 
-    O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
-   ```vim
+O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
+```vim
     ,cc  " Comentar
     ,cu  " Descomentar
-    ```
+```
     Esses comandos tornam o processo de comentar e descomentar código muito mais rápido e eficiente.
 
 
@@ -229,7 +229,7 @@ call plug#end()
 
 ### 2. Navegação Básica no Vim
 
-    A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
+  A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
    - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
     - `h`: mover para a esquerda
@@ -237,13 +237,13 @@ call plug#end()
     - `k`: mover para cima
     - `l`: mover para a direita
 
-   - **Palavras e Linhas:**
-    - `w`: mover para o início da próxima palavra
-    - `b`: mover para o início da palavra anterior
-    - `0`: mover para o início da linha
-    - `$`: mover para o final da linha
-    - `G`: mover para o final do arquivo
-    - `gg`: mover para o início do arquivo
+- **Palavras e Linhas:**
+  - `w`: mover para o início da próxima palavra
+  - `b`: mover para o início da palavra anterior
+  - `0`: mover para o início da linha
+  - `$`: mover para o final da linha
+  - `G`: mover para o final do arquivo
+  - `gg`: mover para o início do arquivo
 
 #### 3. Comandos Essenciais para Edição de Texto
 
