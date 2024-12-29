@@ -185,20 +185,20 @@ Plug 'preservim/nerdtree'  " Gerenciador de arquivos
 Plug 'vim-airline/vim-airline'  " Barra de status
     Plug 'scrooloose/nerdcommenter'  " Comentários de código
 call plug#end()
-    ```
+```
 
-    2. **Instale os plugins:**
+   2. **Instale os plugins:**
     Após adicionar os plugins ao seu `.vimrc`, abra o Vim e execute o comando:
-    ```vim
-    :PlugInstall
-    ```
+```vim
+ :PlugInstall
+```
 
 ### 4. Usando o NERDTree
 
     O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
-    ```vim
-    :NERDTreeToggle
-    ```
+```vim
+ :NERDTreeToggle
+```
     Isso abrirá uma janela lateral com a estrutura de diretórios do seu projeto, permitindo que você navegue facilmente entre os arquivos.
 
 ### 5. Usando o Vim-Airline
@@ -208,7 +208,7 @@ call plug#end()
 ### 6. Comentando Código com o NerdCommenter
 
     O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
-    ```vim
+   ```vim
     ,cc  " Comentar
     ,cu  " Descomentar
     ```
@@ -223,21 +223,21 @@ call plug#end()
 
     O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
 
-    - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
-    - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
-    - **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
+   - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
+   - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
+   - **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
 
 ### 2. Navegação Básica no Vim
 
     A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
-    - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
+   - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
     - `h`: mover para a esquerda
     - `j`: mover para baixo
     - `k`: mover para cima
     - `l`: mover para a direita
 
-    - **Palavras e Linhas:**
+   - **Palavras e Linhas:**
     - `w`: mover para o início da próxima palavra
     - `b`: mover para o início da palavra anterior
     - `0`: mover para o início da linha
@@ -249,12 +249,12 @@ call plug#end()
 
     Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
-    - **Inserir Texto:**
+   - **Inserir Texto:**
     - `i`: entrar no modo de inserção antes do cursor
     - `a`: entrar no modo de inserção após o cursor
     - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
 
-    - **Salvar e Sair:**
+   - **Salvar e Sair:**
     - `:w`: salvar o arquivo
     - `:q`: sair do Vim sem salva
     - `:wq`: salvar e sair
@@ -262,13 +262,13 @@ call plug#end()
     - `:x` : Salva e fecha 
     - `:e!`: reabre o arquivo
 
-    - **Deletar e Copiar Texto:**
+   - **Deletar e Copiar Texto:**
     - `dd`: deletar a linha atual
     - `yy`: copiar a linha atual
     - `p`: colar o texto copiado ou deletado após o cursor
     - `P`: colar o texto copiado ou deletado antes do cursor
 
-    - **Desfazer e Refazer:**
+   - **Desfazer e Refazer:**
     - `u`: desfazer a última ação
     - `Ctrl + r`: refazer a última ação desfeita
 
@@ -403,13 +403,13 @@ int main() {
 
 4. **Tente compilar o programa:**
 ```bash
-            gcc erro.c -o erro
+ gcc erro.c -o erro
 ```
 
 5. **Observe a mensagem de erro:**
 ```bash
-            erro.c: In function 'main':
-            erro.c:4:1: error: expected ';' before 'return'
+ erro.c: In function 'main':
+ erro.c:4:1: error: expected ';' before 'return'
 ```
 
 6. **Corrija o erro no Vim:**
@@ -418,12 +418,12 @@ int main() {
 
 7. **Compile novamente:**
 ```bash
-    gcc erro.c -o erro
+ gcc erro.c -o erro
 ```
 
 8. **Execute o programa corrigido:**
     ```bash
-    ./erro
+ ./erro
     ```
 ### Codigo em java
 ```bash
