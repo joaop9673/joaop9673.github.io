@@ -56,11 +56,13 @@ Embora existam muitos editores de texto disponíveis, como Nano, Emacs e editore
 
 5. **Portabilidade**: O Vim está disponível em praticamente todas as distribuições Linux e também pode ser instalado em sistemas Windows e macOS, permitindo que os usuários mantenham um ambiente de edição consistente em diferentes plataformas.
 
+---
+
 ### Parte 2: Instalando o Vim no GNU/Linux
 
 A instalação do Vim é um processo simples e direto, que pode ser realizado através do gerenciador de pacotes da sua distribuição GNU/Linux. O Vim está disponível na maioria das distribuições, e a instalação pode ser feita com apenas alguns comandos no terminal. Nesta seção, abordaremos como instalar o Vim em algumas das distribuições mais populares.
 
-### 1. Instalando o Vim no Ubuntu/Debian
+###  Instalando o Vim no Ubuntu/Debian
 
 Para instalar o Vim em distribuições baseadas no Debian, como o Ubuntu, siga os passos abaixo:
 
@@ -79,7 +81,7 @@ Após a instalação, você pode verificar se o Vim foi instalado corretamente e
 vim --version
 ```
 
-### 2. Instalando o Vim no Fedora
+###  Instalando o Vim no Fedora
 
 Para usuários do Fedora, o processo de instalação é igualmente simples:
 
@@ -94,7 +96,7 @@ Assim como no Ubuntu, você pode verificar a instalação com:
 vim --version
 ```
 
-### 3. Instalando o Vim no Arch Linux
+###  Instalando o Vim no Arch Linux
 
 Os usuários do Arch Linux podem instalar o Vim usando o gerenciador de pacotes Pacman:
 
@@ -109,7 +111,7 @@ Verifique a instalação com:
 vim --version
 ```
 
-### 4. Instalando o Vim em Outras Distribuições
+###  Instalando o Vim em Outras Distribuições
 
 Para outras distribuições, o Vim pode estar disponível em seus respectivos repositórios de pacotes. Aqui estão alguns exemplos:
 
@@ -125,7 +127,7 @@ sudo emerge app-editors/vim
 
 Se você não tiver certeza de como instalar o Vim em sua distribuição específica, consulte a documentação oficial ou o site da distribuição para obter instruções detalhadas.
 
-### 5. Verificando a Instalação
+###  Verificando a Instalação
 
 Após a instalação, é sempre uma boa prática verificar se o Vim foi instalado corretamente. Execute o seguinte comando no terminal:
 ```bash
@@ -139,7 +141,7 @@ Esse comando exibirá a versão do Vim instalada, juntamente com informações s
 
 Uma das grandes vantagens do Vim é sua capacidade de personalização. Configurar o Vim de acordo com suas preferências pode melhorar significativamente sua experiência de edição e aumentar sua produtividade. Nesta seção, abordaremos como configurar o Vim para programação, incluindo a criação do arquivo de configuração `.vimrc` e sugestões de configurações úteis.
 
-### 1. Criando ou Editando o Arquivo `.vimrc`
+###  Criando ou Editando o Arquivo `.vimrc`
 
 O arquivo de configuração do Vim, chamado `.vimrc`, é onde você pode definir suas preferências e personalizações. Para criar ou editar o arquivo `.vimrc`, siga os passos abaixo:
 
@@ -154,6 +156,7 @@ vim ~/.vimrc
 Aqui estão algumas configurações recomendadas que podem melhorar sua experiência ao programar:
 
 ```vim
+
 syntax on           " Ativa o realce de sintaxe
 set number          " Exibe números de linha
 set relativenumber  " Exibe numeros relativos em relação a linha atual
@@ -172,62 +175,21 @@ set cursorline      " Destaca a linha atual
 
 Essas configurações ajudam a tornar o Vim mais amigável para programação, melhorando a legibilidade do código e facilitando a navegação.
 
-### 3. Instalando Plugins para Aumentar a Funcionalidade
-
-O Vim permite a instalação de plugins que podem adicionar funcionalidades extras. Um dos gerenciadores de plugins mais populares é o `vim-plug`. Para instalá-lo e adicionar alguns plugins úteis, siga os passos abaixo:
-
-1. **Instale o `vim-plug`:**
-Adicione o seguinte código ao seu arquivo `.vimrc` para configurar o `vim-plug`:
-
-```vim
-call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'  " Gerenciador de arquivos
-Plug 'vim-airline/vim-airline'  " Barra de status
-    Plug 'scrooloose/nerdcommenter'  " Comentários de código
-call plug#end()
-```
-
-2. **Instale os plugins:**
-    Após adicionar os plugins ao seu `.vimrc`, abra o Vim e execute o comando:
-```vim
- :PlugInstall
-```
-
-### 4. Usando o NERDTree
-
-O NERDTree é um plugin que fornece uma visualização de árvore de arquivos, facilitando a navegação entre diretórios e arquivos. Para abrir o NERDTree, você pode usar o comando:
-```vim
- :NERDTreeToggle
-```
-Isso abrirá uma janela lateral com a estrutura de diretórios do seu projeto, permitindo que você navegue facilmente entre os arquivos.
-
-### 5. Usando o Vim-Airline
-
-O Vim-Airline é um plugin que melhora a barra de status do Vim, fornecendo informações úteis sobre o arquivo atual, como o modo de edição, número de linhas e colunas, e muito mais. Ele é ativado automaticamente após a instalação e não requer configuração adicional.
-
-### 6. Comentando Código com o NerdCommenter
-
-O NerdCommenter é um plugin que facilita a adição e remoção de comentários em seu código. Para comentar uma linha ou um bloco de código, você pode usar o comando:
-```vim
-    ,cc  " Comentar
-    ,cu  " Descomentar
-```
-Esses comandos tornam o processo de comentar e descomentar código muito mais rápido e eficiente.
-
+---
 
 ### Parte 4: Escrevendo Código no Vim
 
 Agora que você instalou e configurou o Vim, é hora de aprender a escrever código de forma eficiente. Nesta seção, abordaremos a navegação básica no Vim, os diferentes modos de operação e comandos essenciais para edição de texto.
 
-#### 1. Modos de Operação do Vim
+### . Modos de Operação do Vim
 
 O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
 
-   - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
-   - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
-   - **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
+- **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
+- **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
+- **Modo Visual:** Este modo permite selecionar texto. Para entrar no modo visual, pressione `v` (selecionar caractere por caractere) ou `V` (selecionar linha por linha).
 
-### 2. Navegação Básica no Vim
+###  Navegação Básica no Vim
 
 A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
@@ -245,7 +207,7 @@ A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns coma
   - `G`: mover para o final do arquivo
   - `gg`: mover para o início do arquivo
 
-#### 3. Comandos Essenciais para Edição de Texto
+###  Comandos Essenciais para Edição de Texto
 
 Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
@@ -272,16 +234,16 @@ Aqui estão alguns comandos essenciais que você deve conhecer para editar texto
   - `u`: desfazer a última ação
   - `Ctrl + r`: refazer a última ação desfeita
 
-### 4. Exemplo Prático: Criando um Programa Simples em C
+###  Exemplo Prático: Criando um Programa Simples em C
 
 Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos um programa simples em C que imprime "Hello, World!" na tela.
 
-   1. **Abra o Vim e crie um novo arquivo:**
+1. **Abra o Vim e crie um novo arquivo:**
     ```bash
     vim hello.c
     ```
 
-   2. **No modo de inserção, escreva o seguinte código**:
+2. **No modo de inserção, escreva o seguinte código**:
 
    ```c
 #include <stdio.h>
@@ -296,7 +258,7 @@ Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos 
 - Pressione `Esc` para voltar ao modo normal.
 - Digite `:wq` e pressione `Enter`.
 
-### 5. Compilando o Código
+###  Compilando o Código
 
 Após escrever o código, você precisará compilá-lo para executá-lo. Usaremos o GCC (GNU Compiler Collection) para compilar o programa.
 
@@ -314,15 +276,17 @@ gcc hello.c -o hello
 ```
 Hello, World!
 ```
+---
+
 ### Parte 5: Compilando Código no GNU/Linux
 
 Agora que você aprendeu a escrever código no Vim, é hora de entender como compilar e executar esse código no ambiente GNU/Linux. Nesta seção, abordaremos o uso do GCC (GNU Compiler Collection) para compilar programas, além de dicas sobre como lidar com erros de compilação.
 
-### 1. O que é o GCC?
+###  O que é o GCC?
 
 O GCC é um compilador de código aberto que suporta várias linguagens de programação, incluindo C, C++, Fortran, entre outras. É uma ferramenta essencial para desenvolvedores que trabalham em ambientes GNU/Linux, pois permite transformar o código-fonte em executáveis que podem ser executados pelo sistema operacional.
 
-### 2. Compilando um Programa em C
+###  Compilando um Programa em C
 
 Vamos usar o exemplo do programa "Hello, World!" que criamos na Parte 4. Para compilar o código, siga os passos abaixo:
 
@@ -369,7 +333,7 @@ Hello, World!
 - **-02**: Otimiza o código para desempenho.
 - **-std=c11**: Especifica a versão do padrão C.
 
-### 3. Lidando com Erros de Compilação
+###  Lidando com Erros de Compilação
 
 Durante a compilação, você pode encontrar erros. O GCC fornece mensagens de erro que ajudam a identificar o que está errado no código. Aqui estão algumas dicas para lidar com erros de compilação:
 
@@ -379,7 +343,7 @@ Durante a compilação, você pode encontrar erros. O GCC fornece mensagens de e
 
 - **Compile Novamente:** Após fazer as correções, compile o código novamente usando o mesmo comando do GCC. Continue esse processo até que o código compile sem erros.
 
-### 4. Exemplo Prático: Compilando um Programa com Erros
+###  Exemplo Prático: Compilando um Programa com Erros
 
 Vamos criar um exemplo de um programa com um erro de sintaxe para ilustrar como lidar com erros de compilação.
 
