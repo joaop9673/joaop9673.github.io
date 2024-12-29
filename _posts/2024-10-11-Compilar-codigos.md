@@ -212,16 +212,16 @@ O NerdCommenter é um plugin que facilita a adição e remoção de comentários
     ,cc  " Comentar
     ,cu  " Descomentar
 ```
-    Esses comandos tornam o processo de comentar e descomentar código muito mais rápido e eficiente.
+Esses comandos tornam o processo de comentar e descomentar código muito mais rápido e eficiente.
 
 
 ### Parte 4: Escrevendo Código no Vim
 
-    Agora que você instalou e configurou o Vim, é hora de aprender a escrever código de forma eficiente. Nesta seção, abordaremos a navegação básica no Vim, os diferentes modos de operação e comandos essenciais para edição de texto.
+Agora que você instalou e configurou o Vim, é hora de aprender a escrever código de forma eficiente. Nesta seção, abordaremos a navegação básica no Vim, os diferentes modos de operação e comandos essenciais para edição de texto.
 
 #### 1. Modos de Operação do Vim
 
-    O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
+O Vim possui diferentes modos de operação, cada um com suas próprias funcionalidades. Os principais modos são:
 
    - **Modo Normal:** Este é o modo padrão do Vim, onde você pode executar comandos. Para entrar no modo normal, pressione `Esc`.
    - **Modo de Inserção:** Neste modo, você pode inserir texto. Para entrar no modo de inserção, pressione `i` (inserir antes do cursor) ou `a` (inserir após o cursor).
@@ -229,7 +229,7 @@ O NerdCommenter é um plugin que facilita a adição e remoção de comentários
 
 ### 2. Navegação Básica no Vim
 
-  A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
+A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
    - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
     - `h`: mover para a esquerda
@@ -247,7 +247,7 @@ O NerdCommenter é um plugin que facilita a adição e remoção de comentários
 
 #### 3. Comandos Essenciais para Edição de Texto
 
-    Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
+Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
    - **Inserir Texto:**
     - `i`: entrar no modo de inserção antes do cursor
@@ -274,7 +274,7 @@ O NerdCommenter é um plugin que facilita a adição e remoção de comentários
 
 ### 4. Exemplo Prático: Criando um Programa Simples em C
 
-    Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos um programa simples em C que imprime "Hello, World!" na tela.
+Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos um programa simples em C que imprime "Hello, World!" na tela.
 
    1. **Abra o Vim e crie um novo arquivo:**
     ```bash
