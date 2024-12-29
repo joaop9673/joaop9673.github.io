@@ -276,14 +276,14 @@ call plug#end()
 
     Vamos colocar em prática o que aprendemos até agora. Neste exemplo, criaremos um programa simples em C que imprime "Hello, World!" na tela.
 
-    1. **Abra o Vim e crie um novo arquivo:**
+   1. **Abra o Vim e crie um novo arquivo:**
     ```bash
     vim hello.c
     ```
 
-    2. **No modo de inserção, escreva o seguinte código**:
+   2. **No modo de inserção, escreva o seguinte código**:
 
-    ```c
+   ```c
 #include <stdio.h>
 
     int main() {
@@ -396,37 +396,37 @@ int main() {
     printf("Hello, World!\n"  // Falta o fechamento do parêntese
             return 0;
             }
-            ```
+```
 
-            3. **Salve e saia do Vim:**
-            - Pressione `Esc`, digite `:wq` e pressione `Enter`.
+3. **Salve e saia do Vim:**
+      - Pressione `Esc`, digite `:wq` e pressione `Enter`.
 
-            4. **Tente compilar o programa:**
-            ```bash
+4. **Tente compilar o programa:**
+```bash
             gcc erro.c -o erro
-            ```
+```
 
-            5. **Observe a mensagem de erro:**
-            ```bash
+5. **Observe a mensagem de erro:**
+```bash
             erro.c: In function 'main':
             erro.c:4:1: error: expected ';' before 'return'
-            ```
+```
 
-            6. **Corrija o erro no Vim:**
+6. **Corrija o erro no Vim:**
             - Abra o arquivo `erro.c` novamente e adicione o parêntese de fechamento na linha do `printf`.
 ```
 
-    7. **Compile novamente:**
-    ```bash
+7. **Compile novamente:**
+```bash
     gcc erro.c -o erro
-    ```
+```
 
-    8. **Execute o programa corrigido:**
+8. **Execute o programa corrigido:**
     ```bash
     ./erro
     ```
 ### Codigo em java
-    ```bash
+```bash
     public class Exemplo {
         public static void main(String[] args) {
             System.out.println("HEllo, Word!");
