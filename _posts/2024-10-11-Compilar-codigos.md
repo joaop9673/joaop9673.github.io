@@ -231,11 +231,11 @@ O Vim possui diferentes modos de operação, cada um com suas próprias funciona
 
 A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns comandos básicos para se movimentar pelo texto:
 
-   - **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
-    - `h`: mover para a esquerda
-    - `j`: mover para baixo
-    - `k`: mover para cima
-    - `l`: mover para a direita
+- **Setas do Teclado:** Você pode usar as setas do teclado para se mover, mas é mais eficiente usar as teclas `h`, `j`, `k` e `l`:
+  - `h`: mover para a esquerda
+  - `j`: mover para baixo
+  - `k`: mover para cima
+  - `l`: mover para a direita
 
 - **Palavras e Linhas:**
   - `w`: mover para o início da próxima palavra
@@ -249,28 +249,28 @@ A navegação no Vim pode ser feita de várias maneiras. Aqui estão alguns coma
 
 Aqui estão alguns comandos essenciais que você deve conhecer para editar texto no Vim:
 
-   - **Inserir Texto:**
-    - `i`: entrar no modo de inserção antes do cursor
-    - `a`: entrar no modo de inserção após o cursor
-    - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
+- **Inserir Texto:**
+  - `i`: entrar no modo de inserção antes do cursor
+  - `a`: entrar no modo de inserção após o cursor
+  - `o`: abrir uma nova linha abaixo e entrar no modo de inserção
 
-   - **Salvar e Sair:**
-    - `:w`: salvar o arquivo
-    - `:q`: sair do Vim sem salva
-    - `:wq`: salvar e sair
-    - `:q!`: sair sem salvar
-    - `:x` : Salva e fecha 
-    - `:e!`: reabre o arquivo
+- **Salvar e Sair:**
+  - `:w`: salvar o arquivo
+  - `:q`: sair do Vim sem salva
+  - `:wq`: salvar e sair
+  - `:q!`: sair sem salvar
+  - `:x` : Salva e fecha 
+  - `:e!`: reabre o arquivo
 
-   - **Deletar e Copiar Texto:**
-    - `dd`: deletar a linha atual
-    - `yy`: copiar a linha atual
-    - `p`: colar o texto copiado ou deletado após o cursor
-    - `P`: colar o texto copiado ou deletado antes do cursor
+- **Deletar e Copiar Texto:**
+  - `dd`: deletar a linha atual
+  - `yy`: copiar a linha atual
+  - `p`: colar o texto copiado ou deletado após o cursor
+  - `P`: colar o texto copiado ou deletado antes do cursor
 
-   - **Desfazer e Refazer:**
-    - `u`: desfazer a última ação
-    - `Ctrl + r`: refazer a última ação desfeita
+- **Desfazer e Refazer:**
+  - `u`: desfazer a última ação
+  - `Ctrl + r`: refazer a última ação desfeita
 
 ### 4. Exemplo Prático: Criando um Programa Simples em C
 
