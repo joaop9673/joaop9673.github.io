@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "História do Código Aberto e do GNU"
-date: 2023-10-01
+date: 2024-10-11
 categories: [tecnologia, código aberto]
 description: O movimento GNU, iniciado por Richard Stallman em 1983, visava criar um sistema operacional livre. Em 1991, Linus Torvalds lançou o Linux, que rapidamente se tornou popular. Nos anos 2000, o Linux ganhou espaço em servidores e a Open Source Initiative (OSI) promoveu o software de código aberto. Hoje, o Linux é amplamente utilizado em diversos dispositivos, impulsionando a inovação e a colaboração no desenvolvimento de software.
 ---
