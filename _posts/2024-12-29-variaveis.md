@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Variaves"
+title: "Variáveis"
 date: 2024-12-29
 categories: [tecnologia, código aberto]
 ---
