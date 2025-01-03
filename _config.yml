@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Licença MIT - Código aberto Permite modificação, distribuição e uso Sem garantias ou responsabilidade implícita.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joaop9673.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: joaop9673
+twitter_username: @joaopaulohigin3
 feed:
   title: "TechTalks"
   description: "As últimas atualizações do meu blog. Licença MIT."
