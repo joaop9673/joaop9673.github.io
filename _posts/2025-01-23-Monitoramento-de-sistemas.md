@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monitoramento de sistemas"
-date: 2025-23-01
+date: 2025-01-23
 categories: [tecnologia, código aberto]
 ---
 
