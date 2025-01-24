@@ -12,20 +12,75 @@ No mundo da administração de sistemas Linux, é fundamental ter ferramentas qu
 
 O comando **iostat** é ultilizado para monitorar a ultilização da CPU e a atividade de entrada/saida (**I**/**O**) dos sispositivos. Ele e parte do pacote **sysstat** e fornece estatiticas que ajudam a indetificar gargalos de desempenho.
 
-### Uso Basico
+### Instalando o `iostat`
+
+Antes de usar o `iostat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
+
 ```bash
-iostat -x 1
+sudo apt install sysstat
 ```
 
-- `-x`: Exibe estatísticas detalhadas.
+Para distribuições baseadas em Red Hat, como o CentOS,fedora ou Rhel
+
+```bash
+sudo yum install sysstat
+```
+### Usando o `iostat`
+
+A sintaxe basica do comando `iostat`e:
+
+
+```bash
+iostat [opções] [instervalo] [contagem]
+```
+- **Opções**:Parâmetros que modificam a saida do comando.
+- **Intervalo**:O tempo em segundos entre as atualizações da saida.
+- **Contagem**:O numero de vezes que a saida deve ser atualizado.
+
+## Exemplo de uso
+
+```bash
+iostat -x 1 5
+```
+
+- `-x`: Exibe estatísticas detalhadas sobre a ultilização de I/O.
 - `1`: Atualiza a saída a cada 1 segundo.
+- `5`: Exiber as saida 5 vezes.
 
 ### Saída
 
-A saída do `iostat` inclui informações como:
+A saída do `iostat` pode ser dividida em duas seções principais:a utilização da CPU e a atividade de I/O dos dispositivos.
+
+#### 1. Utilização da CPU
+
+A primeira parte da saida mostra a utilização da CPU, com colunas como:
 
 - `%user`: Porcentagem de tempo que a CPU está ocupada com processos de usuário.
+- `%system`: Porcentagem de tempo que a CPU esta ocupada com processos de usuario.
+- `%idle`: Porcentagem de tempo que a CPU esta ociosa.
 - `%iowait`: Porcentagem de tempo que a CPU está ociosa, aguardando operações de I/O.
+
+#### 2. Atividade de I/O
+A segunda parte da saida mostra  informações sobre os dispositivos de armazenamento,com colunas como:
+
+- `Device`: Nome do dispositivo.
+- `tps`: Transações por segundo (numero de operações de I/O).
+- `KB_read/s`: Kilobytes lidos por segundo.
+- `KB_wrtn/s`: Kilobytes escritos por segundo.
+- `await`: Tempo medio de espera para operações de I/O(em millissegundos).
+- `%util`: Porcentagem de tempo que o dispositivo esta ocupado com operações de I/O.
+
+#### Exemplos Praticos
+
+### Monitorando a Utilização de CPU e I/O
+
+para mostra a utilização da CPU e a atividade de I/O em tempo real, você pode usar:
+
+```bash
+iostat -x 2
+```
+
+Isso atualizara a saida a cada 2 segundos, permitindo que quem estiver operando veja como o desempenho de sistema muda ao longo do tempo.
 
 ## 2. netstat
 
@@ -110,4 +165,110 @@ A saída do `ps` inclui:
 - Usuário que iniciou o processo.
 - Uso de CPU e memória.
 - Tempo de execução.
+
+## 6. top
+
+O comando `top` fornece uma visão em tempo real dos processos em execução nos sistema, mmostrando indformações sobre o uso de CPU, memoria e outros recuros.
+
+### Uso Basico
+
+```bash
+top
+```
+A saida do `top` inclui:
+
+- Lista de processos em execução, ordenados pelo uso de CPU.
+- Informações sobre a carga do sistema, uso de memoria e swap.
+- Permite interações, como matar processos ou alterar prioridades 
+
+## 7. vmstat
+
+O comando `vmstat` (Virtual Memory Statics) fornece informações sonbre processos, memorias, e paginação, block I/O, traps e atividades da CPU.
+
+### Uso Basico
+
+```bash
+vmstat 1
+```
+
+- `1`: Atualiza a saida a cada 1 segundo.
+
+A saida do `vmstat` inclui:
+
+- Informações sobre a memoria livre e usada.
+- Estatisticas de I/O e CPU.
+
+## 8. df
+
+O comando `df`(Disk Free)e usado para relatar a quantidade de espaço em disco disponivel em sistmas de arquivos.
+
+### Uso Basico
+```bash
+df -h
+```
+- `-h`:Exibe os tamanhos em um formato legivel(Human-readable).
+
+a saida do `df` inclui:
+
+- Sistema de arquivos.
+- Tamanho total, usado e dispomivel.
+- Ponto de mantagem.
+
+## 9. du
+
+O comando `du`(Disk Usage)e ultilizado para estimar o uso de espaço em disco de arquivos e diretorios.
+
+### Uso Basico
+```bash
+du -sh /caminho/do/diretorio
+```
+
+- `-s`: Resumo(summary)do uso de espaço.
+- `-h`:Fomato legivel pra humanos
+
+A saida do `du` mostra o espaço total usado pelo diretorio especifico.
+
+## 10. free
+
+O comando `free` exibe infomações sobre a memoria do sistema, incluido memoria total, usada, livre e swap.
+
+### Uso Basico 
+
+```bash
+free -h
+```
+
+- `-h`:Exibe os tamanhos em um formato levivel pra humanos
+
+A saida do `free`inclui:
+
+- Total, usado e livre de memoria RAM e swap.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
