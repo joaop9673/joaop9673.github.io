@@ -6,7 +6,7 @@ categories: [tecnologia, código aberto]
 ---
 
 #### Monitoramento de Sistema: Comandos Essenciais para Administradores Linux
-No mundo da administração de sistemas Linux, é fundamental ter ferramentas que ajudem a monitorar o desempenho e a saúde do sistema. Neste post, vamos explorar alguns comandos essenciais: **iostat**, **netstat**, **w**, **sar** e **ps**. Cada um deles oferece informações valiosas sobre diferentes aspectos do sistema.
+No mundo da administração de sistemas Linux, é fundamental ter ferramentas que ajudem a monitorar o desempenho e a saúde do sistema. Neste post, vamos explorar alguns comandos essenciais: **iostat**, **netstat**, **w**, **sar**,**ps**, **top**, **vmstat**, **df**, **du** e **free**. Cada um deles oferece informações valiosas sobre diferentes aspectos do sistema.
 
 ## 1. iostat
 
@@ -85,6 +85,14 @@ Isso atualizara a saida a cada 2 segundos, permitindo que quem estiver operando 
 ## 2. netstat
 
 O comando `netstat` é uma ferramenta poderosa para monitorar conexões de rede, tabelas de roteamento e estatísticas de interface. Ele é útil para diagnosticar problemas de rede e verificar o estado das conexões.
+
+### Instalando o `netstat`
+
+Antes de usar o `netstat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
+
+```bash
+sudo apt install netstat
+```
 
 ### Uso Básico
 
