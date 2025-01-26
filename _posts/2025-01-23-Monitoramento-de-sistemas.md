@@ -154,12 +154,12 @@ netstat -i
 ### Interpretação da Saida
 A saida do `netstat` pode variar dependendo das opções ultilizadas, aqui se encotra algumas das mais comuns que dar pra encotrar:
 
-- `**proto**`:O protocolo da conexão(TCP,UDP).
-- `**Recv-Q**`:Numero de bytes não lidos na fila de recebimento.
-- `**Send-Q**`:Numero de bytes não comfirmado na fila de envio.
-- `**Local Address**`:Endereço IP e porta local.
-- `**Foreign Address**`:Endereço IP e porta remota
-- `**state**`:Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
+- **proto**:O protocolo da conexão(TCP,UDP).
+- **Recv-Q**:Numero de bytes não lidos na fila de recebimento.
+- **Send-Q**:Numero de bytes não comfirmado na fila de envio.
+- **Local Address**:Endereço IP e porta local.
+- **Foreign Address**:Endereço IP e porta remota
+- **state**:Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
 
 ## 3. ss
 
