@@ -14,13 +14,13 @@ O comando **iostat** é ultilizado para monitorar a ultilização da CPU e a ati
 
 ### Instalando o `iostat`
 
-Antes de usar o `iostat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
+Antes de usar o `iostat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instalar com o seguinte comando:
 
 ```bash
 sudo apt install sysstat
 ```
 
-Para distribuições baseadas em Red Hat, como o CentOS,fedora ou Rhel
+Para distribuições baseadas em Red Hat, como o CentOS, fedora ou Rhel
 
 ```bash
 sudo yum install sysstat
@@ -84,17 +84,41 @@ Isso atualizara a saida a cada 2 segundos, permitindo que quem estiver operando 
 
 ## 2. netstat
 
-O comando `netstat` é uma ferramenta poderosa para monitorar conexões de rede, tabelas de roteamento e estatísticas de interface. Ele é útil para diagnosticar problemas de rede e verificar o estado das conexões.
+E um comando usado para exibir status das conexoẽs de rede, sockes, portas, portas, tabelas de roteamento, ele usar o conteudo d0 /proc para coletar as informaçoẽs.
 
 ### Instalando o `netstat`
 
-Antes de usar o `netstat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
+O comando `netstat` e uma ferramenta de rede que geralmente ja vem instaladno nas maiorias das distribuiçoes. No entanto, pode ser necessario instalr o paconte que contem. O `netstat`, faz parte do paconte `net-tools`. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
 
 ```bash
-sudo apt install netstat
+sudo apt install net-tools
+```
+para Distribuições Baseados em ared Hat (CentOS ou Fedora)
+```bash
+sudo dnf install net-tools
+```
+Para Arch Linux
+```bash
+sudo pacman -S net-tools
 ```
 
-### Uso Básico
+### Sintaxe Basica
+
+```bash
+netstat [opções]
+```
+ **Exemplos de uso**
+- 1. Para conexões Ativas
+
+Para exibir todas as conexões de rede ativas, você pode usar:
+
+```bash
+netstat -a
+```
+- `-a`: Mostra todas as conexões e escuta (listenig)sockests.
+
+- 2. Exibir Conexões TCP e UDP
+para filtar as conexões por protocolo, pode usar:
 
 ```bash
 netstat -tuln
@@ -105,12 +129,41 @@ netstat -tuln
 - `-l`: Mostra apenas os sockets que estão escutando.
 - `-n`: Exibe endereços e números de porta em formato numérico.
 
-### Saída
+- 3. Estatisticas de rede
+ para visualizar estatisticas detalhadas sobre a rede.
 
-A saída do `netstat` inclui informações como:
+ ```bash
+ netstat -s
+```
+- `-s`:Exibe estatisticas por protocolo (TCP, UDP, ICMP, etc.).
 
-- Endereço local e remoto.
-- Estado da conexão (LISTEN, ESTABLISHED, etc.).
+- 4. Pra tabela de roteamento
+
+```bash
+netstat -r
+```
+- `-r`:Mostra a tabela de roteamento.
+
+- 5. Intefaces de rede
+
+```bash
+netstat -i
+```
+- `-i`:Mostra informações sobre as interfaces de rede.
+
+### Interpretação da Saida
+A saida do `netstat` pode variar dependendo das opções ultilizadas, aqui se encotra algumas das mais comuns que dar pra encotrar:
+
+- `**proto**`:O protocolo da conexão(TCP,UDP).
+- `**Recv-Q**`:Numero de bytes não lidos na fila de recebimento.
+- `**Send-Q**`:Numero de bytes não comfirmado na fila de envio.
+- `**Local Address**`:Endereço IP e porta local.
+- `**Foreign Address**`:Endereço IP e porta remota
+- `**state**`:Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
+
+## 3. ss
+
+Vale lembrar que, em algumas distribuições mais recentes, o netstat está sendo gradualmente substituído por ferramentas mais modernas, como ss (socket statistics), que oferece funcionalidades semelhantes e é mais eficiente.
 
 ## 3. w
 
