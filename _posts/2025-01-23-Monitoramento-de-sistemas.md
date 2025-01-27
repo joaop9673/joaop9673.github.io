@@ -108,7 +108,7 @@ sudo pacman -S net-tools
 netstat [opções]
 ```
  **Exemplos de uso**
-- 1. Para conexões Ativas
+- Para conexões Ativas
 
 Para exibir todas as conexões de rede ativas, você pode usar:
 
@@ -117,7 +117,7 @@ netstat -a
 ```
 - `-a`: Mostra todas as conexões e escuta (listenig)sockests.
 
-- 2. Exibir Conexões TCP e UDP
+- Exibir Conexões TCP e UDP
 para filtar as conexões por protocolo, pode usar:
 
 ```bash
@@ -129,7 +129,7 @@ netstat -tuln
 - `-l`: Mostra apenas os sockets que estão escutando.
 - `-n`: Exibe endereços e números de porta em formato numérico.
 
-- 3. Estatisticas de rede
+- Estatisticas de rede
  para visualizar estatisticas detalhadas sobre a rede.
 
  ```bash
@@ -137,14 +137,14 @@ netstat -tuln
 ```
 - `-s`:Exibe estatisticas por protocolo (TCP, UDP, ICMP, etc.).
 
-- 4. Pra tabela de roteamento
+- Pra tabela de roteamento
 
 ```bash
 netstat -r
 ```
 - `-r`:Mostra a tabela de roteamento.
 
-- 5. Intefaces de rede
+- Intefaces de rede
 
 ```bash
 netstat -i
@@ -154,12 +154,12 @@ netstat -i
 ### Interpretação da Saida
 A saida do `netstat` pode variar dependendo das opções ultilizadas, aqui se encotra algumas das mais comuns que dar pra encotrar:
 
-- **proto**:O protocolo da conexão(TCP,UDP).
-- **Recv-Q**:Numero de bytes não lidos na fila de recebimento.
-- **Send-Q**:Numero de bytes não comfirmado na fila de envio.
-- **Local Address**:Endereço IP e porta local.
-- **Foreign Address**:Endereço IP e porta remota
-- **state**:Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
+- **proto**: O protocolo da conexão(TCP,UDP).
+- **Recv-Q**: Numero de bytes não lidos na fila de recebimento.
+- **Send-Q**: Numero de bytes não comfirmado na fila de envio.
+- **Local Address**: Endereço IP e porta local.
+- **Foreign Address**: Endereço IP e porta remota
+- **state**: Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
 
 ## 3. ss
 
