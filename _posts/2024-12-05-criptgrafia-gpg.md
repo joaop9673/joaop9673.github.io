@@ -52,7 +52,7 @@ gpg --full-generate-key
 ```bash
 gpg --export -a "seu@email.com" > chave_publica.asc
 ```
-Criptografe um arquivo:
+4. Criptografe um arquivo:
 
 ```bash
 gpg --encrypt --recipient "amigo@email.com" documento.txt
