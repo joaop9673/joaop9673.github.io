@@ -66,6 +66,8 @@ gpg --encrypt --recipient "amigo@email.com" documento.txt
 ### 8. GPG: O Guardião Digital da Sua Privacidade na Era da Vigilância
 
 Em um mundo onde vazamentos de dados e violações de privacidade são rotina, a criptografia GPG (GNU Privacy Guard) emerge como uma das ferramentas mais poderosas para proteger sua comunicação digital. Baseado no padrão OpenPGP, o GPG é o escudo invisível que cifra e-mails, arquivos e mensagens, garantindo que apenas os destinatários autorizados acessem seu conteúdo.
+
+---
  
 >📚 **Referências para mergulhar fundo:**  
 - Manual oficial do GnuPG: https://gnupg.org/documentation/  
