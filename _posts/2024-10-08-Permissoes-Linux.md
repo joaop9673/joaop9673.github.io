@@ -22,8 +22,9 @@ As permissões são o cerne da segurança no Linux, atuando como guardiãs que r
 3. **Outros (Others)**: Demais usuários do sistema
 
 ### Os Três Poderes
+
 | Permissão | Símbolo | Efeito em Arquivos       | Efeito em Diretórios      |
-|-----------|---------|--------------------------|---------------------------|
+|:-----------|:---------|:--------------------------|:---------------------------|
 | Leitura   | **r**   | Ver conteúdo             | Listar itens              |
 | Escrita   | **w**   | Modificar/excluir        | Criar/remover arquivos    |
 | Execução  | **x**   | Executar como programa   | Acessar (cd)              |
@@ -32,9 +33,10 @@ As permissões são o cerne da segurança no Linux, atuando como guardiãs que r
 
 **Exemplo real**:
 
+```bash
 drwxr-xr-- 2 alice devs 4096 Out 10 09:30 Projetos/
 -rw-r----- 1 bob devs 1024 Out 10 08:15 plano.txt
-
+```
 
 **Leitura do Código**:
 - **Primeiro caractere**: Tipo de recurso  
