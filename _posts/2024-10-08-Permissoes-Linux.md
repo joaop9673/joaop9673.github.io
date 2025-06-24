@@ -24,7 +24,7 @@ As permissões são o cerne da segurança no Linux, atuando como guardiãs que r
 ### Os Três Poderes
 
 | Permissão | Símbolo | Efeito em Arquivos       | Efeito em Diretórios      |
-|:-----------|:---------|:--------------------------|:---------------------------|
+|:----------|:-------|:------------------------- |:--------------------------|
 | Leitura   | **r**   | Ver conteúdo             | Listar itens              |
 | Escrita   | **w**   | Modificar/excluir        | Criar/remover arquivos    |
 | Execução  | **x**   | Executar como programa   | Acessar (cd)              |
@@ -82,13 +82,16 @@ Valor	Permissões	Binário
 |  7	|  rwx	|  111  |
 
 
-Superpoderes: Bits Especiais de Segurança
-Bit	Comando	Caso de Uso Típico	Representação
-setuid	chmod u+s	/usr/bin/passwd	rws
-setgid	chmod g+s	Diretórios compartilhados	rwxr-s
-sticky	chmod +t	/tmp/	rwxrwxrwt
-Armadilhas Mortais: O Que Nunca Fazer
-bash
+### Superpoderes: Bits Especiais de Segurança
+
+|Bit     |Comando	     |Caso de Uso Típico	        |Representação|
+|:-----   |:---------: |----------------------------|-------------|
+|setuid  |chmod u+s	   |  /usr/bin/passwd	          |rws          |
+|setgid	 |chmod g+s    |	Diretórios compartilhados	|rwxr-s|
+|sticky  |chmod +t     |  /tmp/	                    | rwxrwxrwt |
+
+### Armadilhas Mortais: O Que Nunca Fazer
+```bash
 # DESASTRE: Acesso total a todos
 sudo chmod -R 777 /
 
@@ -97,7 +100,9 @@ sudo chown -R root:root /home/usuario/
 
 # VULNERABILIDADE: Execução global
 chmod a+x ~/downloads/script-desconhecido.sh
-Kit de Sobrevivência: Resolução Rápida
+```
+### Kit de Sobrevivência: Resolução Rápida
+
 Script não executa? → chmod +x script.sh
 
 Acesso negado a diretório? → chmod o+x pasta/
@@ -106,8 +111,9 @@ Não consegue modificar arquivo? → chmod u+w arquivo
 
 Arquivos novos com permissões erradas? → umask 0077
 
-Ferramentas Avançadas
-bash
+### Ferramentas Avançadas
+```bash
+
 # Controle granular com ACLs
 setfacl -m u:colaborador:rwx projeto/
 
@@ -116,16 +122,18 @@ getfacl /dados/importantes
 
 # Configurar permissões padrão
 umask 0077  # Arquivos: 600, Diretórios: 700
-Fluxo de Trabalho Seguro
-Verifique antes de modificar: ls -l
+```
 
-Conceda o mínimo necessário: Evite 777
+### Fluxo de Trabalho Seguro
+- 1.Verifique antes de modificar: ls -l
 
-Use grupos estrategicamente: groupadd equipe; chgrp equipe /projeto/
+- 2.Conceda o mínimo necessário: Evite 777
 
-Teste as permissões: su - testuser
+- 3.Use grupos estrategicamente: groupadd equipe; chgrp equipe /projeto/
 
-Monitore alterações: auditd
+- 4.Teste as permissões: su - testuser
+
+- 5.Monitore alterações: auditd
 
 
 
