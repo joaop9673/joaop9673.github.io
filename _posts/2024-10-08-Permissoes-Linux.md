@@ -71,13 +71,61 @@ chmod 750 scripts/            # Proprietário: rwx | Grupo: r-x | Outros: ---
 Tabela de referência rápida:
 
 Valor	Permissões	Binário
-0	---	000
-1	--x	001
-2	-w-	010
-3	-wx	011
-4	r--	100
-5	r-x	101
-6	rw-	110
-7	rwx	111
+
+|  0	|  ---	|  000  |
+|  1	|  --x	|  001  |
+|  2	|  -w-	|  010  |
+|  3	|  -wx	|  011  |
+|  4	|  r--	|  100  |
+|  5	|  r-x	|  101  |
+|  6	|  rw-	|  110  |
+|  7	|  rwx	|  111  |
+
+
+Superpoderes: Bits Especiais de Segurança
+Bit	Comando	Caso de Uso Típico	Representação
+setuid	chmod u+s	/usr/bin/passwd	rws
+setgid	chmod g+s	Diretórios compartilhados	rwxr-s
+sticky	chmod +t	/tmp/	rwxrwxrwt
+Armadilhas Mortais: O Que Nunca Fazer
+bash
+# DESASTRE: Acesso total a todos
+sudo chmod -R 777 /
+
+# RISCO: Perda de propriedade
+sudo chown -R root:root /home/usuario/
+
+# VULNERABILIDADE: Execução global
+chmod a+x ~/downloads/script-desconhecido.sh
+Kit de Sobrevivência: Resolução Rápida
+Script não executa? → chmod +x script.sh
+
+Acesso negado a diretório? → chmod o+x pasta/
+
+Não consegue modificar arquivo? → chmod u+w arquivo
+
+Arquivos novos com permissões erradas? → umask 0077
+
+Ferramentas Avançadas
+bash
+# Controle granular com ACLs
+setfacl -m u:colaborador:rwx projeto/
+
+# Visualizar ACLs
+getfacl /dados/importantes
+
+# Configurar permissões padrão
+umask 0077  # Arquivos: 600, Diretórios: 700
+Fluxo de Trabalho Seguro
+Verifique antes de modificar: ls -l
+
+Conceda o mínimo necessário: Evite 777
+
+Use grupos estrategicamente: groupadd equipe; chgrp equipe /projeto/
+
+Teste as permissões: su - testuser
+
+Monitore alterações: auditd
+
 
 
