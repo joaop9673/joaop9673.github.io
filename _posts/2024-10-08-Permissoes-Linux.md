@@ -68,27 +68,27 @@ chmod 700 ~/.ssh/             # Proprietário: rwx | Grupo: --- | Outros: ---
 chmod 644 config.conf         # Proprietário: rw- | Grupo: r-- | Outros: r--
 chmod 750 scripts/            # Proprietário: rwx | Grupo: r-x | Outros: ---
 ```
-Tabela de referência rápida:
+### Tabela de referência rápida:
 
 | Valor |	Permissões |	Binário |
 |:---- -|:-----------:|:--------|
-|  0	|  ---	|  000  |
-|  1	|  --x	|  001  |
-|  2	|  -w-	|  010  |
-|  3	|  -wx	|  011  |
-|  4	|  r--	|  100  |
-|  5	|  r-x	|  101  |
-|  6	|  rw-	|  110  |
-|  7	|  rwx	|  111  |
+|  0  	|  ---|  000  |
+|  1	  |  --x	|  001  |
+|  2	  |  -w-	|  010  |
+|  3  	|  -wx	|  011  |
+|  4  	|  r--	|  100  |
+|  5	  |  r-x	|  101  |
+|  6	  |  rw-	|  110  |
+|  7	  |  rwx	|  111  |
 
 
 ### Superpoderes: Bits Especiais de Segurança
 
 |Bit     |Comando	     |Caso de Uso Típico	        |Representação|
-|:-----   |:---------: |----------------------------|-------------|
+|:-----  |:----------: |----------------------------|-------------|
 |setuid  |chmod u+s	   |  /usr/bin/passwd	          |rws          |
-|setgid	 |chmod g+s    |	Diretórios compartilhados	|rwxr-s|
-|sticky  |chmod +t     |  /tmp/	                    | rwxrwxrwt |
+|setgid	 |chmod g+s    |	Diretórios compartilhados	|rwxr-s       |
+|sticky  |chmod +t     |  /tmp/	                    | rwxrwxrwt   |
 
 ### Armadilhas Mortais: O Que Nunca Fazer
 ```bash
