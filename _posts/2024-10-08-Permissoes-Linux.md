@@ -70,7 +70,8 @@ chmod 750 scripts/            # Proprietário: rwx | Grupo: r-x | Outros: ---
 ```
 Tabela de referência rápida:
 
-|Valor|	Permissões|	Binário|
+| Valor |	Permissões |	Binário |
+|:---- -|:-----------:|:--------|
 |  0	|  ---	|  000  |
 |  1	|  --x	|  001  |
 |  2	|  -w-	|  010  |
