@@ -71,7 +71,7 @@ chmod 750 scripts/            # Proprietário: rwx | Grupo: r-x | Outros: ---
 ### Tabela de referência rápida:
 
 | Valor |	Permissões |	Binário |
-|:---- -|:-----------:|:--------|
+| :-----| :-----------: | :--------|
 |  0  	|  ---|  000  |
 |  1	  |  --x	|  001  |
 |  2	  |  -w-	|  010  |
@@ -103,13 +103,13 @@ chmod a+x ~/downloads/script-desconhecido.sh
 ```
 ### Kit de Sobrevivência: Resolução Rápida
 
-Script não executa? → chmod +x script.sh
+- Script não executa? ```→ chmod +x script.sh```
 
-Acesso negado a diretório? → chmod o+x pasta/
+- Acesso negado a diretório? ```→ chmod o+x pasta/```
 
-Não consegue modificar arquivo? → chmod u+w arquivo
+- Não consegue modificar arquivo? ```→ chmod u+w arquivo```
 
-Arquivos novos com permissões erradas? → umask 0077
+- Arquivos novos com permissões erradas?```→ umask 0077```
 
 ### Ferramentas Avançadas
 ```bash
