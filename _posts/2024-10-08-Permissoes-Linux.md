@@ -125,15 +125,15 @@ umask 0077  # Arquivos: 600, Diretórios: 700
 ```
 
 ### Fluxo de Trabalho Seguro
-- 1.Verifique antes de modificar: ls -l
+- 1.Verifique antes de modificar: ```ls -l```
 
-- 2.Conceda o mínimo necessário: Evite 777
+- 2.Conceda o mínimo necessário: Evite ```777```
 
-- 3.Use grupos estrategicamente: groupadd equipe; chgrp equipe /projeto/
+- 3.Use grupos estrategicamente: ```groupadd equipe; chgrp equipe /projeto/```
 
-- 4.Teste as permissões: su - testuser
+- 4.Teste as permissões: ```su - testuser```
 
-- 5.Monitore alterações: auditd
+- 5.Monitore alterações: ```auditd```
 
 
 
