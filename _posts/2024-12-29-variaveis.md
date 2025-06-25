@@ -37,11 +37,16 @@ Pares **chave=valor** que configuram o comportamento do sistema e aplicações. 
 3. **Sessão**: Temporária (apenas no terminal atual)
 
 ### Ciclo de Vida
+
+
 ```mermaid
 graph LR
-A[Processo Pai] -->|Herda| B[Processo Filho]
-B -->|Pode modificar| C[Novas Variáveis]
-C -->|Não afeta| A
+    P[Processo Pai] -->|Define| V[Variáveis Originais]
+    V -->|Passa cópia| F[Processo Filho]
+    F -->|Modifica| NV[Novas Variáveis]
+    NV -->|Alterações locais| F
+    style V fill:#cff,stroke:#333
+    style NV fill:#fcf,stroke:#333
 ```
 ## Comandos Essenciais
 Visualização
@@ -105,7 +110,7 @@ DB_PASS=s3nh@_sup3rs3gur@
 ```
 ### Boas Práticas de Segurança
 
-## O Que Fazer ✅
+### O Que Fazer ✅
 - Use arquivos ```.env``` para segredos
 - Limite escopo com export ```VAR=valor``` em scripts
 - Revise variáveis com ```printenv | grep -i 'KEY'```
@@ -119,12 +124,14 @@ export SENHA="12345"  # Visível em history
 export TOKEN="eyJhbG..."  # Nunca faça isso!
 ```
 ## Gerenciamento Profissional
+
 ### Ferramentas Especializadas 
 
-| Ferramenta |	Função |
-| direnv |	Carrega .env por diretório |
-| dotenv |	Suporte multi-linguagem |
-| Vault |	Gerenciamento centralizado |
+| Ferramenta |	Função                      |
+|------------|---                           |
+| direnv     |	Carrega .env por diretório  |
+| dotenv     |	Suporte multi-linguagem     |
+| Vault      |	Gerenciamento centralizado  |
 
 ### Exemplo com direnv
 ```bash
