@@ -54,10 +54,11 @@ echo $PATH        # Valor específico
 ```bash
 # Temporário (apenas na sessão)
 export API_KEY="abc123xyz"
-```
+
 # Para subshells
 MEU_VAR="valor"  # Sem export = apenas no shell atual
 export MEU_VAR    # Torna disponível para processos filhos
+```
 Exclusão
 ```bash
 unset HISTSIZE    # Remove variável
@@ -103,12 +104,11 @@ DB_HOST=localhost
 DB_PASS=s3nh@_sup3rs3gur@
 ```
 ### Boas Práticas de Segurança
+
 ## O Que Fazer ✅
-Use arquivos ```.env``` para segredos
-
-Limite escopo com export ```VAR=valor``` em scripts
-
-Revise variáveis com ```printenv | grep -i 'KEY'```
+- Use arquivos ```.env``` para segredos
+- Limite escopo com export ```VAR=valor``` em scripts
+- Revise variáveis com ```printenv | grep -i 'KEY'```
 
 ### O Que Evitar ❌
 ```bash
@@ -118,12 +118,12 @@ export SENHA="12345"  # Visível em history
 # Armazenar dados sensíveis em scripts versionados
 export TOKEN="eyJhbG..."  # Nunca faça isso!
 ```
-Gerenciamento Profissional
-Ferramentas Especializadas
-Ferramenta	Função
-direnv	Carrega .env por diretório
-dotenv	Suporte multi-linguagem
-Vault	Gerenciamento centralizado
+## Gerenciamento Profissional
+### Ferramentas Especializadas
+| Ferramenta |	Função|
+| direnv |	Carrega .env por diretório |
+| dotenv |	Suporte multi-linguagem |
+| Vault |	Gerenciamento centralizado |
 
 ### Exemplo com direnv
 ```bash
