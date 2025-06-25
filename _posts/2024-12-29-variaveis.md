@@ -97,19 +97,20 @@ export AWS_SECRET_ACCESS_KEY="wJalrXU..."
 export CHROME_HEADLESS=true
 ```
 4. Variáveis Sensíveis (.env)
-text
+```
 # Arquivo .env (nunca versionado!)
 DB_HOST=localhost
 DB_PASS=s3nh@_sup3rs3gur@
-Boas Práticas de Segurança
-O Que Fazer ✅
-Use arquivos .env para segredos
+```
+### Boas Práticas de Segurança
+## O Que Fazer ✅
+Use arquivos ```.env``` para segredos
 
-Limite escopo com export VAR=valor em scripts
+Limite escopo com export ```VAR=valor``` em scripts
 
-Revise variáveis com printenv | grep -i 'KEY'
+Revise variáveis com ```printenv | grep -i 'KEY'```
 
-## O Que Evitar ❌
+### O Que Evitar ❌
 ```bash
 # Expor segredos no histórico
 export SENHA="12345"  # Visível em history
@@ -136,9 +137,7 @@ export DB_URL="postgres://user:pass@localhost/db"
 # Verifique variáveis específicas
 echo "PATH: $PATH" 
 echo "USER: $USER"
-```
 # Compare ambientes
-```
 env > env_original.txt
 # Execute problema
 env > env_problema.txt
@@ -150,18 +149,3 @@ Command not found → Verifique ```$PATH```
 Acesso negado → Cheque $HOME e ```permissões```
 
 Problemas de localização → Confira ```$LANG```
-
-
-
-
-**Feliz Aniversário!** 🎂
-
-Desejo um dia cheio de:  
-✨ Alegria  
-💖 Paz  
-😊 Sorrisos  
-
-Que este novo ano traga coisas boas!  
-
-Com carinho,  
-joao paulo  
