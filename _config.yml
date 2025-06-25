@@ -52,3 +52,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+# _config.yml
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: plaintext
+
