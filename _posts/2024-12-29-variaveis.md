@@ -119,8 +119,9 @@ export SENHA="12345"  # Visível em history
 export TOKEN="eyJhbG..."  # Nunca faça isso!
 ```
 ## Gerenciamento Profissional
-### Ferramentas Especializadas
-| Ferramenta |	Função|
+### Ferramentas Especializadas 
+
+| Ferramenta |	Função |
 | direnv |	Carrega .env por diretório |
 | dotenv |	Suporte multi-linguagem |
 | Vault |	Gerenciamento centralizado |
