@@ -136,20 +136,53 @@ du -h --max-depth=1 /home  # Top-level
 free -m  # Exibe em MB
 free -h  # Formato legível
 ```
-## Fluxo de Diagnóstico Rápido
+## 🔍 Fluxo de Diagnóstico Rápido (Atualizado)
 
-```graph TD
-    A[Problema] --> B{w/ ou top?}
-    B -->|Usuários| C[w]
-    B -->|Processos| D[top/ps]
-    A --> E{Disco lento?}
-    E -->|Sim| F[iostat]
-    E -->|Espaço| G[df/du]
-    A --> H{Rede?}
-    H -->|Conexões| I[netstat/ss]
-    H -->|Estatísticas| J[sar]
-    A --> K{Memória?}
-    K --> L[free/vmstat]
+```mermaid
+graph TD
+    A[Problema Reportado] --> B{Sintoma Principal?}
+    
+    B --> C1[Desempenho Lento]
+    B --> C2[Erros de Rede]
+    B --> C3[Falta de Espaço]
+    B --> C4[Alto Uso de Memória]
+    
+    %% Desempenho
+    C1 --> D1["`**w** ou **uptime**`<br>Carga do sistema (load average)"]
+    D1 --> D1a{{Carga > núcleos?}}
+    D1a -->|Sim| E1["`**top**` ou **htop**`<br>Identificar processos problemáticos"]
+    D1a -->|Não| E2["`**iostat -x 1**`<br>Verificar gargalos de I/O"]
+    
+    %% Rede
+    C2 --> D2["`**ping**` e **traceroute**`<br>Conectividade básica"]
+    D2 --> D2a{{Conectividade OK?}}
+    D2a -->|Não| F1["Verificar roteamento/firewall"]
+    D2a -->|Sim| F2["`**netstat -tuln**` ou **ss -tunlp**`<br>Portas e serviços"]
+    F2 --> F2a{{Portas esperadas abertas?}}
+    
+    %% Armazenamento
+    C3 --> D3["`**df -h**`<br>Espaço em filesystems"]
+    D3 --> D3a{{Partição cheia?}}
+    D3a -->|Sim| G1["`**du -sh /* &#124; sort -h**`<br>Localizar grandes diretórios"]
+    D3a -->|Não| G2["`**iostat**` para performance de disco"]
+    
+    %% Memória
+    C4 --> D4["`**free -h**`<br>Uso de RAM/Swap"]
+    D4 --> D4a{{Swap alto?}}
+    D4a -->|Sim| H1["`**ps aux --sort=-%mem &#124; head**`<br>Top consumidores"]
+    D4a -->|Não| H2["`**vmstat 1**`<br>Analisar paginação"]
+    
+    %% Análise Profunda
+    E1 --> I["`**strace -p PID**`<br>Depurar processo"]
+    G1 --> J["`**ncdu**`<br>Navegação interativa"]
+    H1 --> K["`**pmap PID**`<br>Mapeamento de memória"]
+    
+    %% Monitoramento Contínuo
+    I --> Z["`**sar -A**`<br>Relatório completo"]
+    J --> Z
+    K --> Z
+    
+    Z -->> Relatório["Relatório de diagnóstico:<br>- Métricas-chave<br>- Processos críticos<br>- Ações recomendadas"]
 ```
 ## Dicas Profissionais
 - 1.Log histórico: Configure ```sar``` para coleta diária (editando ```/etc/cron.d/sysstat```)
@@ -169,3 +202,53 @@ ps aux --sort=-%mem | head -6
 netstat -tun | grep 'ESTAB' | awk '{print $5}' | cut -d: -f1 | sort | uniq -c
 ```
 **Importante**: Para troubleshooting, sempre comece com ```w```, ```top``` e ```free``` - dão visão geral imediata do sistema.
+
+## 📚 Referências Essenciais
+
+### Documentação Oficial
+1. **sysstat (iostat/sar)**  
+   [https://github.com/sysstat/sysstat](https://github.com/sysstat/sysstat)  
+   Repositório oficial com manuais detalhados
+
+2. **procps (ps/top/free)**  
+   [https://gitlab.com/procps-ng/procps](https://gitlab.com/procps-ng/procps)  
+   Documentação dos comandos de processos
+
+3. **iproute2 (ss)**  
+   [https://wiki.linuxfoundation.org/networking/iproute2](https://wiki.linuxfoundation.org/networking/iproute2)  
+   Sucessor moderno do netstat
+
+### Manuais Online
+4. **Linux man pages online**  
+   [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)  
+   Documentação completa de todos os comandos
+
+5. **TLDR Pages**  
+   [https://tldr.sh/](https://tldr.sh/)  
+   Exemplos rápidos de uso para cada comando
+
+### Guias Avançados
+6. **Linux Performance Analysis in 60s**  
+   [https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)  
+   Fluxo de diagnóstico da Netflix
+
+7. **Brendan Gregg's Blog**  
+   [http://www.brendangregg.com/linuxperf.html](http://www.brendangregg.com/linuxperf.html)  
+   Ferramentas e técnicas de performance por especialista da Netflix
+
+### Livros Recomendados
+8. **Linux Bible**  
+   Christopher Negus (ISBN: 978-1119578888)  
+   Capítulos 8-10 dedicados a administração e monitoramento
+
+9. **The Linux Command Line**  
+   William Shotts (Disponível gratuitamente em: [https://linuxcommand.org/tlcl.php](https://linuxcommand.org/tlcl.php))
+
+### Ferramentas Relacionadas
+10. **Prometheus + Grafana**  
+    [https://prometheus.io/](https://prometheus.io/)  
+    Monitoramento moderno baseado em métricas
+
+11. **htop**  
+    [https://htop.dev/](https://htop.dev/)  
+    Versão melhorada do top com interface colorida
