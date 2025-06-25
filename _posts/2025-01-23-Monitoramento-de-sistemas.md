@@ -1,335 +1,171 @@
 ---
 layout: post
-title: "Monitoramento de sistemas"
+title: "Monitoramento de Sistemas Linux: Comandos Essenciais"
 date: 2025-01-23
-categories: [tecnologia, código aberto]
+categories: [tecnologia, administração de sistemas]
 ---
 
-#### Monitoramento de Sistema: Comandos Essenciais para Administradores Linux
-No mundo da administração de sistemas Linux, é fundamental ter ferramentas que ajudem a monitorar o desempenho e a saúde do sistema. Neste post, vamos explorar alguns comandos essenciais: **iostat**, **netstat**, **w**, **sar**,**ps**, **top**, **vmstat**, **df**, **du** e **free**. Cada um deles oferece informações valiosas sobre diferentes aspectos do sistema.
+# Monitoramento de Sistemas Linux: Comandos Essenciais
 
-## 1. iostat
+Dominar ferramentas de monitoramento é crucial para administradores de sistemas Linux. Conheça os comandos fundamentais para diagnosticar desempenho, redes e recursos:
 
-O comando **iostat** é ultilizado para monitorar a ultilização da CPU e a atividade de entrada/saida (**I**/**O**) dos sispositivos. Ele e parte do pacote **sysstat** e fornece estatiticas que ajudam a indetificar gargalos de desempenho.
-
-### Instalando o `iostat`
-
-Antes de usar o `iostat`, você pode precisar instala-lo. Em distribuições baseadas em Debian, como o Ubuntu, você pode instalar com o seguinte comando:
-
+## 🖥️ 1. iostat (I/O Statistics)
+**Função**: Monitora CPU e operações de disco  
+**Instalação**:
 ```bash
+# Debian/Ubuntu
 sudo apt install sysstat
-```
 
-Para distribuições baseadas em Red Hat, como o CentOS, fedora ou Rhel
-
-```bash
+# Red Hat/CentOS
 sudo yum install sysstat
 ```
-### Usando o `iostat`
-
-A sintaxe basica do comando `iostat`e:
-
+**Uso**:
 
 ```bash
-iostat [opções] [instervalo] [contagem]
+
+iostat -x 1 5  # Detalhes de I/O, atualiza a cada 1s (5 vezes)
 ```
-- **Opções**:Parâmetros que modificam a saida do comando.
-- **Intervalo**:O tempo em segundos entre as atualizações da saida.
-- **Contagem**:O numero de vezes que a saida deve ser atualizado.
+## Saída-chave:
 
-## Exemplo de uso
+- **%util**: % de tempo do disco ocupado
 
-```bash
-iostat -x 1 5
-```
+- **await**: Tempo médio de espera por I/O (ms)
 
-- `-x`: Exibe estatísticas detalhadas sobre a ultilização de I/O.
-- `1`: Atualiza a saída a cada 1 segundo.
-- `5`: Exiber as saida 5 vezes.
+- **tps**: Transações por segundo
 
-### Saída
-
-A saída do `iostat` pode ser dividida em duas seções principais:a utilização da CPU e a atividade de I/O dos dispositivos.
-
-#### 1. Utilização da CPU
-
-A primeira parte da saida mostra a utilização da CPU, com colunas como:
-
-- `%user`: Porcentagem de tempo que a CPU está ocupada com processos de usuário.
-- `%system`: Porcentagem de tempo que a CPU esta ocupada com processos de usuario.
-- `%idle`: Porcentagem de tempo que a CPU esta ociosa.
-- `%iowait`: Porcentagem de tempo que a CPU está ociosa, aguardando operações de I/O.
-
-#### 2. Atividade de I/O
-A segunda parte da saida mostra  informações sobre os dispositivos de armazenamento,com colunas como:
-
-- `Device`: Nome do dispositivo.
-- `tps`: Transações por segundo (numero de operações de I/O).
-- `KB_read/s`: Kilobytes lidos por segundo.
-- `KB_wrtn/s`: Kilobytes escritos por segundo.
-- `await`: Tempo medio de espera para operações de I/O(em millissegundos).
-- `%util`: Porcentagem de tempo que o dispositivo esta ocupado com operações de I/O.
-
-#### Exemplos Praticos
-
-### Monitorando a Utilização de CPU e I/O
-
-para mostra a utilização da CPU e a atividade de I/O em tempo real, você pode usar:
+## 🌐 2. netstat (Network Statistics)
+**Função**: Exibe conexões de rede e portas
+**Instalação**:
 
 ```bash
-iostat -x 2
-```
-
-Isso atualizara a saida a cada 2 segundos, permitindo que quem estiver operando veja como o desempenho de sistema muda ao longo do tempo.
-
-## 2. netstat
-
-E um comando usado para exibir status das conexoẽs de rede, sockes, portas, portas, tabelas de roteamento, ele usar o conteudo d0 /proc para coletar as informaçoẽs.
-
-### Instalando o `netstat`
-
-O comando `netstat` e uma ferramenta de rede que geralmente ja vem instaladno nas maiorias das distribuiçoes. No entanto, pode ser necessario instalr o paconte que contem. O `netstat`, faz parte do paconte `net-tools`. Em distribuições baseadas em Debian, como o Ubuntu, você pode instar com o seguinte comando:
-
-```bash
+# Debian/Ubuntu
 sudo apt install net-tools
 ```
-para Distribuições Baseados em ared Hat (CentOS ou Fedora)
-```bash
-sudo dnf install net-tools
-```
-Para Arch Linux
-```bash
-sudo pacman -S net-tools
-```
-
-### Sintaxe Basica
+### Comandos úteis:
 
 ```bash
-netstat [opções]
+netstat -tuln    # Portas TCP/UDP em escuta
+netstat -s       # Estatísticas por protocolo
+netstat -r       # Tabela de roteamento
 ```
- **Exemplos de uso**
-- Para conexões Ativas
-
-Para exibir todas as conexões de rede ativas, você pode usar:
+### Alternativa moderna:
 
 ```bash
-netstat -a
+ss -tunlp  # Equivalente com melhor performance
 ```
-- `-a`: Mostra todas as conexões e escuta (listenig)sockests.
-
-- Exibir Conexões TCP e UDP
-para filtar as conexões por protocolo, pode usar:
+## 👥 3. w (Who & What)
+**Função**: Mostra usuários logados e processos
+**Exemplo**:
 
 ```bash
-netstat -tuln
+w  # Exibe: usuário, terminal, tempo idle, processo atual
 ```
-
-- `-t`: Exibe conexões TCP.
-- `-u`: Exibe conexões UDP.
-- `-l`: Mostra apenas os sockets que estão escutando.
-- `-n`: Exibe endereços e números de porta em formato numérico.
-
-- Estatisticas de rede
- para visualizar estatisticas detalhadas sobre a rede.
-
- ```bash
- netstat -s
-```
-- `-s`:Exibe estatisticas por protocolo (TCP, UDP, ICMP, etc.).
-
-- Pra tabela de roteamento
+## 📊 4. sar (System Activity Reporter)
+**Função**: Coleta histórica de desempenho
+**Uso**:
 
 ```bash
-netstat -r
+sar -u 2 5      # CPU a cada 2s (5 amostras)
+sar -r 1 3      # Memória
+sar -d -p 1 3   # Disco por dispositivo
 ```
-- `-r`:Mostra a tabela de roteamento.
-
-- Intefaces de rede
+## 🧩 5. ps (Process Status)
+**Função**: Lista processos ativos
+**Comando essencial**:
 
 ```bash
-netstat -i
+ps aux --sort=-%cpu | head  # Top 10 processos por CPU
 ```
-- `-i`:Mostra informações sobre as interfaces de rede.
+**Campos importantes**:
 
-### Interpretação da Saida
-A saida do `netstat` pode variar dependendo das opções ultilizadas, aqui se encotra algumas das mais comuns que dar pra encotrar:
+- **PID**: ID do processo
 
-- **proto**: O protocolo da conexão(TCP,UDP).
-- **Recv-Q**: Numero de bytes não lidos na fila de recebimento.
-- **Send-Q**: Numero de bytes não comfirmado na fila de envio.
-- **Local Address**: Endereço IP e porta local.
-- **Foreign Address**: Endereço IP e porta remota
-- **state**: Estado da conexão (LISTEN,ESTABLSHED,TIME_WAIT,etc.).
+- **%CPU**: Uso de CPU
 
-## 3. ss
+- **%MEM**: Uso de memória
 
-Vale lembrar que, em algumas distribuições mais recentes, o netstat está sendo gradualmente substituído por ferramentas mais modernas, como ss (socket statistics), que oferece funcionalidades semelhantes e é mais eficiente.
+- **STAT**: Estado do processo
 
-## 3. w
+## 🚀 6. top (Task Manager)
+**Função**: Monitoramento em tempo real
+Atalhos dentro do top:
+|---|
+- **P**: Ordenar por CPU
 
-O comando `w` fornece uma visão geral dos usuários conectados ao sistema e suas atividades. É uma maneira rápida de ver quem está logado e o que estão fazendo.
+- **M**: Ordenar por memória
 
-### Uso Básico
+- **k**: Matar processo
+
+- **1**: Mostrar CPUs individuais
+
+## 🧠 7. vmstat (Virtual Memory Stats)
+**Função**: Analisa memória, processos e I/O
+**Uso**:
 
 ```bash
-w
+vmstat 1  # Atualiza a cada 1 segundo
 ```
+**Saída crítica*:
 
-### Saída
+- ```si/so```: Swap in/out (alto = problema)
 
-A saída do `w` inclui:
+- ```us/sy```: % CPU user/system
 
-- Nome do usuário.
-- Tempo de login.
-- Atividade atual (comando em execução).
-- Tempo de inatividade.
+- ```free```: Memória livre (KB)
 
-## 4. sar
-
-O comando `sar` (System Activity Report) é uma ferramenta abrangente para coletar e relatar informações sobre a atividade do sistema. Ele pode monitorar CPU, memória, I/O, rede e muito mais.
-
-### Uso Básico
+## 💾 8. df (Disk Free)
+**Função**: Espaço em sistemas de arquivos
+**Exemplo**:
 
 ```bash
-sar -u 1
+df -hT  # Legível + tipos de filesystem
 ```
-
-- `-u`: Relata a utilização da CPU.
-- `1`: Atualiza a saída a cada 1 segundo.
-
-### Saída
-
-A saída do `sar` inclui informações detalhadas sobre:
-
-- `%user`, `%system`, `%idle`: Percentuais de uso da CPU.
-- Estatísticas de I/O e memória.
-
-## 5. ps
-
-O comando `ps` é utilizado para exibir informações sobre os processos em execução no sistema. É uma ferramenta essencial para monitorar e gerenciar processos.
-
-### Uso Básico
+## 📁 9. du (Disk Usage)
+**Função**: Uso de espaço por diretório
+**Comandos**:
 
 ```bash
-ps aux
+du -sh /var/log  # Resumo do diretório
+du -h --max-depth=1 /home  # Top-level
 ```
-
-- `a`: Exibe processos de todos os usuários.
-- `u`: Exibe informações detalhadas sobre os processos.
-- `x`: Inclui processos que não estão associados a um terminal.
-
-### Saída
-
-A saída do `ps` inclui:
-
-- ID do processo (PID).
-- Usuário que iniciou o processo.
-- Uso de CPU e memória.
-- Tempo de execução.
-
-## 6. top
-
-O comando `top` fornece uma visão em tempo real dos processos em execução nos sistema, mmostrando indformações sobre o uso de CPU, memoria e outros recuros.
-
-### Uso Basico
+🧠 10. free (Memory Usage)
+**Função**: Exibe uso de RAM e swap
+**Uso**:
 
 ```bash
-top
+free -m  # Exibe em MB
+free -h  # Formato legível
 ```
-A saida do `top` inclui:
+## Fluxo de Diagnóstico Rápido
 
-- Lista de processos em execução, ordenados pelo uso de CPU.
-- Informações sobre a carga do sistema, uso de memoria e swap.
-- Permite interações, como matar processos ou alterar prioridades 
+```graph TD
+    A[Problema] --> B{w/ ou top?}
+    B -->|Usuários| C[w]
+    B -->|Processos| D[top/ps]
+    A --> E{Disco lento?}
+    E -->|Sim| F[iostat]
+    E -->|Espaço| G[df/du]
+    A --> H{Rede?}
+    H -->|Conexões| I[netstat/ss]
+    H -->|Estatísticas| J[sar]
+    A --> K{Memória?}
+    K --> L[free/vmstat]
+```
+## Dicas Profissionais
+- 1.Log histórico: Configure ```sar``` para coleta diária (editando ```/etc/cron.d/sysstat```)
 
-## 7. vmstat
-
-O comando `vmstat` (Virtual Memory Statics) fornece informações sonbre processos, memorias, e paginação, block I/O, traps e atividades da CPU.
-
-### Uso Basico
+- 2.Monitoramento contínuo:
 
 ```bash
-vmstat 1
+watch -n 2 'df -h; echo; free -h'  # Atualiza a cada 2s
 ```
-
-- `1`: Atualiza a saida a cada 1 segundo.
-
-A saida do `vmstat` inclui:
-
-- Informações sobre a memoria livre e usada.
-- Estatisticas de I/O e CPU.
-
-## 8. df
-
-O comando `df`(Disk Free)e usado para relatar a quantidade de espaço em disco disponivel em sistmas de arquivos.
-
-### Uso Basico
-```bash
-df -h
-```
-- `-h`:Exibe os tamanhos em um formato legivel(Human-readable).
-
-a saida do `df` inclui:
-
-- Sistema de arquivos.
-- Tamanho total, usado e dispomivel.
-- Ponto de mantagem.
-
-## 9. du
-
-O comando `du`(Disk Usage)e ultilizado para estimar o uso de espaço em disco de arquivos e diretorios.
-
-### Uso Basico
-```bash
-du -sh /caminho/do/diretorio
-```
-
-- `-s`: Resumo(summary)do uso de espaço.
-- `-h`:Fomato legivel pra humanos
-
-A saida do `du` mostra o espaço total usado pelo diretorio especifico.
-
-## 10. free
-
-O comando `free` exibe infomações sobre a memoria do sistema, incluido memoria total, usada, livre e swap.
-
-### Uso Basico 
+- 3.Combinações poderosas:
 
 ```bash
-free -h
+# Top 5 processos consumindo memória
+ps aux --sort=-%mem | head -6
+
+# Conexões ESTABLISHED por IP
+netstat -tun | grep 'ESTAB' | awk '{print $5}' | cut -d: -f1 | sort | uniq -c
 ```
-
-- `-h`:Exibe os tamanhos em um formato levivel pra humanos
-
-A saida do `free`inclui:
-
-- Total, usado e livre de memoria RAM e swap.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Importante**: Para troubleshooting, sempre comece com ```w```, ```top``` e ```free``` - dão visão geral imediata do sistema.
