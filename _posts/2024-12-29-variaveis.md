@@ -157,3 +157,55 @@ Command not found → Verifique ```$PATH```
 Acesso negado → Cheque $HOME e ```permissões```
 
 Problemas de localização → Confira ```$LANG```
+
+## 📚 Referências Essenciais
+
+### Documentação Oficial
+1. **GNU Bash Manual**  
+   [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)  
+   Capítulo 6: Shell Variables - explicação técnica detalhada
+
+2. **Zsh Documentation**  
+   [https://zsh.sourceforge.io/Doc/](https://zsh.sourceforge.io/Doc/)  
+   Seção 14: Parameters - tratamento de variáveis no Zsh
+
+3. **Microsoft Docs: Environment Variables**  
+   [https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables)  
+   Guia oficial para Windows/PowerShell
+
+### Ferramentas Especializadas
+4. **direnv**  
+   [https://direnv.net/](https://direnv.net/)  
+   Documentação oficial com exemplos práticos
+
+5. **HashiCorp Vault**  
+   [https://www.vaultproject.io/](https://www.vaultproject.io/)  
+   Gerenciamento profissional de segredos
+
+### Padrões e Boas Práticas
+6. **The Twelve-Factor App**  
+   [https://12factor.net/config](https://12factor.net/config)  
+   Metodologia para gestão de configurações em aplicações
+
+7. **OWASP Secure Configuration Guide**  
+   [https://cheatsheetseries.owasp.org/cheatsheets/Environment_Variable_Security_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Environment_Variable_Security_Cheat_Sheet.html)  
+   Diretrizes de segurança para variáveis
+
+### Artigos Técnicos
+8. **Linux Environment Variables Explained**  
+   [https://linuxhandbook.com/environment-variables/](https://linuxhandbook.com/environment-variables/)  
+   Guia prático com exemplos cotidianos
+
+9. **Mastering Environment Variables in Windows**  
+   [https://www.howtogeek.com/51807/](https://www.howtogeek.com/51807/)  
+   Tutorial visual para administradores Windows
+
+### Diagramas Mermaid
+10. **Documentação Oficial**  
+    [https://mermaid.js.org/syntax/flowchart.html](https://mermaid.js.org/syntax/flowchart.html)  
+    Sintaxe completa para criação de diagramas
+
+### Padrões de Segurança
+11. **NIST Special Publication 800-53**  
+     [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf)  
+     Controles de segurança para proteção de dados (Seção IA-5)
