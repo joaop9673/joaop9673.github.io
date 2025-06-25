@@ -136,53 +136,31 @@ du -h --max-depth=1 /home  # Top-level
 free -m  # Exibe em MB
 free -h  # Formato legível
 ```
-## 🔍 Fluxo de Diagnóstico Rápido (Atualizado)
+## 🔍 Fluxo de Diagnóstico 
 
 ```mermaid
 graph TD
-    A[Problema Reportado] --> B{Sintoma Principal?}
+    A[Sintoma] --> B{Identifique}
+    B -->|Desempenho| C["top/htop"]
+    B -->|Rede| D["ss -tunlp"]
+    B -->|Disco| E["df -h; du -sh /*"]
+    B -->|Memória| F["free -h"]
     
-    B --> C1[Desempenho Lento]
-    B --> C2[Erros de Rede]
-    B --> C3[Falta de Espaço]
-    B --> C4[Alto Uso de Memória]
+    C --> G{{CPU alta?}}
+    G -->|Sim| H["ps aux --sort=-%cpu"]
+    G -->|Não| I["iostat -x 1"]
     
-    %% Desempenho
-    C1 --> D1["`**w** ou **uptime**`<br>Carga do sistema (load average)"]
-    D1 --> D1a{{Carga > núcleos?}}
-    D1a -->|Sim| E1["`**top**` ou **htop**`<br>Identificar processos problemáticos"]
-    D1a -->|Não| E2["`**iostat -x 1**`<br>Verificar gargalos de I/O"]
+    D --> J{{Portas fechadas?}}
+    J -->|Sim| K["journalctl -u serviço"]
+    J -->|Não| L["ping; traceroute"]
     
-    %% Rede
-    C2 --> D2["`**ping**` e **traceroute**`<br>Conectividade básica"]
-    D2 --> D2a{{Conectividade OK?}}
-    D2a -->|Não| F1["Verificar roteamento/firewall"]
-    D2a -->|Sim| F2["`**netstat -tuln**` ou **ss -tunlp**`<br>Portas e serviços"]
-    F2 --> F2a{{Portas esperadas abertas?}}
+    E --> M{{Espaço insuficiente?}}
+    M -->|Sim| N["ncdu /"]
+    M -->|Não| O["iostat -d"]
     
-    %% Armazenamento
-    C3 --> D3["`**df -h**`<br>Espaço em filesystems"]
-    D3 --> D3a{{Partição cheia?}}
-    D3a -->|Sim| G1["`**du -sh /* &#124; sort -h**`<br>Localizar grandes diretórios"]
-    D3a -->|Não| G2["`**iostat**` para performance de disco"]
-    
-    %% Memória
-    C4 --> D4["`**free -h**`<br>Uso de RAM/Swap"]
-    D4 --> D4a{{Swap alto?}}
-    D4a -->|Sim| H1["`**ps aux --sort=-%mem &#124; head**`<br>Top consumidores"]
-    D4a -->|Não| H2["`**vmstat 1**`<br>Analisar paginação"]
-    
-    %% Análise Profunda
-    E1 --> I["`**strace -p PID**`<br>Depurar processo"]
-    G1 --> J["`**ncdu**`<br>Navegação interativa"]
-    H1 --> K["`**pmap PID**`<br>Mapeamento de memória"]
-    
-    %% Monitoramento Contínuo
-    I --> Z["`**sar -A**`<br>Relatório completo"]
-    J --> Z
-    K --> Z
-    
-    Z -->> Relatório["Relatório de diagnóstico:<br>- Métricas-chave<br>- Processos críticos<br>- Ações recomendadas"]
+    F --> P{{Swap alto?}}
+    P -->|Sim| Q["ps aux --sort=-%mem"]
+    P -->|Não| R["vmstat 1"]
 ```
 ## Dicas Profissionais
 - 1.Log histórico: Configure ```sar``` para coleta diária (editando ```/etc/cron.d/sysstat```)
@@ -252,3 +230,43 @@ netstat -tun | grep 'ESTAB' | awk '{print $5}' | cut -d: -f1 | sort | uniq -c
 11. **htop**  
     [https://htop.dev/](https://htop.dev/)  
     Versão melhorada do top com interface colorida
+
+### Documentação Oficial
+12. **sysstat (iostat/sar)**  
+   [https://github.com/sysstat/sysstat](https://github.com/sysstat/sysstat)  
+   Manuais completos e exemplos avançados
+
+13. **procps (ps/top/free)**  
+   [https://gitlab.com/procps-ng/procps](https://gitlab.com/procps-ng/procps)  
+   Documentação oficial dos comandos de processos
+
+14. **Diagramas Mermaid**  
+   [Documentação do GitHub](https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams)  
+   Guia completo para criação de diagramas técnicos
+
+### Manuais e Guias
+15. **Linux man pages online**  
+   [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)  
+   Referência autoritativa de todos os comandos
+
+16. **Linux Performance Analysis in 60s**  
+   [Netflix TechBlog](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)  
+   Metodologia prática para diagnóstico rápido
+
+### Ferramentas Avançadas
+17. **Prometheus + Grafana**  
+   [https://prometheus.io/](https://prometheus.io/)  
+   Monitoramento moderno baseado em métricas
+
+18. **Brendan Gregg's Tools**  
+   [http://www.brendangregg.com/linuxperf.html](http://www.brendangregg.com/linuxperf.html)  
+   Coleção de ferramentas e técnicas de performance
+
+### Livros Recomendados
+19. **Linux Performance Tuning**  
+   ISBN: 978-1492053500  
+   Capítulos essenciais sobre monitoramento e otimização
+
+20. **The Linux Command Line**  
+   [Download gratuito](https://linuxcommand.org/tlcl.php)  
+   Seções 10-12 dedicadas a administração de sistemas
