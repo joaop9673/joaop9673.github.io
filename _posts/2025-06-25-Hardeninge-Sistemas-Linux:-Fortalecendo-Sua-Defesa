@@ -30,9 +30,9 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 # Verificar configuração
 cat /etc/apt/apt.conf.d/20auto-upgrades
-
-2. Controle de Acesso
-bash
+```
+### 2. Controle de Acesso
+```bash
 # Bloquear logins root remotos
 sudo sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 
@@ -41,7 +41,8 @@ echo "AllowUsers usuario_admin" | sudo tee -a /etc/ssh/sshd_config
 
 # Recarregar SSH
 sudo systemctl reload sshd
-3. Firewall Restritivo
+```
+### 3. Firewall Restritivo
 bash
 # Politica padrão DROP
 sudo ufw default deny incoming
