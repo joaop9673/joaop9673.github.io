@@ -53,7 +53,7 @@ netstat -r       # Tabela de roteamento
 ```bash
 ss -tunlp  # Equivalente com melhor performance
 ```
-## 👥 3. w (Who & What)
+## 👥 3. w (**Who** & What)
 **Função**: Mostra usuários logados e processos
 **Exemplo**:
 
