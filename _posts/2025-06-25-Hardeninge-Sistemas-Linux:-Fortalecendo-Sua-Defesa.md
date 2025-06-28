@@ -52,10 +52,11 @@ sudo ufw default allow outgoing
 sudo ufw allow 22/tcp comment 'SSH'
 sudo ufw allow 80/tcp comment 'HTTP'
 sudo ufw allow 443/tcp comment 'HTTPS'
-```
+
 # Ativar firewall
 sudo ufw enable
-4. Proteção de Memória
+```
+### 4. Proteção de Memória
 ```bash
 # Prevenir buffer overflows
 echo "kernel.exec-shield = 1" | sudo tee -a /etc/sysctl.conf
@@ -69,13 +70,15 @@ echo "net.ipv4.conf.all.rp_filter = 1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
 ## 🛡️ Ferramentas de Segurança
-1. SELinux vs AppArmor
-Característica	SELinux	AppArmor
-Complexidade	Alta	Moderada
-Perfis pré-definidos	+200	+150
-Logs detalhados	audit.log	syslog
-Distros padrão	RHEL, CentOS	Ubuntu, Debian
-Ativação:
+### 1. SELinux vs AppArmor
+|* Característica	    *|* SELinux	     *|* AppArmor *| 
+|---------------------|--------------|---------------|
+|Complexidade	        |   Alt        | Moderada
+|Perfis pré-definidos |	  +200	     |  +150
+|Logs detalhados	    |              |audit.log	syslog
+|Distros padrão	      | RHEL, CentOS |Ubuntu, Debian
+
+### Ativação:
 
 ```bash
 # SELinux (RHEL/CentOS)
