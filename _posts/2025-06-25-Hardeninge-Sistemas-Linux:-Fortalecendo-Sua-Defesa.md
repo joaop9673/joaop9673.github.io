@@ -43,7 +43,7 @@ echo "AllowUsers usuario_admin" | sudo tee -a /etc/ssh/sshd_config
 sudo systemctl reload sshd
 ```
 ### 3. Firewall Restritivo
-bash
+```bash
 # Politica padrão DROP
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -52,11 +52,11 @@ sudo ufw default allow outgoing
 sudo ufw allow 22/tcp comment 'SSH'
 sudo ufw allow 80/tcp comment 'HTTP'
 sudo ufw allow 443/tcp comment 'HTTPS'
-
+```
 # Ativar firewall
 sudo ufw enable
 4. Proteção de Memória
-bash
+```bash
 # Prevenir buffer overflows
 echo "kernel.exec-shield = 1" | sudo tee -a /etc/sysctl.conf
 echo "kernel.randomize_va_space = 2" | sudo tee -a /etc/sysctl.conf
@@ -67,7 +67,8 @@ echo "net.ipv4.conf.all.rp_filter = 1" | sudo tee -a /etc/sysctl.conf
 
 # Aplicar configurações
 sudo sysctl -p
-🛡️ Ferramentas de Segurança
+```
+## 🛡️ Ferramentas de Segurança
 1. SELinux vs AppArmor
 Característica	SELinux	AppArmor
 Complexidade	Alta	Moderada
@@ -76,7 +77,7 @@ Logs detalhados	audit.log	syslog
 Distros padrão	RHEL, CentOS	Ubuntu, Debian
 Ativação:
 
-bash
+```bash
 # SELinux (RHEL/CentOS)
 sudo setenforce 1
 sudo sed -i 's/SELINUX=.*/SELINUX=enforcing/' /etc/selinux/config
@@ -84,8 +85,9 @@ sudo sed -i 's/SELINUX=.*/SELINUX=enforcing/' /etc/selinux/config
 # AppArmor (Ubuntu/Debian)
 sudo systemctl enable apparmor
 sudo systemctl start apparmor
-2. Fail2Ban - Proteção Contra Bruteforce
-bash
+```
+### 2. Fail2Ban - Proteção Contra Bruteforce
+```bash
 # Instalação
 sudo apt install fail2ban
 
@@ -100,15 +102,17 @@ EOF
 
 # Reiniciar serviço
 sudo systemctl restart fail2ban
-3. Rkhunter - Detecção de Rootkits
-bash
+```
+### 3. Rkhunter - Detecção de Rootkits
+```bash
 # Instalação e verificação
 sudo apt install rkhunter
 sudo rkhunter --propupd  # Atualizar base de dados
 sudo rkhunter --check
-📊 Automação com Ferramentas de Compliance
-1. Lynis - Auditoria Automatizada
-bash
+```
+## 📊 Automação com Ferramentas de Compliance
+### 1. Lynis - Auditoria Automatizada
+```bash
 # Instalação
 curl -s https://packages.cisofy.com/keys/cisofy-software-public.key | sudo gpg --dearmor -o /usr/share/keyrings/cisofy-software-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/cisofy-software-archive-keyring.gpg] https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
@@ -117,8 +121,9 @@ sudo apt install lynis
 
 # Executar auditoria
 sudo lynis audit system
-2. OpenSCAP - Conformidade com Padrões
-bash
+```
+## 2. OpenSCAP - Conformidade com Padrões
+```bash
 # Instalação (RHEL/Ubuntu)
 sudo apt install openscap-scanner scap-security-guide
 
