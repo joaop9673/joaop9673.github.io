@@ -24,38 +24,62 @@ Hardening é o processo de proteger sistemas Linux contra ameaças através da r
 
 ### 1. Atualizações Automatizadas
 ```bash
-# Configurar updates automáticos (Ubuntu/Debian)
+# Fedora/RHEL
+sudo dnf install dnf-automatic
+sudo systemctl enable --now dnf-automatic.timer
+
+# Debian/Ubuntu
 sudo apt install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
-
-# Verificar configuração
-cat /etc/apt/apt.conf.d/20auto-upgrades
 ```
 ### 2. Controle de Acesso
 ```bash
-# Bloquear logins root remotos
+# Bloquear logins root
 sudo sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 
-# Limitar logins SSH a usuários específicos
+# Limitar usuários SSH
 echo "AllowUsers usuario_admin" | sudo tee -a /etc/ssh/sshd_config
 
-# Recarregar SSH
+# Tempo de inatividade
+echo "ClientAliveInterval 300" | sudo tee -a /etc/ssh/sshd_config
 sudo systemctl reload sshd
 ```
-### 3. Firewall Restritivo
+### 3. Firewall Restritivo com nftables
 ```bash
-# Politica padrão DROP
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
+#!/usr/sbin/nft -f
+flush ruleset
 
-# Liberar serviços essenciais
-sudo ufw allow 22/tcp comment 'SSH'
-sudo ufw allow 80/tcp comment 'HTTP'
-sudo ufw allow 443/tcp comment 'HTTPS'
-
-# Ativar firewall
-sudo ufw enable
+table inet firewall {
+    chain input {
+        type filter hook input priority 0; policy drop;
+        
+        # Conexões estabelecidas
+        ct state established,related accept
+        
+        # Loopback
+        iifname "lo" accept
+        
+        # ICMP (ping)
+        ip protocol icmp accept
+        
+        # SSH
+        tcp dport 22 accept comment "SSH"
+        
+        # Logging
+        log prefix "DROP: "
+    }
+    
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+    }
+    
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
+}
 ```
+Salve como ```/etc/nftables.conf``` e ative com:
+```sudo systemctl enable --now nftables```
 ### 4. Proteção de Memória
 ```bash
 # Prevenir buffer overflows
@@ -79,16 +103,11 @@ sudo sysctl -p
 |Logs detalhados	    |  audit.log	 |syslog           |
 |Distros padrão	      | RHEL, CentOS |Ubuntu, Debian   |
 
-### Ativação:
+### Ativação SELinux (Enforcing):
 
 ```bash
-# SELinux (RHEL/CentOS)
 sudo setenforce 1
 sudo sed -i 's/SELINUX=.*/SELINUX=enforcing/' /etc/selinux/config
-
-# AppArmor (Ubuntu/Debian)
-sudo systemctl enable apparmor
-sudo systemctl start apparmor
 ```
 ### 2. Fail2Ban - Proteção Contra Bruteforce
 ```bash
@@ -96,24 +115,29 @@ sudo systemctl start apparmor
 sudo apt install fail2ban
 
 # Configuração personalizada
-cat <<EOF | sudo tee /etc/fail2ban/jail.local
+
+# /etc/fail2ban/jail.d/sshd.conf
 [sshd]
 enabled = true
 maxretry = 3
 bantime = 1h
 findtime = 600
-EOF
+ignoreip = 192.168.1.0/24
 
 # Reiniciar serviço
 sudo systemctl restart fail2ban
 ```
 ### 3. Rkhunter - Detecção de Rootkits
 ```bash
-# Instalação e verificação
-sudo apt install rkhunter
-sudo rkhunter --propupd  # Atualizar base de dados
-sudo rkhunter --check
+# Instalar e executar verificações
+sudo dnf install rkhunter chkrootkit
+sudo rkhunter --update
+sudo rkhunter --check --sk
+sudo chkrootkit -q
 ```
+### 4.Criar perfil AppArmor:
+```sudo aa-genprof /caminho/do/app```
+
 ## 📊 Automação com Ferramentas de Compliance
 ### 1. Lynis - Auditoria Automatizada
 ```bash
@@ -151,6 +175,99 @@ sudo aa-status    # Para AppArmor
 sudo sestatus     # Para SELinux
 sudo fail2ban-client status
 ```
+## 🧠 Hardening do Kernel
+Configurações sysctl essenciais (```/etc/sysctl.d/99-hardening.conf```):
+```vim
+# Proteção contra buffer overflow
+kernel.exec-shield = 1
+kernel.randomize_va_space = 2
+
+# Prevenção de ataques de rede
+net.ipv4.tcp_syncookies = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+
+# Limitar informações do kernel
+kernel.kptr_restrict = 2
+kernel.dmesg_restrict = 1
+```
+Aplicar configurações:
+```sudo sysctl -p /etc/sysctl.d/99-hardening.conf```
+
+## 🔐 Segurança de Usuários e Permissões
+
+### 1. Política de Senhas Fortes (PAM)
+```bash
+# /etc/security/pwquality.conf
+minlen = 14
+minclass = 3
+maxrepeat = 3
+```
+### 2. Restrições de Sudo
+```bash
+# /etc/sudoers.d/secure
+Defaults use_pty
+Defaults timestamp_timeout=5
+Defaults passwd_timeout=1
+%admin ALL=(ALL) SETENV: ALL
+```
+### 3. Controle de Acesso Mandatório
+```bash
+# Instalar ferramentas
+sudo dnf install pam_script pam_access
+
+# Configurar restrições de login
+echo "-:ALL EXCEPT admin :ALL" | sudo tee /etc/security/access.conf
+```
+## 📊 Ferramentas de Auditoria Automatizada
+
+### 1. Lynis - Auditoria Completa
+```bash
+git clone https://github.com/CISOfy/lynis
+cd lynis
+sudo ./lynis audit system
+```
+### 2. OpenSCAP - Conformidade CIS
+```bash
+sudo dnf install openscap-scanner scap-security-guide
+sudo oscap xccdf eval \
+  --profile xccdf_org.ssgproject.content_profile_cis \
+  --results scan-results.xml \
+  /usr/share/xml/scap/ssg/content/ssg-fedora-ds.xml
+```
+### 3. Automação com Ansible
+```yaml
+# hardening-playbook.yml
+- name: Aplicar hardening básico
+  hosts: all
+  tasks:
+    - name: Atualizar sistema
+      dnf: 
+        name: "*"
+        state: latest
+        update_cache: yes
+
+    - name: Configurar sysctl
+      copy:
+        src: files/99-hardening.conf
+        dest: /etc/sysctl.d/99-hardening.conf
+
+    - name: Aplicar configurações sysctl
+      command: sysctl -p /etc/sysctl.d/99-hardening.conf
+```
+## ⚠️ Verificação Rápida de Segurança
+```bash
+#!/bin/bash
+# security-check.sh
+echo "=== Auditoria Rápida ==="
+echo "- SELinux: $(sestatus | grep mode)"
+echo "- Firewall: $(sudo nft list ruleset | wc -l) regras"
+echo "- Updates: $(sudo dnf check-update | wc -l) pendentes"
+echo "- Logins: $(grep '^AllowUsers' /etc/ssh/sshd_config)"
+echo "- Root: $(grep '^PermitRootLogin' /etc/ssh/sshd_config)"
+```
+
 ## 📚 Referências Técnicas
 
 ### Documentação Oficial
