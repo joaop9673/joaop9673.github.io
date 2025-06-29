@@ -71,6 +71,7 @@ sudo sysctl -p
 ```
 ## 🛡️ Ferramentas de Segurança
 ### 1. SELinux vs AppArmor
+
 | Característica	    | SELinux	     | AppArmor        | 
 |---------------------|--------------|-----------------|
 |Complexidade	        |   Alta       | Moderada        |
