@@ -79,7 +79,10 @@ table inet firewall {
 }
 ```
 Salve como ```/etc/nftables.conf``` e ative com:
-```sudo systemctl enable --now nftables```
+```bash
+sudo systemctl enable --now nftables
+```
+
 ### 4. Proteção de Memória
 ```bash
 # Prevenir buffer overflows
