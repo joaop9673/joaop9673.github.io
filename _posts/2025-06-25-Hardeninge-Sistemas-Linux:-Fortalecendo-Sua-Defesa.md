@@ -6,8 +6,8 @@ categories: [segurança, administração, linux]
 ---
 
 # Hardening de Sistemas Linux: Fortalecendo Sua Defesa
+Hardening é o processo de proteger sistemas Linux contra ameaças através da redução da superfície de ataque e implementação de configurações seguras. Em um mundo onde:
 
-## Por Que Hardening É Essencial?
 - **Ataques aumentam 38% ao ano** (Fonte: Relatório IBM Security 2024)
 - **95% das violações** exploram configurações inadequadas
 - **Sistemas padrão** têm +200 pontos vulneráveis
