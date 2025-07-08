@@ -114,26 +114,19 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl enable git-hd.service
 ```
-## 🔄 Fluxo de Trabalho com VPN
 
-```sequenceDiagram
-    Remote Device->>+Mullvad VPN: Conecta (WireGuard)
-    Mullvad VPN-->>-Remote Device: Atribui IP 10.64.0.2
-    Remote Device->>Git Server (10.64.0.1): git push/pull
-    Git Server-->>HD Externo: Armazena dados criptografados
-```
 ## 💡 Recursos Adicionais
-### Monitoramento:
+- 1. Monitoramento:
 ```bash
 watch -n 5 "mullvad status; sudo du -sh /mnt/git_repos/*"
 ```
-### Backup Incremental:
+- 2. Backup Incremental:
 ```bash
 # Usar borgbackup com criptografia
 borg init --encryption=repokey /backup/git-repos
 borg create /backup/git-repos::'{now}' /mnt/git_repos
 ```
-### Acesso via Mobile:
+- 3. Acesso via Mobile:
 Use Termux + Mullvad App para git pull no celular
 
 ## ⚠️ Dicas de Segurança
