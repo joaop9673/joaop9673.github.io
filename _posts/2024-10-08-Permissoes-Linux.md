@@ -134,6 +134,26 @@ umask 0077  # Arquivos: 600, Diretórios: 700
 - 4.Teste as permissões: ```su - testuser```
 
 - 5.Monitore alterações: ```auditd```
+## Referências Técnicas Essenciais
 
+### 1. Documentação Oficial
+- 📜 **[Linux man-pages: chmod(1)](https://man7.org/linux/man-pages/man1/chmod.1.html)**  
+- 📚 **[Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html)**  
+- 🔍 **[POSIX.1-2017 Standard](https://pubs.opengroup.org/onlinepubs/9699919799/)**
 
+### 2. Segurança e Conformidade
+- 🛡️ **[CIS Linux Benchmarks](https://www.cisecurity.org/cis-benchmarks/)**  
+- 🔐 **[NIST SP 800-53: Access Control](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf)**  
+- ⚖️ **[LGPD Art. 16](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)**
 
+### 3. Guias Práticos
+- 🔧 **[Red Hat: Managing File Permissions](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_filesystems/managing-file-permissions_managing-file-systems)**  
+- ⚙️ **[Linux Foundation: Filesystem Permissions](https://training.linuxfoundation.org/resources/learning-paths/linux-security-and-hardening/filesystem-permissions/)**  
+
+### 4. Tópicos Avançados
+- 🔐 **[SELinux vs AppArmor](https://www.redhat.com/sysadmin/selinux-apparmor)**  
+- 🛠️ **[Linux ACL Deep Dive](https://www.ibm.com/docs/en/aix/7.2?topic=files-access-control-lists)**  
+
+### 5. Boas Práticas
+- 💼 **[OWASP File Permissions Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Permission_Cheat_Sheet.html)**  
+- 🏢 **[Enterprise Linux Security Standards](https://www.nsa.gov/Resources/Commercial-Solutions/Commercial-Products/)**
