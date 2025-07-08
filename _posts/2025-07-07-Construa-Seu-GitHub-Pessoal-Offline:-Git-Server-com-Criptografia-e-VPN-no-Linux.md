@@ -93,7 +93,7 @@ echo "ssh-ed25519 AAAAC3Nz..." | sudo tee -a /mnt/git_repos/git-user/.ssh/author
 git clone ssh://git-user@10.64.0.1:49222/mnt/git_repos/meu-projeto.git
 ```
 ## Passo 5: Startup Automático
-Crie um serviço systemd ```/etc/systemd/system/git-hd.service```:
+- 1. Crie um serviço systemd ```/etc/systemd/system/git-hd.service```:
 
 ```ini
 [Unit]
@@ -109,25 +109,31 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 ```
-Ative com:
+- 2. Ative com:
 
 ```bash
 sudo systemctl enable git-hd.service
 ```
-Monitoramento:
+## 🔄 Fluxo de Trabalho com VPN
 
+```sequenceDiagram
+    Remote Device->>+Mullvad VPN: Conecta (WireGuard)
+    Mullvad VPN-->>-Remote Device: Atribui IP 10.64.0.2
+    Remote Device->>Git Server (10.64.0.1): git push/pull
+    Git Server-->>HD Externo: Armazena dados criptografados
+```
+## 💡 Recursos Adicionais
+### Monitoramento:
 ```bash
 watch -n 5 "mullvad status; sudo du -sh /mnt/git_repos/*"
 ```
-Backup Incremental:
-
+### Backup Incremental:
 ```bash
 # Usar borgbackup com criptografia
 borg init --encryption=repokey /backup/git-repos
 borg create /backup/git-repos::'{now}' /mnt/git_repos
 ```
-Acesso via Mobile:
-
+### Acesso via Mobile:
 Use Termux + Mullvad App para git pull no celular
 
 ## ⚠️ Dicas de Segurança
@@ -137,13 +143,13 @@ Sempre desmonte antes de remover o HD:
 sudo umount /mnt/git_repos
 sudo cryptsetup close git_hd
 ```
-Configure firewall básico:
+- 1. Configure firewall básico:
 
 ```bash
 sudo ufw allow from 10.64.0.0/10 to any port 49222
 sudo ufw deny 22/tcp
 ```
-Ative auditoria:
+- 2. Ative auditoria:
 
 ```bash
 sudo auditctl -w /mnt/git_repos -p war -k git_hd_access
