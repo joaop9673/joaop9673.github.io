@@ -160,9 +160,9 @@ SystemMaxUse=0  # Em journald.conf
 
 - Logs não aparecendo? ```→ systemctl restart systemd-journald```
 - syslog-ng não inicia? ```→ syslog-ng -Fevd```
-- Falta espaço em disco? → ```journalctl --vacuum-size=500M```
-- Consulta lenta? → ```journalctl --since "1 hour ago"```
-- Formatação ilegível? → ```journalctl -o verbose```
+- Falta espaço em disco? ```→ journalctl --vacuum-size=500M```
+- Consulta lenta? ```→ journalctl --since "1 hour ago"```
+- Formatação ilegível? ```→ journalctl -o verbose```
 
 ## Fluxo de Trabalho Profissional
 - **Coleta**: journald captura logs estruturados do sistema
