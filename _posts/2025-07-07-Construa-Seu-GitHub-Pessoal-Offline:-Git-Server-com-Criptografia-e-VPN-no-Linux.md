@@ -17,101 +17,136 @@ categories: [segurança, administração, linux]
 
 ## Passo 1: Preparando o HD com Criptografia
 ```bash
+# Particionar (substitua /dev/sdX pelo seu dispositivo)
+sudo fdisk /dev/sdX  # Crie uma partição Linux (tipo 83)
+
+# Criptografar com LUKS
 sudo cryptsetup luksFormat /dev/sdX1
 sudo cryptsetup open /dev/sdX1 git_hd
-sudo mkfs.ext4 /dev/mapper/git_hd -L "GitVault"
+
+# Formatar como ext4 (melhor para Git)
+sudo mkfs.ext4 /dev/mapper/git_hd -L "GitSecure"
+
+# Montar
 sudo mkdir /mnt/git_repos
 sudo mount /dev/mapper/git_hd /mnt/git_repos
 ```
 ## Passo 2: Configurando o Servidor Git
+Crie um script ```/mnt/git_repos/init_server.sh```:
 ```bash
+#!/bin/bash
+
+# Criar usuário dedicado
 sudo useradd -m -d /mnt/git_repos/git-user git-user
+
+# Configurar SSH
 sudo mkdir /mnt/git_repos/git-user/.ssh
 sudo touch /mnt/git_repos/git-user/.ssh/authorized_keys
+
+# Permissões seguras
 sudo chown -R git-user:git-user /mnt/git_repos/git-user
 sudo chmod 700 /mnt/git_repos/git-user/.ssh
 sudo chmod 600 /mnt/git_repos/git-user/.ssh/authorized_keys
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI..." | sudo tee -a /mnt/git_repos/git-user/.ssh/authorized_keys
-sudo -u git-user mkdir /mnt/git_repos/meu-projeto.git
-sudo -u git-user git init --bare /mnt/git_repos/meu-projeto.git
-```
-## Passo 3: Integração com Mullvad VPN
-```bash
-curl -Lo mullvad.deb https://mullvad.net/download/app/deb/latest
-sudo apt install ./mullvad.deb
-mullvad account login SEU_CODIGO_DE_28_DIGITOS
-mullvad lan set allow
-mullvad status
-```
-## Passo 4: Configuração do SSH Server
-Crie ```/mnt/git_repos/sshd_config```:
 
-```apache
+# Iniciar servidor SSH em porta alternativa
+sudo /usr/sbin/sshd -f /mnt/git_repos/sshd_config
+```
+Crie ```/mnt/git_repos/sshd_config```:
+```
 Port 49222
-ListenAddress 10.64.215.112
+ListenAddress 10.64.0.1  # IP interno da Mullvad
 PermitRootLogin no
 PasswordAuthentication no
 AuthorizedKeysFile .ssh/authorized_keys
 Subsystem sftp internal-sftp
 AllowUsers git-user
 ```
-Inicie o servidor:
+
+## Passo 3: Integração com Mullvad VPN
+```bash
+# Instalar Mullvad CLI
+curl -Lo mullvad.deb https://mullvad.net/download/app/deb/latest
+sudo apt install ./mullvad.deb
+
+# Conectar e configurar
+mullvad account login XXXXXXXX
+mullvad relay set location br saw
+mullvad lan set allow
+```
+Verifique o IP interno:
+```
+mullvad status
+# Anote o IP (ex: 10.64.0.1)
+```
+
+## Passo 4: Acesso Remoto Seguro
+
+- 1. Adicione sua chave SSH:
 
 ```bash
-sudo /usr/sbin/sshd -f /mnt/git_repos/sshd_config
+# Copiar chave pública para o servidor
+echo "ssh-ed25519 AAAAC3Nz..." | sudo tee -a /mnt/git_repos/git-user/.ssh/authorized_keys
 ```
-## Passo 5: Acessando Seu Repositório
+- 2. Clonar repositório remotamente:
+
 ```bash
-git clone ssh://git-user@10.64.215.112:49222/mnt/git_repos/meu-projeto.git
+git clone ssh://git-user@10.64.0.1:49222/mnt/git_repos/meu-projeto.git
 ```
-### Automação com Systemd
-Crie ```/etc/systemd/system/git-hd.service```:
+## Passo 5: Startup Automático
+Crie um serviço systemd ```/etc/systemd/system/git-hd.service```:
 
 ```ini
 [Unit]
-Description=Git Server on Encrypted HD
-Requires=mullvad-daemon.service
-After=network.target
+Description=Git Server on External HD
+Requires=multi-user.target
+After=mullvad-daemon.service
 
 [Service]
-ExecStart=/usr/sbin/sshd -f /mnt/git_repos/sshd_config
-Restart=always
-User=git-user
+Type=oneshot
+ExecStart=/bin/bash /mnt/git_repos/init_server.sh
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
 ```
-Ative o serviço:
+Ative com:
 
 ```bash
-sudo systemctl enable --now git-hd.service
+sudo systemctl enable git-hd.service
 ```
-### Dicas de Segurança Avançada
+Monitoramento:
+
+```bash
+watch -n 5 "mullvad status; sudo du -sh /mnt/git_repos/*"
+```
+Backup Incremental:
+
+```bash
+# Usar borgbackup com criptografia
+borg init --encryption=repokey /backup/git-repos
+borg create /backup/git-repos::'{now}' /mnt/git_repos
+```
+Acesso via Mobile:
+
+Use Termux + Mullvad App para git pull no celular
+
+## ⚠️ Dicas de Segurança
+Sempre desmonte antes de remover o HD:
+
+```bash
+sudo umount /mnt/git_repos
+sudo cryptsetup close git_hd
+```
+Configure firewall básico:
+
 ```bash
 sudo ufw allow from 10.64.0.0/10 to any port 49222
 sudo ufw deny 22/tcp
+```
+Ative auditoria:
+
+```bash
 sudo auditctl -w /mnt/git_repos -p war -k git_hd_access
-sudo apt install borgbackup
-borg init --encryption=repokey /caminho/backup/git-repos
-borg create /caminho/backup/git-repos::'{now}' /mnt/git_repos
-```
-### Solução de Problemas Comuns
-Problema: Conexão SSH recusada
-
-```bash
-mullvad lan set allow
-sudo ufw allow from 10.64.0.0/10
-```
-Problema: Permissões negadas
-
-```bash
-sudo chown -R git-user:git-user /mnt/git_repos
-```
-Problema: HD não reconhecido
-
-```bash
-sudo cryptsetup open /dev/sdX1 git_hd
-sudo mount /dev/mapper/git_hd /mnt/git_repos
 ```
 Aviso Legal: Tutorial para fins educacionais. Verifique leis locais antes de implementar.
 
