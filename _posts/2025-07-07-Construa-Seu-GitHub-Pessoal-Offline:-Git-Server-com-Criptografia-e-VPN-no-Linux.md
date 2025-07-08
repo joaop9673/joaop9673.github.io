@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux"
+date: 2025-07-07
+categories: [segurança, administração, linux]
+---
+
 # Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux
 
 ![Servidor Git com VPN e Criptografia](https://images.unsplash.com/photo-1558494945-7a658f0f6a77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80)  
