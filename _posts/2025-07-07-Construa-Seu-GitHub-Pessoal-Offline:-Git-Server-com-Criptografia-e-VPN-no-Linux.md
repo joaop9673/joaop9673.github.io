@@ -81,19 +81,19 @@ mullvad status
 
 ## Passo 4: Acesso Remoto Seguro
 
-- 1. Adicione sua chave SSH:
+1. Adicione sua chave SSH:
 
 ```bash
 # Copiar chave pública para o servidor
 echo "ssh-ed25519 AAAAC3Nz..." | sudo tee -a /mnt/git_repos/git-user/.ssh/authorized_keys
 ```
-- 2. Clonar repositório remotamente:
+2. Clonar repositório remotamente:
 
 ```bash
 git clone ssh://git-user@10.64.0.1:49222/mnt/git_repos/meu-projeto.git
 ```
 ## Passo 5: Startup Automático
-- 1. Crie um serviço systemd ```/etc/systemd/system/git-hd.service```:
+1. Crie um serviço systemd ```/etc/systemd/system/git-hd.service```:
 
 ```ini
 [Unit]
@@ -109,24 +109,24 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 ```
-- 2. Ative com:
+2. Ative com:
 
 ```bash
 sudo systemctl enable git-hd.service
 ```
 
 ## 💡 Recursos Adicionais
-- 1. Monitoramento:
+1. Monitoramento:
 ```bash
 watch -n 5 "mullvad status; sudo du -sh /mnt/git_repos/*"
 ```
-- 2. Backup Incremental:
+2. Backup Incremental:
 ```bash
 # Usar borgbackup com criptografia
 borg init --encryption=repokey /backup/git-repos
 borg create /backup/git-repos::'{now}' /mnt/git_repos
 ```
-- 3. Acesso via Mobile:
+3. Acesso via Mobile:
 Use Termux + Mullvad App para git pull no celular
 
 ## ⚠️ Dicas de Segurança
@@ -136,13 +136,13 @@ Sempre desmonte antes de remover o HD:
 sudo umount /mnt/git_repos
 sudo cryptsetup close git_hd
 ```
-- 1. Configure firewall básico:
+1. Configure firewall básico:
 
 ```bash
 sudo ufw allow from 10.64.0.0/10 to any port 49222
 sudo ufw deny 22/tcp
 ```
-- 2. Ative auditoria:
+2. Ative auditoria:
 
 ```bash
 sudo auditctl -w /mnt/git_repos -p war -k git_hd_access
