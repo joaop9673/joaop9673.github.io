@@ -156,32 +156,24 @@ chmod 777 /var/log/secure
 # VULNERABILIDADE: Armazenamento ilimitado
 SystemMaxUse=0  # Em journald.conf
 ```
-## Kit de Sobrevivência: Resolução Rápida
-Logs não aparecendo? → systemctl restart systemd-journald
+## Kit de Sobrevivência: Resolução Rápid
 
-syslog-ng não inicia? → syslog-ng -Fevd
+- Logs não aparecendo? ```→ systemctl restart systemd-journald```
+- syslog-ng não inicia? ```→ syslog-ng -Fevd```
+- Falta espaço em disco? → ```journalctl --vacuum-size=500M```
+- Consulta lenta? → ```journalctl --since "1 hour ago"```
+- Formatação ilegível? → ```journalctl -o verbose```
 
-Falta espaço em disco? → journalctl --vacuum-size=500M
+## Fluxo de Trabalho Profissional
+- **Coleta**: journald captura logs estruturados do sistema
+- **Processamento**: syslog-ng filtra e encaminha eventos relevantes
+- **Armazenamento**: Logs consolidados em arquivos locais ou remotos
+- **Análise**: Logwatch gera relatórios diários sumarizados
+- **Monitoramento**: Alertas em tempo real para eventos críticos
+- **Manutenção**: Rotação e retenção controlada de logs
 
-Consulta lenta? → journalctl --since "1 hour ago"
-
-Formatação ilegível? → journalctl -o verbose
-
-Fluxo de Trabalho Profissional
-Coleta: journald captura logs estruturados do sistema
-
-Processamento: syslog-ng filtra e encaminha eventos relevantes
-
-Armazenamento: Logs consolidados em arquivos locais ou remotos
-
-Análise: Logwatch gera relatórios diários sumarizados
-
-Monitoramento: Alertas em tempo real para eventos críticos
-
-Manutenção: Rotação e retenção controlada de logs
-
-Ferramentas Complementares Essenciais
-bash
+## Ferramentas Complementares Essenciais
+```bash
 # Análise interativa
 sudo apt install lnav
 
@@ -193,6 +185,7 @@ pip3 install logreduce
 
 # Centralização
 sudo apt install filebeat
+```
 "Logs são histórias não contadas do seu sistema - aprenda a lê-las antes que se tornem tragédias."
 
 ## Referências Técnicas Essenciais
