@@ -134,7 +134,7 @@ umask 0077  # Arquivos: 600, Diretórios: 700
 - 4.Teste as permissões: ```su - testuser```
 
 - 5.Monitore alterações: ```auditd```
-## Referências Técnicas Essenciais
+## 📚 Referências Técnicas Essenciais
 
 ### 1. Documentação Oficial
 - 📜 **[Linux man-pages: chmod(1)](https://man7.org/linux/man-pages/man1/chmod.1.html)**  
