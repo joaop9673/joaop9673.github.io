@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Gestão Avançada de Logs com journald e syslog-ng: Da Coleta à Análise"
+date: 2024-12-07
+categories: [tecnologia, segurança, linux]
+---
 # Gestão Avançada de Logs com journald e syslog-ng: Da Coleta à Análise
 
 ## Por Que Essa Combinação?
