@@ -146,6 +146,7 @@ while read line; do
 done
 ```
 ## Armadilhas Mortais: O Que Nunca Fazer
+
 ```bash
 # DESASTRE: Limpeza indiscriminada
 rm -rf /var/log/*
