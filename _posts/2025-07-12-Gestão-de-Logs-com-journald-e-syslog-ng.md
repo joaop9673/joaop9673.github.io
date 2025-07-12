@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Domínio de Logs: Gestão Avançada com journald e syslog-ng no Linux"
-date: 2025-07-12
+date: 2025-07-10
 categories: [tecnologia, segurança, linux, devops]
 ---
 
