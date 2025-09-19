@@ -208,7 +208,7 @@ Digite o código:
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+    printf("Ola, Mundo!\n");
     return 0;
 }
 ```
@@ -226,7 +226,7 @@ gcc hello.c -o hello
 Use opções adicionais para melhorar a compilação:
 
 ```bash
-gcc -Wall -g -O2 -std=c11 hello.c -o hello
+gcc -Wall -g -O2 -std=c11 ola.c -o ola
 ```
 ---
 
@@ -249,7 +249,7 @@ vim erro.c
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n"  // ← erro: parêntese não fechado
+    printf("Ola Mundo!\n"  // ← erro: parêntese não fechado
     return 0;
 }
 ```
@@ -281,7 +281,7 @@ Corrija o código:
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+    printf("Ola, Mundo!\n");
     return 0;
 }
 ```
@@ -304,7 +304,7 @@ Se não houver mensagens de erro, o executável erro foi gerado com sucesso.
 
 Saída:
 ```bash
-Hello, World!
+Ola, Mundo!
 ```
 ---
 ## Parte 8: Compilando Código Java com Vim e Terminal
@@ -343,7 +343,7 @@ vim Exemplo.java
 ```java
 public class Exemplo {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Ola, Mundo!");
     }
 }
 ```
@@ -370,7 +370,7 @@ java Exemplo
 ```
 Saída esperada:
 ```bash
-Hello, World!
+Ola, Mundo!
 ```
 ### ⚠️ Dicas importantes
 
