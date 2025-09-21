@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas" />
+    <meta property="og:title" content="Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas" />
+    <meta property="twitter:title" content="Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2024-12-29-variaveis/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas | </title>
+
+    <link rel="canonical" href="/post/2024-12-29-variaveis/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Sunday, December 29, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="domine-variáveis-de-ambiente-controle-dinâmico-de-sistemas">Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas</h1>
+<h2 id="o-que-são-variáveis-de-ambiente">O Que São Variáveis de Ambiente?</h2>
+<p>Pares <strong>chave=valor</strong> que configuram o comportamento do sistema e aplicações. Funcionam como &ldquo;memória do sistema&rdquo; para configurações essenciais.</p>
+<h3 id="por-que-são-importantes">Por Que São Importantes?</h3>
+<ul>
+<li>Personalizam ambientes por usuário/aplicação</li>
+<li>Controlam comportamento de programas</li>
+<li>Armazenam caminhos críticos</li>
+<li>Gerenciam preferências globais</li>
+</ul>
+<h2 id="variáveis-essenciais-do-sistema">Variáveis Essenciais do Sistema</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Variável</th>
+          <th>Função</th>
+          <th>Exemplo de Valor</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>PATH</strong></td>
+          <td>Busca de executáveis</td>
+          <td><code>/usr/bin:/bin:/usr/local/bin</code></td>
+      </tr>
+      <tr>
+          <td><strong>HOME</strong></td>
+          <td>Diretório do usuário</td>
+          <td><code>/home/usuario</code></td>
+      </tr>
+      <tr>
+          <td><strong>USER</strong></td>
+          <td>Usuário atual</td>
+          <td><code>joao</code></td>
+      </tr>
+      <tr>
+          <td><strong>SHELL</strong></td>
+          <td>Shell padrão</td>
+          <td><code>/bin/bash</code></td>
+      </tr>
+      <tr>
+          <td><strong>LANG</strong></td>
+          <td>Idioma/localização</td>
+          <td><code>pt_BR.UTF-8</code></td>
+      </tr>
+      <tr>
+          <td><strong>PWD</strong></td>
+          <td>Diretório atual</td>
+          <td><code>/home/usuario/docs</code></td>
+      </tr>
+      <tr>
+          <td><strong>TERM</strong></td>
+          <td>Tipo de terminal</td>
+          <td><code>xterm-256color</code></td>
+      </tr>
+      <tr>
+          <td><strong>EDITOR</strong></td>
+          <td>Editor padrão</td>
+          <td><code>nano</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="mecânica-de-funcionamento">Mecânica de Funcionamento</h2>
+<h3 id="escopos-de-atuação">Escopos de Atuação</h3>
+<ol>
+<li><strong>Global</strong>: Afeta todo o sistema (<code>/etc/environment</code>)</li>
+<li><strong>Usuário</strong>: Configuração por usuário (<code>~/.bashrc</code>, <code>~/.zshrc</code>)</li>
+<li><strong>Sessão</strong>: Temporária (apenas no terminal atual)</li>
+</ol>
+<h3 id="ciclo-de-vida">Ciclo de Vida</h3>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
+    P[Processo Pai] --&gt;|Define| V[Variáveis Originais]
+    V --&gt;|Passa cópia| F[Processo Filho]
+    F --&gt;|Modifica| NV[Novas Variáveis]
+    NV --&gt;|Alterações locais| F
+    style V fill:#cff,stroke:#333
+    style NV fill:#fcf,stroke:#333
+</code></pre><h2 id="comandos-essenciais">Comandos Essenciais</h2>
+<p>Visualização</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>printenv          <span style="color:#75715e"># Todas as variáveis</span>
+</span></span><span style="display:flex;"><span>env               <span style="color:#75715e"># Alternativa ao printenv</span>
+</span></span><span style="display:flex;"><span>echo $PATH        <span style="color:#75715e"># Valor específico</span>
+</span></span></code></pre></div><h3 id="criaçãomodificação">Criação/Modificação</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Temporário (apenas na sessão)</span>
+</span></span><span style="display:flex;"><span>export API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abc123xyz&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para subshells</span>
+</span></span><span style="display:flex;"><span>MEU_VAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;valor&#34;</span>  <span style="color:#75715e"># Sem export = apenas no shell atual</span>
+</span></span><span style="display:flex;"><span>export MEU_VAR    <span style="color:#75715e"># Torna disponível para processos filhos</span>
+</span></span></code></pre></div><p>Exclusão</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unset HISTSIZE    <span style="color:#75715e"># Remove variável</span>
+</span></span></code></pre></div><p>Configuração Permanente
+Bash (Linux/macOS)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc ou ~/.bash_profile</span>
+</span></span><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/lib/jvm/java-11-openjdk&#34;</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:</span>$HOME<span style="color:#e6db74">/.local/bin&#34;</span>
+</span></span></code></pre></div><p>Zsh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.zshrc</span>
+</span></span><span style="display:flex;"><span>export EDITOR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code --wait&#34;</span>
+</span></span></code></pre></div><p>Windows (PowerShell)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Perfil de usuário</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">Environment</span>]::SetEnvironmentVariable(<span style="color:#e6db74">&#34;PYTHONPATH&#34;</span>, <span style="color:#e6db74">&#34;C:\MyPython&#34;</span>, <span style="color:#e6db74">&#34;User&#34;</span>)
+</span></span></code></pre></div><p>Casos de Uso Avançados</p>
+<ol>
+<li>Versionamento de Linguagens</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Seleciona versão do Python</span>
+</span></span><span style="display:flex;"><span>export PYENV_VERSION<span style="color:#f92672">=</span>3.11
+</span></span></code></pre></div><ol start="2">
+<li>Configuração de APIs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Segurança com serviços em nuvem</span>
+</span></span><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AKIA...&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wJalrXU...&#34;</span>
+</span></span></code></pre></div><ol start="3">
+<li>Controle de Aplicações</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Força modo headless no Chrome</span>
+</span></span><span style="display:flex;"><span>export CHROME_HEADLESS<span style="color:#f92672">=</span>true
+</span></span></code></pre></div><ol start="4">
+<li>Variáveis Sensíveis (.env)</li>
+</ol>
+<pre tabindex="0"><code># Arquivo .env (nunca versionado!)
+DB_HOST=localhost
+DB_PASS=s3nh@_sup3rs3gur@
+</code></pre><h3 id="boas-práticas-de-segurança">Boas Práticas de Segurança</h3>
+<h3 id="o-que-fazer-">O Que Fazer ✅</h3>
+<ul>
+<li>Use arquivos <code>.env</code> para segredos</li>
+<li>Limite escopo com export <code>VAR=valor</code> em scripts</li>
+<li>Revise variáveis com <code>printenv | grep -i 'KEY'</code></li>
+</ul>
+<h3 id="o-que-evitar-">O Que Evitar ❌</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Expor segredos no histórico</span>
+</span></span><span style="display:flex;"><span>export SENHA<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12345&#34;</span>  <span style="color:#75715e"># Visível em history</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Armazenar dados sensíveis em scripts versionados</span>
+</span></span><span style="display:flex;"><span>export TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eyJhbG...&#34;</span>  <span style="color:#75715e"># Nunca faça isso!</span>
+</span></span></code></pre></div><h2 id="gerenciamento-profissional">Gerenciamento Profissional</h2>
+<h3 id="ferramentas-especializadas">Ferramentas Especializadas</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Ferramenta</th>
+          <th>Função</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>direnv</td>
+          <td>Carrega .env por diretório</td>
+      </tr>
+      <tr>
+          <td>dotenv</td>
+          <td>Suporte multi-linguagem</td>
+      </tr>
+      <tr>
+          <td>Vault</td>
+          <td>Gerenciamento centralizado</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exemplo-com-direnv">Exemplo com direnv</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># .envrc (executado automaticamente ao entrar no diretório)</span>
+</span></span><span style="display:flex;"><span>export ENV_AMBIENTE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;producao&#34;</span>
+</span></span><span style="display:flex;"><span>export DB_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;postgres://user:pass@localhost/db&#34;</span>
+</span></span></code></pre></div><h2 id="resolução-de-problemas">Resolução de Problemas</h2>
+<h3 id="diagnóstico-comum">Diagnóstico Comum</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verifique variáveis específicas</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;PATH: </span>$PATH<span style="color:#e6db74">&#34;</span> 
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;USER: </span>$USER<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare ambientes</span>
+</span></span><span style="display:flex;"><span>env &gt; env_original.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Execute problema</span>
+</span></span><span style="display:flex;"><span>env &gt; env_problema.txt
+</span></span><span style="display:flex;"><span>diff env_*.txt
+</span></span></code></pre></div><h3 id="erros-frequentes">Erros Frequentes</h3>
+<p>Command not found → Verifique <code>$PATH</code></p>
+<p>Acesso negado → Cheque $HOME e <code>permissões</code></p>
+<p>Problemas de localização → Confira <code>$LANG</code></p>
+<h2 id="-referências-essenciais">📚 Referências Essenciais</h2>
+<h3 id="documentação-oficial">Documentação Oficial</h3>
+<ol>
+<li>
+<p><strong>GNU Bash Manual</strong><br>
+<a href="https://www.gnu.org/software/bash/manual/">https://www.gnu.org/software/bash/manual/</a><br>
+Capítulo 6: Shell Variables - explicação técnica detalhada</p>
+</li>
+<li>
+<p><strong>Zsh Documentation</strong><br>
+<a href="https://zsh.sourceforge.io/Doc/">https://zsh.sourceforge.io/Doc/</a><br>
+Seção 14: Parameters - tratamento de variáveis no Zsh</p>
+</li>
+<li>
+<p><strong>Microsoft Docs: Environment Variables</strong><br>
+<a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables">https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables</a><br>
+Guia oficial para Windows/PowerShell</p>
+</li>
+</ol>
+<h3 id="ferramentas-especializadas-1">Ferramentas Especializadas</h3>
+<ol start="4">
+<li>
+<p><strong>direnv</strong><br>
+<a href="https://direnv.net/">https://direnv.net/</a><br>
+Documentação oficial com exemplos práticos</p>
+</li>
+<li>
+<p><strong>HashiCorp Vault</strong><br>
+<a href="https://www.vaultproject.io/">https://www.vaultproject.io/</a><br>
+Gerenciamento profissional de segredos</p>
+</li>
+</ol>
+<h3 id="padrões-e-boas-práticas">Padrões e Boas Práticas</h3>
+<ol start="6">
+<li>
+<p><strong>The Twelve-Factor App</strong><br>
+<a href="https://12factor.net/config">https://12factor.net/config</a><br>
+Metodologia para gestão de configurações em aplicações</p>
+</li>
+<li>
+<p><strong>OWASP Secure Configuration Guide</strong><br>
+<a href="https://cheatsheetseries.owasp.org/cheatsheets/Environment_Variable_Security_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Environment_Variable_Security_Cheat_Sheet.html</a><br>
+Diretrizes de segurança para variáveis</p>
+</li>
+</ol>
+<h3 id="artigos-técnicos">Artigos Técnicos</h3>
+<ol start="8">
+<li>
+<p><strong>Linux Environment Variables Explained</strong><br>
+<a href="https://linuxhandbook.com/environment-variables/">https://linuxhandbook.com/environment-variables/</a><br>
+Guia prático com exemplos cotidianos</p>
+</li>
+<li>
+<p><strong>Mastering Environment Variables in Windows</strong><br>
+<a href="https://www.howtogeek.com/51807/">https://www.howtogeek.com/51807/</a><br>
+Tutorial visual para administradores Windows</p>
+</li>
+</ol>
+<h3 id="diagramas-mermaid">Diagramas Mermaid</h3>
+<ol start="10">
+<li><strong>Documentação Oficial</strong><br>
+<a href="https://mermaid.js.org/syntax/flowchart.html">https://mermaid.js.org/syntax/flowchart.html</a><br>
+Sintaxe completa para criação de diagramas</li>
+</ol>
+<h3 id="padrões-de-segurança">Padrões de Segurança</h3>
+<ol start="11">
+<li><strong>NIST Special Publication 800-53</strong><br>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf</a><br>
+Controles de segurança para proteção de dados (Seção IA-5)</li>
+</ol>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2024-12-05-criptgrafia-gpg/" data-toggle="tooltip" data-placement="top" title="Desvendado a Criptografia GPG">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2025-01-23-Monitoramento-de-sistemas/" data-toggle="tooltip" data-placement="top" title="Monitoramento de Sistemas Linux: Comandos Essenciais">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

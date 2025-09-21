@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on JPHS</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on JPHS</description>
+    <generator>Hugo</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Fri, 19 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Código Aberto</title>
+      <link>http://localhost:1313/categories/c%C3%B3digo-aberto/</link>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/c%C3%B3digo-aberto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tecnologia</title>
+      <link>http://localhost:1313/categories/tecnologia/</link>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/tecnologia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>http://localhost:1313/categories/devops/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Segurança</title>
+      <link>http://localhost:1313/categories/seguran%C3%A7a/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/seguran%C3%A7a/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administração</title>
+      <link>http://localhost:1313/categories/administra%C3%A7%C3%A3o/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/administra%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administração De Sistemas</title>
+      <link>http://localhost:1313/categories/administra%C3%A7%C3%A3o-de-sistemas/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/administra%C3%A7%C3%A3o-de-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas Operacionais</title>
+      <link>http://localhost:1313/categories/sistemas-operacionais/</link>
+      <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/sistemas-operacionais/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

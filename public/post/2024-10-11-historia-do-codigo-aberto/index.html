@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="História do Código Aberto e do Movimento GNU" />
+    <meta property="og:title" content="História do Código Aberto e do Movimento GNU" />
+    <meta property="twitter:title" content="História do Código Aberto e do Movimento GNU" />
+    
+
+    
+    <meta name="description" content="O movimento GNU, fundado por Richard Stallman em 1983, visava criar um sistema operacional livre. Em 1991, Linus Torvalds lançou o kernel Linux, que combinado com ferramentas GNU formou o GNU/Linux. A Open Source Initiative (OSI), criada em 1998, impulsionou a adoção empresarial. Hoje, o código aberto domina servidores, dispositivos móveis e infraestrutura crítica, transformando a indústria de software.">
+    <meta property="og:description" content="O movimento GNU, fundado por Richard Stallman em 1983, visava criar um sistema operacional livre. Em 1991, Linus Torvalds lançou o kernel Linux, que combinado com ferramentas GNU formou o GNU/Linux. A Open Source Initiative (OSI), criada em 1998, impulsionou a adoção empresarial. Hoje, o código aberto domina servidores, dispositivos móveis e infraestrutura crítica, transformando a indústria de software." />
+    <meta property="twitter:description" content="O movimento GNU, fundado por Richard Stallman em 1983, visava criar um sistema operacional livre. Em 1991, Linus Torvalds lançou o kernel Linux, que combinado com ferramentas GNU formou o GNU/Linux. A Open Source Initiative (OSI), criada em 1998, impulsionou a adoção empresarial. Hoje, o código aberto domina servidores, dispositivos móveis e infraestrutura crítica, transformando a indústria de software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2024-10-11-historia-do-codigo-aberto/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>História do Código Aberto e do Movimento GNU | </title>
+
+    <link rel="canonical" href="/post/2024-10-11-historia-do-codigo-aberto/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>História do Código Aberto e do Movimento GNU</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Friday, October 11, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="anos-1980-o-nascimento-do-software-livre">Anos 1980: O Nascimento do Software Livre</h2>
+<p>A década de 1980 testemunhou uma guinada crucial na computação. Enquanto computadores pessoais se popularizavam, Richard Stallman—então pesquisador do MIT—liderou uma resposta à crescente restrição de softwares proprietários. Em 1983, ele anunciou o projeto <strong>GNU</strong> (GNU&rsquo;s Not Unix), um esforço para criar um sistema operacional completamente livre.</p>
+<h3 id="os-pilares-da-liberdade">Os Pilares da Liberdade</h3>
+<p>Stallman estabeleceu quatro liberdades essenciais para o usuário:</p>
+<ol>
+<li>Executar o programa para qualquer propósito</li>
+<li>Estudar e modificar o código-fonte</li>
+<li>Redistribuir cópias</li>
+<li>Distribuir versões modificadas</li>
+</ol>
+<h3 id="conquistas-e-desafios">Conquistas e Desafios</h3>
+<ul>
+<li><strong>1985</strong>: Criação da Free Software Foundation (FSF) para financiar o projeto</li>
+<li><strong>1989</strong>: Lançamento da GPL (Licença Pública Geral), garantindo perpetuidade das liberdades</li>
+<li><strong>Dificuldade</strong>: O kernel do projeto (GNU Hurd) enfrentava atrasos no desenvolvimento</li>
+</ul>
+<h2 id="anos-1990-a-revolução-gnulinux">Anos 1990: A Revolução GNU/Linux</h2>
+<h3 id="o-kernel-que-faltava-1991">O Kernel que Faltava (1991)</h3>
+<p>Linus Torvalds, estudante finlandês, lançou um kernel Unix-like livre: o <strong>Linux</strong>. Quando combinado às ferramentas GNU (compiladores, bibliotecas, shell), formou-se o primeiro sistema operacional livre completo: o <strong>GNU/Linux</strong>.</p>
+<h3 id="a-explosão-das-comunidades">A Explosão das Comunidades</h3>
+<ul>
+<li><strong>1992</strong>: Linux licenciado sob GPL, atraindo colaboradores globais</li>
+<li><strong>1993</strong>: Surgimento das primeiras distribuições (Slackware, Debian)</li>
+<li><strong>1994</strong>: Red Hat é fundada, profissionalizando o ecossistema</li>
+<li><strong>1996</strong>: KDE e GNOME iniciam a evolução de interfaces gráficas</li>
+</ul>
+<h3 id="marco-institucional-1998">Marco Institucional (1998)</h3>
+<p>A Open Source Initiative (OSI) foi fundada por Eric Raymond e Bruce Perens, criando a &ldquo;Open Source Definition&rdquo; e promovendo vantagens práticas do modelo para empresas.</p>
+<h2 id="anos-2000-dominância-em-infraestrutura">Anos 2000: Dominância em Infraestrutura</h2>
+<h3 id="servidores-e-nuvem">Servidores e Nuvem</h3>
+<ul>
+<li><strong>2001</strong>: IBM investe US$ 1 bilhão em desenvolvimento Linux</li>
+<li><strong>2004</strong>: Amazon Web Services adota Linux como base</li>
+<li><strong>2007</strong>: Linux Foundation é criada para padronizar desenvolvimento</li>
+</ul>
+<h3 id="desktop-e-mobilidade">Desktop e Mobilidade</h3>
+<ul>
+<li><strong>2004</strong>: Ubuntu democratiza o acesso a usuários domésticos</li>
+<li><strong>2008</strong>: Android (baseado em kernel Linux) revoluciona dispositivos móveis</li>
+</ul>
+<h3 id="adoção-corporativa">Adoção Corporativa</h3>
+<p>Microsoft, Oracle e Apple passam a contribuir com projetos open source, enquanto 90% dos supercomputadores passam a rodar Linux.</p>
+<h2 id="anos-2010-presente-a-nova-normalidade">Anos 2010-Presente: A Nova Normalidade</h2>
+<h3 id="onipresença-tecnológica">Onipresença Tecnológica</h3>
+<ul>
+<li><strong>Infraestrutura crítica</strong>: 95% dos servidores web, nuvens públicas, IoT</li>
+<li><strong>Dispositivos</strong>: Android domina 70% do mercado móvel global</li>
+<li><strong>Emergentes</strong>: Kubernetes, TensorFlow e blockchain dependem de código aberto</li>
+</ul>
+<h3 id="evolução-do-modelo">Evolução do Modelo</h3>
+<ul>
+<li><strong>Licenças permissivas</strong> (Apache, MIT) ganham espaço junto à GPL</li>
+<li><strong>GitHub</strong> (fundado 2008) torna-se hub global de colaboração</li>
+<li><strong>Financiamento</strong>: Modelos &ldquo;open-core&rdquo; e patrocínios corporativos sustentam projetos</li>
+</ul>
+<h2 id="legado-e-futuro">Legado e Futuro</h2>
+<p>O movimento iniciado por Stallman transformou radicalmente a tecnologia:</p>
+<ol>
+<li><strong>Econômico</strong>: Economia de bilhões em licenças e aceleração de inovações</li>
+<li><strong>Cultural</strong>: Colaboração aberta torna-se padrão na indústria</li>
+<li><strong>Ético</strong>: Debate sobre direitos digitais e privacidade permanecem centrais</li>
+</ol>
+<blockquote>
+<p>&ldquo;O software livre é uma questão de liberdade, não de preço.&rdquo; — Richard Stallman</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2024-10-08-Permissoes-Linux/" data-toggle="tooltip" data-placement="top" title="Controle Total: Dominando Permissões no Linux para Segurança de Dados">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2024-10-11-Compilar-codigos/" data-toggle="tooltip" data-placement="top" title="Compila códigos no Linux para transformar suas ideias em programas funcionais.">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

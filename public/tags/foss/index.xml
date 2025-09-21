@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FOSS on </title>
+    <link>//localhost:1313/tags/foss/</link>
+    <description>Recent content in FOSS on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/foss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mulheres no Código Aberto: Pioneiras Esquecidas</title>
+      <link>//localhost:1313/post/2025-08-19-women-in-foss/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/2025-08-19-women-in-foss/</guid>
+      <description>&lt;h1 id=&#34;mulheres-no-código-aberto-pioneiras-esquecidas&#34;&gt;Mulheres no Código Aberto: Pioneiras Esquecidas&lt;/h1&gt;&#xA;&lt;p&gt;A história da tecnologia e do código aberto está repleta de contribuições femininas fundamentais — muitas vezes esquecidas. Neste post, destacamos o perfil de duas mulheres pioneiras na computação, projetos liderados por mulheres e iniciativas contemporâneas que buscam promover a diversidade e inclusão no ecossistema FOSS (Free and Open Source Software).&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-perfil-kathleen-booth&#34;&gt;👩‍💻 Perfil: Kathleen Booth&lt;/h2&gt;&#xA;&lt;p&gt;Kathleen Booth (1922–2022) foi uma das primeiras pessoas a escrever uma linguagem de montagem para computadores digitais. Trabalhou com os primeiros computadores britânicos, como o ARC e o BIRM, e teve papel essencial no desenvolvimento de software para essas máquinas. Ela também coescreveu livros sobre programação e arquitetura de computadores, sendo uma das primeiras mulheres a atuar na interface entre hardware e software.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

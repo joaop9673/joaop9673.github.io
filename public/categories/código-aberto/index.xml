@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Código Aberto on JPHS</title>
+    <link>http://localhost:1313/categories/c%C3%B3digo-aberto/</link>
+    <description>Recent content in Código Aberto on JPHS</description>
+    <generator>Hugo</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Fri, 19 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/c%C3%B3digo-aberto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim na Veia: Codifique e Compile Sem Tocar no Mouse</title>
+      <link>http://localhost:1313/post/2025-09-19-Vim-Veia-Codifique-Compile-Sem-Tocar-Mouse/</link>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-09-19-Vim-Veia-Codifique-Compile-Sem-Tocar-Mouse/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;parte-1-o-que-é-o-vim&#34;&gt;Parte 1: O que é o Vim?&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;O &lt;strong&gt;Vim (Vi IMproved)&lt;/strong&gt; é um editor de texto poderoso, altamente configurável e projetado para ser usado com máxima eficiência — tudo pelo teclado. Criado por Bram Moolenaar em 1991, ele é uma evolução do editor &lt;strong&gt;Vi&lt;/strong&gt;, amplamente usado nos sistemas Unix.&lt;/p&gt;&#xA;&lt;p&gt;Mesmo com o surgimento de editores modernos como VS Code e Sublime Text, o Vim continua sendo o favorito de muitos desenvolvedores por sua leveza, rapidez e flexibilidade.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Desvendado a Criptografia GPG</title>
+      <link>http://localhost:1313/post/2024-12-05-criptgrafia-gpg/</link>
+      <pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-12-05-criptgrafia-gpg/</guid>
+      <description>&lt;h3 id=&#34;criptografia-gpg&#34;&gt;Criptografia GPG&lt;/h3&gt;&#xA;&lt;p&gt;A criptografia GPG (GNU Privacy Guard) é uma implementação do padrão OpenPGP (Pretty Good Privacy), que é um método amplamente utilizado para criptografar e assinar digitalmente dados e comunicações. O GPG é uma ferramenta de código aberto que permite a criptografia de arquivos e mensagens, garantindo a confidencialidade e a autenticidade das informações. Aqui estão os principais conceitos e funcionalidades da criptografia GPG:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-chaves-criptográficas&#34;&gt;1. Chaves Criptográficas&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Chave Pública&lt;/strong&gt;: É usada para criptografar dados. Você pode compartilhar sua chave pública com qualquer pessoa que deseje enviar mensagens criptografadas para você.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compila códigos no Linux para transformar suas ideias em programas funcionais.</title>
+      <link>http://localhost:1313/post/2024-10-11-Compilar-codigos/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-11-Compilar-codigos/</guid>
+      <description>&lt;h3 id=&#34;o-que-é-compilar&#34;&gt;O que é Compilar?&lt;/h3&gt;&#xA;&lt;p&gt;Compilar é o processo de traduzir código-fonte escrito em uma linguagem de programação de alto nível (como C, C++, Java, etc.) para uma linguagem de baixo nível, geralmente código de máquina ou bytecode, que pode ser executado por um computador.&lt;/p&gt;&#xA;&lt;h3 id=&#34;como-funciona-a-compilação&#34;&gt;Como Funciona a Compilação?&lt;/h3&gt;&#xA;&lt;p&gt;O processo de compilação geralmente envolve várias etapas:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Análise Léxica&lt;/strong&gt;: O compilador lê o código-fonte e o divide em tokens, que são as unidades básicas de significado (como palavras-chave, identificadores, operadores, etc.).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Análise Sintática&lt;/strong&gt;: O compilador verifica a estrutura do código para garantir que ele siga as regras da linguagem (gramática). Isso resulta em uma árvore sintática que representa a estrutura do programa.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Análise Semântica&lt;/strong&gt;: O compilador verifica se as operações do código fazem sentido (por exemplo, se as variáveis foram declaradas antes de serem usadas).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Geração de Código&lt;/strong&gt;: O compilador traduz a árvore sintática em código de máquina ou bytecode, que pode ser executado pelo processador ou pela máquina virtual.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Otimização&lt;/strong&gt;: O compilador pode aplicar várias otimizações para melhorar a eficiência do código gerado, como reduzir o uso de memória ou aumentar a velocidade de execução.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;por-que-compilar&#34;&gt;Por que Compilar?&lt;/h3&gt;&#xA;&lt;p&gt;A compilação é importante por várias razões:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>História do Código Aberto e do Movimento GNU</title>
+      <link>http://localhost:1313/post/2024-10-11-historia-do-codigo-aberto/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-11-historia-do-codigo-aberto/</guid>
+      <description>&lt;h2 id=&#34;anos-1980-o-nascimento-do-software-livre&#34;&gt;Anos 1980: O Nascimento do Software Livre&lt;/h2&gt;&#xA;&lt;p&gt;A década de 1980 testemunhou uma guinada crucial na computação. Enquanto computadores pessoais se popularizavam, Richard Stallman—então pesquisador do MIT—liderou uma resposta à crescente restrição de softwares proprietários. Em 1983, ele anunciou o projeto &lt;strong&gt;GNU&lt;/strong&gt; (GNU&amp;rsquo;s Not Unix), um esforço para criar um sistema operacional completamente livre.&lt;/p&gt;&#xA;&lt;h3 id=&#34;os-pilares-da-liberdade&#34;&gt;Os Pilares da Liberdade&lt;/h3&gt;&#xA;&lt;p&gt;Stallman estabeleceu quatro liberdades essenciais para o usuário:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Executar o programa para qualquer propósito&lt;/li&gt;&#xA;&lt;li&gt;Estudar e modificar o código-fonte&lt;/li&gt;&#xA;&lt;li&gt;Redistribuir cópias&lt;/li&gt;&#xA;&lt;li&gt;Distribuir versões modificadas&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;conquistas-e-desafios&#34;&gt;Conquistas e Desafios&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;1985&lt;/strong&gt;: Criação da Free Software Foundation (FSF) para financiar o projeto&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;1989&lt;/strong&gt;: Lançamento da GPL (Licença Pública Geral), garantindo perpetuidade das liberdades&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dificuldade&lt;/strong&gt;: O kernel do projeto (GNU Hurd) enfrentava atrasos no desenvolvimento&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;anos-1990-a-revolução-gnulinux&#34;&gt;Anos 1990: A Revolução GNU/Linux&lt;/h2&gt;&#xA;&lt;h3 id=&#34;o-kernel-que-faltava-1991&#34;&gt;O Kernel que Faltava (1991)&lt;/h3&gt;&#xA;&lt;p&gt;Linus Torvalds, estudante finlandês, lançou um kernel Unix-like livre: o &lt;strong&gt;Linux&lt;/strong&gt;. Quando combinado às ferramentas GNU (compiladores, bibliotecas, shell), formou-se o primeiro sistema operacional livre completo: o &lt;strong&gt;GNU/Linux&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

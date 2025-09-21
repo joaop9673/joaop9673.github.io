@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on JPHS</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on JPHS</description>
+    <generator>Hugo</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Código Aberto</title>
+      <link>http://localhost:1313/tags/c%C3%B3digo-aberto/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/c%C3%B3digo-aberto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FOSS</title>
+      <link>http://localhost:1313/tags/FOSS/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/FOSS/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inclusão</title>
+      <link>http://localhost:1313/tags/inclus%C3%A3o/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/inclus%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mulheres Na Tecnologia</title>
+      <link>http://localhost:1313/tags/mulheres-na-tecnologia/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mulheres-na-tecnologia/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

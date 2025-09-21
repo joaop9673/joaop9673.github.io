@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Vim na Veia: Codifique e Compile Sem Tocar no Mouse" />
+    <meta property="og:title" content="Vim na Veia: Codifique e Compile Sem Tocar no Mouse" />
+    <meta property="twitter:title" content="Vim na Veia: Codifique e Compile Sem Tocar no Mouse" />
+    
+
+    
+    <meta name="description" content="Descubra como usar o Vim para escrever, compilar e executar seus códigos diretamente pelo terminal no GNU/Linux.">
+    <meta property="og:description" content="Descubra como usar o Vim para escrever, compilar e executar seus códigos diretamente pelo terminal no GNU/Linux." />
+    <meta property="twitter:description" content="Descubra como usar o Vim para escrever, compilar e executar seus códigos diretamente pelo terminal no GNU/Linux." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2025-09-19-Vim-Veia-Codifique-Compile-Sem-Tocar-Mouse/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Vim na Veia: Codifique e Compile Sem Tocar no Mouse | </title>
+
+    <link rel="canonical" href="/post/2025-09-19-Vim-Veia-Codifique-Compile-Sem-Tocar-Mouse/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Vim na Veia: Codifique e Compile Sem Tocar no Mouse</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Friday, September 19, 2025
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <hr>
+<h2 id="parte-1-o-que-é-o-vim">Parte 1: O que é o Vim?</h2>
+<hr>
+<p>O <strong>Vim (Vi IMproved)</strong> é um editor de texto poderoso, altamente configurável e projetado para ser usado com máxima eficiência — tudo pelo teclado. Criado por Bram Moolenaar em 1991, ele é uma evolução do editor <strong>Vi</strong>, amplamente usado nos sistemas Unix.</p>
+<p>Mesmo com o surgimento de editores modernos como VS Code e Sublime Text, o Vim continua sendo o favorito de muitos desenvolvedores por sua leveza, rapidez e flexibilidade.</p>
+<hr>
+<h2 id="parte-2-por-que-usar-o-vim">Parte 2: Por que Usar o Vim?</h2>
+<hr>
+<h3 id="-recursos-que-destacam-o-vim">🛠️ Recursos que destacam o Vim:</h3>
+<ul>
+<li><strong>Modos de operação</strong> (Normal, Inserção, Visual) que separam navegação de edição.</li>
+<li><strong>Atalhos de teclado poderosos</strong> que aceleram o fluxo de trabalho.</li>
+<li><strong>Altamente personalizável</strong> via <code>.vimrc</code> e plugins.</li>
+<li><strong>Disponível em qualquer terminal</strong>, ideal para servidores, containers ou desenvolvimento remoto.</li>
+</ul>
+<hr>
+<h2 id="parte-3-instalando-o-vim-no-gnulinux">Parte 3: Instalando o Vim no GNU/Linux</h2>
+<hr>
+<p>O Vim está disponível na maioria das distribuições Linux. Veja como instalar em algumas delas:</p>
+<h3 id="ubuntudebian">Ubuntu/Debian</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install vim
+</span></span></code></pre></div><h3 id="fedora">Fedora</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install vim
+</span></span></code></pre></div><h3 id="arch-linux">Arch Linux</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S vim
+</span></span></code></pre></div><h2 id="outras-distribuições">Outras distribuições</h2>
+<h3 id="opensuse">OpenSUSE:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo zypper install vim
+</span></span></code></pre></div><h3 id="gentoo">Gentoo:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo emerge app-editors/vim
+</span></span></code></pre></div><p>Verifique a instalação com:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim --version
+</span></span></code></pre></div><hr>
+<h2 id="parte-4-configurando-o-vim-para-programar">Parte 4: Configurando o Vim para Programar</h2>
+<hr>
+<p>Crie ou edite seu arquivo de configuração:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.vimrc
+</span></span></code></pre></div><p>Sugestões de configuração:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">Copiar</span> <span style="color:#a6e22e">código</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#a6e22e">on</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">number</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">relativenumber</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">tabstop</span>=<span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">shiftwidth</span>=<span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">expandtab</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">autoindent</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">smartindent</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">cursorline</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">hlsearch</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">incsearch</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">showcmd</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">scrolloff</span>=<span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">wrap</span>
+</span></span></code></pre></div><p>Essas opções melhoram a legibilidade, navegação e estrutura do código.</p>
+<hr>
+<h2 id="parte-5-usando-o-vim-na-prática">Parte 5: Usando o Vim na Prática</h2>
+<hr>
+<h3 id="-modos-de-operação-do-vim">🧭 Modos de Operação do Vim</h3>
+<p>O Vim funciona com diferentes <strong>modos</strong>, cada um com funções específicas:</p>
+<ul>
+<li><strong>Modo Normal</strong>: padrão para navegação e execução de comandos (pressione <code>Esc</code>).</li>
+<li><strong>Modo de Inserção</strong>: para digitar texto (<code>i</code>, <code>I</code>, <code>a</code>, <code>A</code>, <code>o</code>, <code>O</code>).</li>
+<li><strong>Modo Visual</strong>: para selecionar texto (<code>v</code> para caractere, <code>V</code> para linha, <code>Ctrl+v</code> para bloco).</li>
+<li><strong>Modo de Comando</strong>: usado para salvar, sair, buscar, etc. (pressione <code>:</code> no modo normal).</li>
+</ul>
+<hr>
+<h3 id="-navegação-básica">⌨️ Navegação Básica</h3>
+<p>Evite usar as setas! O Vim é mais rápido com os seguintes atalhos:</p>
+<ul>
+<li>
+<p><code>h</code> → esquerda</p>
+</li>
+<li>
+<p><code>j</code> → baixo</p>
+</li>
+<li>
+<p><code>k</code> → cima</p>
+</li>
+<li>
+<p><code>l</code> → direita</p>
+<hr>
+</li>
+</ul>
+<h4 id="-movimento-por-palavras-e-linhas">🧱 Movimento por palavras e linhas:</h4>
+<ul>
+<li><code>w</code> / <code>b</code>: próxima / anterior palavra</li>
+<li><code>0</code> / <code>$</code>: início / fim da linha</li>
+<li><code>gg</code> / <code>G</code>: topo / final do arquivo</li>
+</ul>
+<hr>
+<h3 id="-inserção-de-texto">✍️ Inserção de Texto</h3>
+<ul>
+<li><code>i</code>: inserir antes do cursor</li>
+<li><code>I</code>: inserir no início da linha</li>
+<li><code>a</code>: inserir após o cursor</li>
+<li><code>A</code>: inserir no fim da linha</li>
+<li><code>o</code>: nova linha abaixo</li>
+<li><code>O</code>: nova linha acima</li>
+</ul>
+<hr>
+<h3 id="-salvar-sair-e-gerenciar-arquivos">💾 Salvar, Sair e Gerenciar Arquivos</h3>
+<ul>
+<li><code>:w</code> → salvar</li>
+<li><code>:q</code> → sair</li>
+<li><code>:wq</code> ou <code>:x</code> → salvar e sair</li>
+<li><code>:q!</code> → sair sem salvar</li>
+<li><code>:e!</code> → recarregar arquivo descartando mudanças</li>
+</ul>
+<hr>
+<h3 id="-edição-de-texto">✂️ Edição de Texto</h3>
+<ul>
+<li>
+<p><code>dd</code> → deletar linha</p>
+</li>
+<li>
+<p><code>yy</code> → copiar linha</p>
+</li>
+<li>
+<p><code>p</code> → colar após</p>
+</li>
+<li>
+<p><code>P</code> → colar antes</p>
+</li>
+<li>
+<p><code>u</code> → desfazer</p>
+</li>
+<li>
+<p><code>Ctrl + r</code> → refazer</p>
+</li>
+</ul>
+<hr>
+<h3 id="-dica-rápida-fluxo-comum">⚡ Dica Rápida: Fluxo Comum</h3>
+<ol>
+<li><code>vim arquivo.c</code> → abre o arquivo</li>
+<li><code>i</code> → entra no modo de inserção</li>
+<li>Escreve o código</li>
+<li><code>Esc</code> → volta ao modo normal</li>
+<li><code>:wq</code> → salva e sai</li>
+</ol>
+<hr>
+<p>Com esses comandos, você já consegue escrever e editar código eficientemente dentro do Vim, sem tocar no mouse e sem depender de uma IDE.</p>
+<p>Na próxima parte, veremos como compilar e executar esses códigos diretamente do terminal.</p>
+<hr>
+<h2 id="parte-6-compilando-código-no-terminal">Parte 6: Compilando Código no Terminal</h2>
+<hr>
+<p>Vamos ver como escrever, compilar e executar um programa usando o GCC.</p>
+<p>📄 Exemplo em C: Hello World
+Crie o arquivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim hello.c
+</span></span></code></pre></div><p>Digite o código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Ola, Mundo!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Salve e saia com <code>:wq.</code></p>
+<p>🛠️ Compile com GCC:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc hello.c -o hello
+</span></span></code></pre></div><p>▶️ Execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./hello
+</span></span></code></pre></div><p>🧠 Dica:
+Use opções adicionais para melhorar a compilação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc -Wall -g -O2 -std<span style="color:#f92672">=</span>c11 ola.c -o ola
+</span></span></code></pre></div><hr>
+<h2 id="parte-7-lidando-com-erros-de-compilação">Parte 7: Lidando com Erros de Compilação</h2>
+<hr>
+<p>Durante o desenvolvimento, é comum encontrar <strong>erros de compilação</strong>. O compilador <strong>GCC</strong> fornece mensagens que indicam o tipo de erro e a linha onde ele ocorreu. Saber interpretá-las é essencial para depurar seu código com eficiência.</p>
+<h3 id="-exemplo-de-código-com-erro">🐞 Exemplo de código com erro</h3>
+<p>Vamos criar um código em C com um erro de sintaxe proposital para entender como o GCC se comporta.</p>
+<h4 id="1-crie-o-arquivo">1. Crie o arquivo:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim erro.c
+</span></span></code></pre></div><h4 id="2-escreva-o-seguinte-código-com-erro">2. Escreva o seguinte código com erro:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Ola Mundo!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>  <span style="color:#75715e">// ← erro: parêntese não fechado
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-tentando-compilar">🛠️ Tentando compilar</h3>
+<p>No terminal, execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc erro.c -o erro
+</span></span></code></pre></div><p>Você verá uma mensagem de erro como esta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>erro.c: In <span style="color:#66d9ef">function</span> ‘main’:
+</span></span><span style="display:flex;"><span>erro.c:4:5: error: expected ‘<span style="color:#f92672">)</span>’ before ‘return’
+</span></span></code></pre></div><p>Essa mensagem diz que o compilador esperava um parêntese fechado ) antes da palavra return, na linha 4.</p>
+<h3 id="-corrigindo-o-erro-no-vim">🧹 Corrigindo o erro no Vim</h3>
+<p>Abra o arquivo novamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim erro.c
+</span></span></code></pre></div><p>Corrija o código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Ola, Mundo!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Salve e saia (:wq)</p>
+<h3 id="-compilando-novamente">✔️ Compilando novamente</h3>
+<p>Agora compile novamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc erro.c -o erro
+</span></span></code></pre></div><p>Se não houver mensagens de erro, o executável erro foi gerado com sucesso.</p>
+<h3 id="-executando-o-programa-corrigido">▶️ Executando o programa corrigido</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./erro
+</span></span></code></pre></div><p>Saída:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Ola, Mundo!
+</span></span></code></pre></div><hr>
+<h2 id="parte-8-compilando-código-java-com-vim-e-terminal">Parte 8: Compilando Código Java com Vim e Terminal</h2>
+<hr>
+<p>Além de C, você também pode programar em <strong>Java</strong> usando o Vim e compilar diretamente pelo terminal usando o <strong>JDK (Java Development Kit)</strong>.</p>
+<h3 id="-pré-requisitos">☕ Pré-requisitos</h3>
+<p>Certifique-se de que o <strong>JDK</strong> está instalado no seu sistema. Para verificar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>javac -version
+</span></span></code></pre></div><p>Se não estiver instalado, use:</p>
+<p>Ubuntu/Debian:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install default-jdk
+</span></span></code></pre></div><p>Fedora:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install java-1.8.0-openjdk-devel
+</span></span></code></pre></div><p>Arch Linux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S jdk-openjdk
+</span></span></code></pre></div><h3 id="-escrevendo-um-programa-java-com-vim">📝 Escrevendo um programa Java com Vim</h3>
+<ol>
+<li>Crie um arquivo .java:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim Exemplo.java
+</span></span></code></pre></div><ol start="2">
+<li>Escreva o seguinte código:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Ola, Mundo!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
+<li>Salve e saia:</li>
+</ol>
+<p>Pressione <code>Esc</code></p>
+<p>Digite <code>:wq</code> e pressione <code>Enter</code></p>
+<h3 id="-compilando-o-código-java">🛠️ Compilando o código Java</h3>
+<p>Para compilar o arquivo, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>javac Exemplo.java
+</span></span></code></pre></div><p>Esse comando cria um arquivo Exemplo.class, que é o bytecode do Java pronto para ser executado pela JVM.</p>
+<h3 id="-executando-o-programa">▶️ Executando o programa</h3>
+<p>Depois de compilar, execute com:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java Exemplo
+</span></span></code></pre></div><p>Saída esperada:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Ola, Mundo!
+</span></span></code></pre></div><h3 id="-dicas-importantes">⚠️ Dicas importantes</h3>
+<p>O nome da classe pública precisa ser o mesmo do arquivo (Exemplo.java → public class Exemplo).</p>
+<p>O Java diferencia maiúsculas de minúsculas em nomes de arquivos e classes.</p>
+<p>Se você receber o erro Could not find or load main class, verifique se compilou corretamente e está no mesmo diretório do .class.</p>
+<h3 id="-compilando-múltiplos-arquivos-java">📦 Compilando múltiplos arquivos Java</h3>
+<p>Se estiver trabalhando com vários arquivos, você pode compilá-los todos com:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>javac *.java
+</span></span></code></pre></div><p>E executar a classe principal normalmente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java NomeDaClassePrincipal
+</span></span></code></pre></div><hr>
+<h2 id="considerações-finais">Considerações Finais</h2>
+<hr>
+<p>O Vim pode parecer intimidador no começo, mas com o tempo se torna uma das ferramentas mais poderosas no arsenal de qualquer programador.</p>
+<p>Ao combiná-lo com o terminal e compiladores como o <strong>GCC</strong> (para C/C++) ou o <strong>Javac</strong> (para Java), você ganha:</p>
+<ul>
+<li>Total controle do ambiente de desenvolvimento</li>
+<li>Maior produtividade sem o uso do mouse</li>
+<li>Um setup leve, rápido e portátil</li>
+<li>Independência de IDEs pesadas</li>
+</ul>
+<p>A prática leva à fluência. Com o tempo, você vai perceber que está codificando, salvando, compilando e executando seus programas com apenas alguns comandos rápidos — tudo sem sair do teclado.</p>
+<p>Seja você um iniciante explorando o terminal ou um desenvolvedor avançado querendo mais agilidade, dominar o Vim é um investimento que vale a pena.</p>
+<hr>
+<h2 id="referências-e-leituras-recomendadas">Referências e Leituras Recomendadas</h2>
+<hr>
+<ul>
+<li>📘 <a href="https://www.vim.org/docs.php">Documentação oficial do Vim</a></li>
+<li>🔧 <a href="https://gcc.gnu.org/">GCC - GNU Compiler Collection</a></li>
+<li>☕ <a href="https://docs.oracle.com/javase/specs/">Documentação oficial do Java SE</a></li>
+<li>📓 <a href="https://vim-adventures.com/">Vim Adventures</a> – jogo interativo para aprender Vim</li>
+<li>🎥 <a href="https://www.youtube.com/@ThePrimeagen">The Primeagen - Vim &amp; Neovim no YouTube</a></li>
+<li>🔍 <code>:help</code> dentro do próprio Vim — a melhor forma de aprender comandos no contexto</li>
+</ul>
+<hr>
+<blockquote>
+<p><em>“Aprenda Vim uma vez, e edite texto como um mestre para o resto da sua vida.”</em></p>
+</blockquote>
+<hr>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2025-08-19-Women-in-FOSS/" data-toggle="tooltip" data-placement="top" title="Mulheres no Código Aberto: Pioneiras Esquecidas">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

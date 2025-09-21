@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Desvendado a Criptografia GPG" />
+    <meta property="og:title" content="Desvendado a Criptografia GPG" />
+    <meta property="twitter:title" content="Desvendado a Criptografia GPG" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2024-12-05-criptgrafia-gpg/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Desvendado a Criptografia GPG | </title>
+
+    <link rel="canonical" href="/post/2024-12-05-criptgrafia-gpg/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Desvendado a Criptografia GPG</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Thursday, December 5, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="criptografia-gpg">Criptografia GPG</h3>
+<p>A criptografia GPG (GNU Privacy Guard) é uma implementação do padrão OpenPGP (Pretty Good Privacy), que é um método amplamente utilizado para criptografar e assinar digitalmente dados e comunicações. O GPG é uma ferramenta de código aberto que permite a criptografia de arquivos e mensagens, garantindo a confidencialidade e a autenticidade das informações. Aqui estão os principais conceitos e funcionalidades da criptografia GPG:</p>
+<h3 id="1-chaves-criptográficas">1. Chaves Criptográficas</h3>
+<ul>
+<li>
+<p><strong>Chave Pública</strong>: É usada para criptografar dados. Você pode compartilhar sua chave pública com qualquer pessoa que deseje enviar mensagens criptografadas para você.</p>
+</li>
+<li>
+<p><strong>Chave Privada</strong>: É usada para descriptografar dados que foram criptografados com sua chave pública. A chave privada deve ser mantida em segredo e nunca deve ser compartilhada.</p>
+</li>
+</ul>
+<h3 id="2-criptografia-assimétrica">2. Criptografia Assimétrica</h3>
+<p>O GPG utiliza criptografia assimétrica, que envolve um par de chaves (pública e privada). Isso significa que, enquanto a chave pública pode ser distribuída livremente, a chave privada deve ser mantida em segredo. Quando alguém deseja enviar uma mensagem segura, eles a criptografam com a chave pública do destinatário. Apenas o destinatário, que possui a chave privada correspondente, pode descriptografar a mensagem.</p>
+<h3 id="3-assinatura-digital">3. Assinatura Digital</h3>
+<p>O GPG também permite a assinatura digital de mensagens e arquivos. Isso é feito usando a chave privada do remetente. A assinatura digital garante a autenticidade da mensagem, permitindo que o destinatário verifique se a mensagem realmente veio do remetente e não foi alterada durante a transmissão.</p>
+<h3 id="4-integridade-dos-dados">4. Integridade dos Dados</h3>
+<p>Além de garantir a confidencialidade e a autenticidade, o GPG também assegura a integridade dos dados. Isso significa que, se uma mensagem for alterada de alguma forma, a assinatura digital não será mais válida, alertando o destinatário sobre a possível manipulação.</p>
+<h3 id="5-uso-do-gpg">5. Uso do GPG</h3>
+<p>O GPG pode ser usado em várias situações, incluindo:</p>
+<ul>
+<li>Criptografar e assinar e-mails.</li>
+<li>Proteger arquivos sensíveis em disco.</li>
+<li>Garantir a integridade de pacotes de software e atualizações.</li>
+</ul>
+<h3 id="6-exemplo-de-uso">6. Exemplo de Uso</h3>
+<p>Passos básicos (exemplo com e-mail):</p>
+<ol>
+<li>Instale uma ferramenta GPG:
+Linux:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> sudo apt install gnupg
+</span></span></code></pre></div><p>Windows/macOS: Gpg4win ou GPG Suite.</p>
+<ol start="2">
+<li>Gere seu par de chaves:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --full-generate-key
+</span></span></code></pre></div><ol start="3">
+<li>Exporte sua chave pública:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export -a <span style="color:#e6db74">&#34;seu@email.com&#34;</span> &gt; chave_publica.asc
+</span></span></code></pre></div><ol start="4">
+<li>Criptografe um arquivo:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --encrypt --recipient <span style="color:#e6db74">&#34;amigo@email.com&#34;</span> documento.txt
+</span></span></code></pre></div><h3 id="7-considerações-de-segurança">7. Considerações de Segurança</h3>
+<ul>
+<li><strong>Metadados não são criptografados</strong>: Assunto de e-mails, remetentes e datas ficam visíveis.</li>
+<li><strong>Proteja sua chave privada</strong>: Se perdê-la ou expô-la, toda sua comunicação estará comprometida.</li>
+<li><strong>Revogação</strong>: Gere um certificado de revogação antes de precisar invalidar uma chave vazada.</li>
+</ul>
+<h3 id="8-gpg-o-guardião-digital-da-sua-privacidade-na-era-da-vigilância">8. GPG: O Guardião Digital da Sua Privacidade na Era da Vigilância</h3>
+<p>Em um mundo onde vazamentos de dados e violações de privacidade são rotina, a criptografia GPG (GNU Privacy Guard) emerge como uma das ferramentas mais poderosas para proteger sua comunicação digital. Baseado no padrão OpenPGP, o GPG é o escudo invisível que cifra e-mails, arquivos e mensagens, garantindo que apenas os destinatários autorizados acessem seu conteúdo.</p>
+<hr>
+<blockquote>
+<p>📚 <strong>Referências para mergulhar fundo:</strong></p>
+</blockquote>
+<ul>
+<li>Manual oficial do GnuPG: <a href="https://gnupg.org/documentation/">https://gnupg.org/documentation/</a></li>
+<li>Guia EFF &ldquo;GPG para Iniciantes&rdquo;: <a href="https://ssd.eff.org/pt-br">https://ssd.eff.org/pt-br</a></li>
+<li>Livro &ldquo;Criptografia para Leigos&rdquo; (Chey Cobb)</li>
+</ul>
+<blockquote>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2024-10-11-Compilar-codigos/" data-toggle="tooltip" data-placement="top" title="Compila códigos no Linux para transformar suas ideias em programas funcionais.">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2024-12-29-variaveis/" data-toggle="tooltip" data-placement="top" title="Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Monitoramento de Sistemas Linux: Comandos Essenciais" />
+    <meta property="og:title" content="Monitoramento de Sistemas Linux: Comandos Essenciais" />
+    <meta property="twitter:title" content="Monitoramento de Sistemas Linux: Comandos Essenciais" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2025-01-23-Monitoramento-de-sistemas/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Monitoramento de Sistemas Linux: Comandos Essenciais | </title>
+
+    <link rel="canonical" href="/post/2025-01-23-Monitoramento-de-sistemas/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Monitoramento de Sistemas Linux: Comandos Essenciais</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Thursday, January 23, 2025
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="monitoramento-de-sistemas-linux-comandos-essenciais">Monitoramento de Sistemas Linux: Comandos Essenciais</h1>
+<p>Dominar ferramentas de monitoramento é crucial para administradores de sistemas Linux. Conheça os comandos fundamentais para diagnosticar desempenho, redes e recursos:</p>
+<h2 id="-1-iostat-io-statistics">🖥️ 1. iostat (I/O Statistics)</h2>
+<p><strong>Função</strong>: Monitora CPU e operações de disco<br>
+<strong>Instalação</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Debian/Ubuntu</span>
+</span></span><span style="display:flex;"><span>sudo apt install sysstat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Red Hat/CentOS</span>
+</span></span><span style="display:flex;"><span>sudo yum install sysstat
+</span></span></code></pre></div><p><strong>Uso</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>iostat -x <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">5</span>  <span style="color:#75715e"># Detalhes de I/O, atualiza a cada 1s (5 vezes)</span>
+</span></span></code></pre></div><h2 id="saída-chave">Saída-chave:</h2>
+<ul>
+<li>
+<p><strong>%util</strong>: % de tempo do disco ocupado</p>
+</li>
+<li>
+<p><strong>await</strong>: Tempo médio de espera por I/O (ms)</p>
+</li>
+<li>
+<p><strong>tps</strong>: Transações por segundo</p>
+</li>
+</ul>
+<h2 id="-2-netstat-network-statistics">🌐 2. netstat (Network Statistics)</h2>
+<p><strong>Função</strong>: Exibe conexões de rede e portas
+<strong>Instalação</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Debian/Ubuntu</span>
+</span></span><span style="display:flex;"><span>sudo apt install net-tools
+</span></span></code></pre></div><h3 id="comandos-úteis">Comandos úteis:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netstat -tuln    <span style="color:#75715e"># Portas TCP/UDP em escuta</span>
+</span></span><span style="display:flex;"><span>netstat -s       <span style="color:#75715e"># Estatísticas por protocolo</span>
+</span></span><span style="display:flex;"><span>netstat -r       <span style="color:#75715e"># Tabela de roteamento</span>
+</span></span></code></pre></div><h3 id="alternativa-moderna">Alternativa moderna:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ss -tunlp  <span style="color:#75715e"># Equivalente com melhor performance</span>
+</span></span></code></pre></div><h2 id="-3-w-who--what">👥 3. w (<strong>Who</strong> &amp; What)</h2>
+<p><strong>Função</strong>: Mostra usuários logados e processos
+<strong>Exemplo</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>w  <span style="color:#75715e"># Exibe: usuário, terminal, tempo idle, processo atual</span>
+</span></span></code></pre></div><h2 id="-4-sar-system-activity-reporter">📊 4. sar (System Activity Reporter)</h2>
+<p><strong>Função</strong>: Coleta histórica de desempenho
+<strong>Uso</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sar -u <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">5</span>      <span style="color:#75715e"># CPU a cada 2s (5 amostras)</span>
+</span></span><span style="display:flex;"><span>sar -r <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span>      <span style="color:#75715e"># Memória</span>
+</span></span><span style="display:flex;"><span>sar -d -p <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span>   <span style="color:#75715e"># Disco por dispositivo</span>
+</span></span></code></pre></div><h2 id="-5-ps-process-status">🧩 5. ps (Process Status)</h2>
+<p><strong>Função</strong>: Lista processos ativos
+<strong>Comando essencial</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps aux --sort<span style="color:#f92672">=</span>-%cpu | head  <span style="color:#75715e"># Top 10 processos por CPU</span>
+</span></span></code></pre></div><p><strong>Campos importantes</strong>:</p>
+<ul>
+<li>
+<p><strong>PID</strong>: ID do processo</p>
+</li>
+<li>
+<p><strong>%CPU</strong>: Uso de CPU</p>
+</li>
+<li>
+<p><strong>%MEM</strong>: Uso de memória</p>
+</li>
+<li>
+<p><strong>STAT</strong>: Estado do processo</p>
+</li>
+</ul>
+<h2 id="-6-top-task-manager">🚀 6. top (Task Manager)</h2>
+<p><strong>Função</strong>: Monitoramento em tempo real</p>
+<table>
+  <thead>
+      <tr>
+          <th>Atalhos dentro do top:</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<ul>
+<li>
+<p><strong>P</strong>: Ordenar por CPU</p>
+</li>
+<li>
+<p><strong>M</strong>: Ordenar por memória</p>
+</li>
+<li>
+<p><strong>k</strong>: Matar processo</p>
+</li>
+<li>
+<p><strong>1</strong>: Mostrar CPUs individuais</p>
+</li>
+</ul>
+<h2 id="-7-vmstat-virtual-memory-stats">🧠 7. vmstat (Virtual Memory Stats)</h2>
+<p><strong>Função</strong>: Analisa memória, processos e I/O
+<strong>Uso</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vmstat <span style="color:#ae81ff">1</span>  <span style="color:#75715e"># Atualiza a cada 1 segundo</span>
+</span></span></code></pre></div><p>*<em>Saída crítica</em>:</p>
+<ul>
+<li>
+<p><code>si/so</code>: Swap in/out (alto = problema)</p>
+</li>
+<li>
+<p><code>us/sy</code>: % CPU user/system</p>
+</li>
+<li>
+<p><code>free</code>: Memória livre (KB)</p>
+</li>
+</ul>
+<h2 id="-8-df-disk-free">💾 8. df (Disk Free)</h2>
+<p><strong>Função</strong>: Espaço em sistemas de arquivos
+<strong>Exemplo</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -hT  <span style="color:#75715e"># Legível + tipos de filesystem</span>
+</span></span></code></pre></div><h2 id="-9-du-disk-usage">📁 9. du (Disk Usage)</h2>
+<p><strong>Função</strong>: Uso de espaço por diretório
+<strong>Comandos</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>du -sh /var/log  <span style="color:#75715e"># Resumo do diretório</span>
+</span></span><span style="display:flex;"><span>du -h --max-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> /home  <span style="color:#75715e"># Top-level</span>
+</span></span></code></pre></div><p>🧠 10. free (Memory Usage)
+<strong>Função</strong>: Exibe uso de RAM e swap
+<strong>Uso</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>free -m  <span style="color:#75715e"># Exibe em MB</span>
+</span></span><span style="display:flex;"><span>free -h  <span style="color:#75715e"># Formato legível</span>
+</span></span></code></pre></div><h2 id="-fluxo-de-diagnóstico">🔍 Fluxo de Diagnóstico</h2>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD
+    A[Sintoma] --&gt; B{Identifique}
+    B --&gt;|Desempenho| C[&#34;top/htop&#34;]
+    B --&gt;|Rede| D[&#34;ss -tunlp&#34;]
+    B --&gt;|Disco| E[&#34;df -h; du -sh /*&#34;]
+    B --&gt;|Memória| F[&#34;free -h&#34;]
+    
+    C --&gt; G{{CPU alta?}}
+    G --&gt;|Sim| H[&#34;ps aux --sort=-%cpu&#34;]
+    G --&gt;|Não| I[&#34;iostat -x 1&#34;]
+    
+    D --&gt; J{{Portas fechadas?}}
+    J --&gt;|Sim| K[&#34;journalctl -u serviço&#34;]
+    J --&gt;|Não| L[&#34;ping; traceroute&#34;]
+    
+    E --&gt; M{{Espaço insuficiente?}}
+    M --&gt;|Sim| N[&#34;ncdu /&#34;]
+    M --&gt;|Não| O[&#34;iostat -d&#34;]
+    
+    F --&gt; P{{Swap alto?}}
+    P --&gt;|Sim| Q[&#34;ps aux --sort=-%mem&#34;]
+    P --&gt;|Não| R[&#34;vmstat 1&#34;]
+</code></pre><h2 id="dicas-profissionais">Dicas Profissionais</h2>
+<ul>
+<li>
+<p>1.Log histórico: Configure <code>sar</code> para coleta diária (editando <code>/etc/cron.d/sysstat</code>)</p>
+</li>
+<li>
+<p>2.Monitoramento contínuo:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch -n <span style="color:#ae81ff">2</span> <span style="color:#e6db74">&#39;df -h; echo; free -h&#39;</span>  <span style="color:#75715e"># Atualiza a cada 2s</span>
+</span></span></code></pre></div><ul>
+<li>3.Combinações poderosas:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Top 5 processos consumindo memória</span>
+</span></span><span style="display:flex;"><span>ps aux --sort<span style="color:#f92672">=</span>-%mem | head -6
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Conexões ESTABLISHED por IP</span>
+</span></span><span style="display:flex;"><span>netstat -tun | grep <span style="color:#e6db74">&#39;ESTAB&#39;</span> | awk <span style="color:#e6db74">&#39;{print $5}&#39;</span> | cut -d: -f1 | sort | uniq -c
+</span></span></code></pre></div><p><strong>Importante</strong>: Para troubleshooting, sempre comece com <code>w</code>, <code>top</code> e <code>free</code> - dão visão geral imediata do sistema.</p>
+<h2 id="-referências-essenciais">📚 Referências Essenciais</h2>
+<h3 id="documentação-oficial">Documentação Oficial</h3>
+<ol>
+<li>
+<p><strong>sysstat (iostat/sar)</strong><br>
+<a href="https://github.com/sysstat/sysstat">https://github.com/sysstat/sysstat</a><br>
+Repositório oficial com manuais detalhados</p>
+</li>
+<li>
+<p><strong>procps (ps/top/free)</strong><br>
+<a href="https://gitlab.com/procps-ng/procps">https://gitlab.com/procps-ng/procps</a><br>
+Documentação dos comandos de processos</p>
+</li>
+<li>
+<p><strong>iproute2 (ss)</strong><br>
+<a href="https://wiki.linuxfoundation.org/networking/iproute2">https://wiki.linuxfoundation.org/networking/iproute2</a><br>
+Sucessor moderno do netstat</p>
+</li>
+</ol>
+<h3 id="manuais-online">Manuais Online</h3>
+<ol start="4">
+<li>
+<p><strong>Linux man pages online</strong><br>
+<a href="https://man7.org/linux/man-pages/">https://man7.org/linux/man-pages/</a><br>
+Documentação completa de todos os comandos</p>
+</li>
+<li>
+<p><strong>TLDR Pages</strong><br>
+<a href="https://tldr.sh/">https://tldr.sh/</a><br>
+Exemplos rápidos de uso para cada comando</p>
+</li>
+</ol>
+<h3 id="guias-avançados">Guias Avançados</h3>
+<ol start="6">
+<li>
+<p><strong>Linux Performance Analysis in 60s</strong><br>
+<a href="https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55">https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55</a><br>
+Fluxo de diagnóstico da Netflix</p>
+</li>
+<li>
+<p><strong>Brendan Gregg&rsquo;s Blog</strong><br>
+<a href="http://www.brendangregg.com/linuxperf.html">http://www.brendangregg.com/linuxperf.html</a><br>
+Ferramentas e técnicas de performance por especialista da Netflix</p>
+</li>
+</ol>
+<h3 id="livros-recomendados">Livros Recomendados</h3>
+<ol start="8">
+<li>
+<p><strong>Linux Bible</strong><br>
+Christopher Negus (ISBN: 978-1119578888)<br>
+Capítulos 8-10 dedicados a administração e monitoramento</p>
+</li>
+<li>
+<p><strong>The Linux Command Line</strong><br>
+William Shotts (Disponível gratuitamente em: <a href="https://linuxcommand.org/tlcl.php">https://linuxcommand.org/tlcl.php</a>)</p>
+</li>
+</ol>
+<h3 id="ferramentas-relacionadas">Ferramentas Relacionadas</h3>
+<ol start="10">
+<li>
+<p><strong>Prometheus + Grafana</strong><br>
+<a href="https://prometheus.io/">https://prometheus.io/</a><br>
+Monitoramento moderno baseado em métricas</p>
+</li>
+<li>
+<p><strong>htop</strong><br>
+<a href="https://htop.dev/">https://htop.dev/</a><br>
+Versão melhorada do top com interface colorida</p>
+</li>
+</ol>
+<h3 id="documentação-oficial-1">Documentação Oficial</h3>
+<ol start="12">
+<li>
+<p><strong>sysstat (iostat/sar)</strong><br>
+<a href="https://github.com/sysstat/sysstat">https://github.com/sysstat/sysstat</a><br>
+Manuais completos e exemplos avançados</p>
+</li>
+<li>
+<p><strong>procps (ps/top/free)</strong><br>
+<a href="https://gitlab.com/procps-ng/procps">https://gitlab.com/procps-ng/procps</a><br>
+Documentação oficial dos comandos de processos</p>
+</li>
+<li>
+<p><strong>Diagramas Mermaid</strong><br>
+<a href="https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams">Documentação do GitHub</a><br>
+Guia completo para criação de diagramas técnicos</p>
+</li>
+</ol>
+<h3 id="manuais-e-guias">Manuais e Guias</h3>
+<ol start="15">
+<li>
+<p><strong>Linux man pages online</strong><br>
+<a href="https://man7.org/linux/man-pages/">https://man7.org/linux/man-pages/</a><br>
+Referência autoritativa de todos os comandos</p>
+</li>
+<li>
+<p><strong>Linux Performance Analysis in 60s</strong><br>
+<a href="https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55">Netflix TechBlog</a><br>
+Metodologia prática para diagnóstico rápido</p>
+</li>
+</ol>
+<h3 id="ferramentas-avançadas">Ferramentas Avançadas</h3>
+<ol start="17">
+<li>
+<p><strong>Prometheus + Grafana</strong><br>
+<a href="https://prometheus.io/">https://prometheus.io/</a><br>
+Monitoramento moderno baseado em métricas</p>
+</li>
+<li>
+<p><strong>Brendan Gregg&rsquo;s Tools</strong><br>
+<a href="http://www.brendangregg.com/linuxperf.html">http://www.brendangregg.com/linuxperf.html</a><br>
+Coleção de ferramentas e técnicas de performance</p>
+</li>
+</ol>
+<h3 id="livros-recomendados-1">Livros Recomendados</h3>
+<ol start="19">
+<li>
+<p><strong>Linux Performance Tuning</strong><br>
+ISBN: 978-1492053500<br>
+Capítulos essenciais sobre monitoramento e otimização</p>
+</li>
+<li>
+<p><strong>The Linux Command Line</strong><br>
+<a href="https://linuxcommand.org/tlcl.php">Download gratuito</a><br>
+Seções 10-12 dedicadas a administração de sistemas</p>
+</li>
+</ol>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2024-12-29-variaveis/" data-toggle="tooltip" data-placement="top" title="Domine Variáveis de Ambiente: Controle Dinâmico de Sistemas">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2025-06-25-Hardeninge-Sistemas-Linux-Fortalecendo-Sua-Defesa/" data-toggle="tooltip" data-placement="top" title="Hardening de Sistemas Linux: Fortalecendo Sua Defesa">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

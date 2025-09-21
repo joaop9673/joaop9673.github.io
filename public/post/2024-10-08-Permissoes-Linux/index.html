@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Controle Total: Dominando Permissões no Linux para Segurança de Dados" />
+    <meta property="og:title" content="Controle Total: Dominando Permissões no Linux para Segurança de Dados" />
+    <meta property="twitter:title" content="Controle Total: Dominando Permissões no Linux para Segurança de Dados" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2024-10-08-Permissoes-Linux/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Controle Total: Dominando Permissões no Linux para Segurança de Dados | </title>
+
+    <link rel="canonical" href="/post/2024-10-08-Permissoes-Linux/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Controle Total: Dominando Permissões no Linux para Segurança de Dados</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Tuesday, October 8, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="controle-total-dominando-permissões-no-linux-para-segurança-de-dados">Controle Total: Dominando Permissões no Linux para Segurança de Dados</h1>
+<h2 id="o-sistema-de-defesa-do-linux">O Sistema de Defesa do Linux</h2>
+<p>As permissões são o cerne da segurança no Linux, atuando como guardiãs que regulam:</p>
+<ul>
+<li>Quem pode acessar seus arquivos</li>
+<li>Quem pode modificá-los</li>
+<li>Quem pode executar programas</li>
+<li>Como os diretórios compartilhados se comportam</li>
+</ul>
+<h2 id="anatomia-das-permissões-entendendo-as-peças">Anatomia das Permissões: Entendendo as Peças</h2>
+<h3 id="os-três-pilares">Os Três Pilares</h3>
+<ol>
+<li><strong>Proprietário (User)</strong>: Criador original (controla com <code>chown</code>)</li>
+<li><strong>Grupo (Group)</strong>: Coleção de usuários (gerencia com <code>chgrp</code>)</li>
+<li><strong>Outros (Others)</strong>: Demais usuários do sistema</li>
+</ol>
+<h3 id="os-três-poderes">Os Três Poderes</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Permissão</th>
+          <th style="text-align: left">Símbolo</th>
+          <th style="text-align: left">Efeito em Arquivos</th>
+          <th style="text-align: left">Efeito em Diretórios</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Leitura</td>
+          <td style="text-align: left"><strong>r</strong></td>
+          <td style="text-align: left">Ver conteúdo</td>
+          <td style="text-align: left">Listar itens</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Escrita</td>
+          <td style="text-align: left"><strong>w</strong></td>
+          <td style="text-align: left">Modificar/excluir</td>
+          <td style="text-align: left">Criar/remover arquivos</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Execução</td>
+          <td style="text-align: left"><strong>x</strong></td>
+          <td style="text-align: left">Executar como programa</td>
+          <td style="text-align: left">Acessar (cd)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="decodificando-o-ls--l-seu-radar-de-permissões">Decodificando o <code>ls -l</code>: Seu Radar de Permissões</h2>
+<p><strong>Exemplo real</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drwxr-xr-- <span style="color:#ae81ff">2</span> alice devs <span style="color:#ae81ff">4096</span> Out <span style="color:#ae81ff">10</span> 09:30 Projetos/
+</span></span><span style="display:flex;"><span>-rw-r----- <span style="color:#ae81ff">1</span> bob devs <span style="color:#ae81ff">1024</span> Out <span style="color:#ae81ff">10</span> 08:15 plano.txt
+</span></span></code></pre></div><p><strong>Leitura do Código</strong>:</p>
+<ul>
+<li><strong>Primeiro caractere</strong>: Tipo de recurso<br>
+<code>d</code> = diretório, <code>-</code> = arquivo, <code>l</code> = link simbólico</li>
+<li><strong>Próximos 9 caracteres</strong>: Permissões em 3 grupos de 3:
+<ul>
+<li>Posições 1-3: Proprietário (ex: <code>rwx</code>)</li>
+<li>Posições 4-6: Grupo (ex: <code>r-x</code>)</li>
+<li>Posições 7-9: Outros (ex: <code>r--</code>)</li>
+</ul>
+</li>
+<li><strong>Campos seguintes</strong>:
+<ul>
+<li>Contagem de links</li>
+<li>Proprietário</li>
+<li>Grupo</li>
+<li>Tamanho</li>
+<li>Data de modificação</li>
+<li>Nome do recurso</li>
+</ul>
+</li>
+</ul>
+<h2 id="controle-prático-com-chmod">Controle Prático com <code>chmod</code></h2>
+<h3 id="método-simbólico-instruções-verbais">Método Simbólico (Instruções Verbais)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod u+x script.sh           <span style="color:#75715e"># Adiciona execução para o proprietário</span>
+</span></span><span style="display:flex;"><span>chmod g-w relatorio.pdf       <span style="color:#75715e"># Remove permissão de escrita do grupo</span>
+</span></span><span style="display:flex;"><span>chmod o<span style="color:#f92672">=</span> arquivo.conf         <span style="color:#75715e"># Remove todas as permissões de outros</span>
+</span></span><span style="display:flex;"><span>chmod a+r publico.txt         <span style="color:#75715e"># Adiciona leitura para todos (all)</span>
+</span></span></code></pre></div><h2 id="método-octal-códigos-numéricos">Método Octal (Códigos Numéricos)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> ~/.ssh/             <span style="color:#75715e"># Proprietário: rwx | Grupo: --- | Outros: ---</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> config.conf         <span style="color:#75715e"># Proprietário: rw- | Grupo: r-- | Outros: r--</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">750</span> scripts/            <span style="color:#75715e"># Proprietário: rwx | Grupo: r-x | Outros: ---</span>
+</span></span></code></pre></div><h3 id="tabela-de-referência-rápida">Tabela de referência rápida:</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Valor</th>
+          <th style="text-align: center">Permissões</th>
+          <th style="text-align: left">Binário</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: center">&mdash;</td>
+          <td style="text-align: left">000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: center">&ndash;x</td>
+          <td style="text-align: left">001</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: center">-w-</td>
+          <td style="text-align: left">010</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: center">-wx</td>
+          <td style="text-align: left">011</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: center">r&ndash;</td>
+          <td style="text-align: left">100</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: center">r-x</td>
+          <td style="text-align: left">101</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: center">rw-</td>
+          <td style="text-align: left">110</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: center">rwx</td>
+          <td style="text-align: left">111</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="superpoderes-bits-especiais-de-segurança">Superpoderes: Bits Especiais de Segurança</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Bit</th>
+          <th style="text-align: center">Comando</th>
+          <th>Caso de Uso Típico</th>
+          <th>Representação</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">setuid</td>
+          <td style="text-align: center">chmod u+s</td>
+          <td>/usr/bin/passwd</td>
+          <td>rws</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">setgid</td>
+          <td style="text-align: center">chmod g+s</td>
+          <td>Diretórios compartilhados</td>
+          <td>rwxr-s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">sticky</td>
+          <td style="text-align: center">chmod +t</td>
+          <td>/tmp/</td>
+          <td>rwxrwxrwt</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="armadilhas-mortais-o-que-nunca-fazer">Armadilhas Mortais: O Que Nunca Fazer</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># DESASTRE: Acesso total a todos</span>
+</span></span><span style="display:flex;"><span>sudo chmod -R <span style="color:#ae81ff">777</span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RISCO: Perda de propriedade</span>
+</span></span><span style="display:flex;"><span>sudo chown -R root:root /home/usuario/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># VULNERABILIDADE: Execução global</span>
+</span></span><span style="display:flex;"><span>chmod a+x ~/downloads/script-desconhecido.sh
+</span></span></code></pre></div><h3 id="kit-de-sobrevivência-resolução-rápida">Kit de Sobrevivência: Resolução Rápida</h3>
+<ul>
+<li>
+<p>Script não executa? <code>→ chmod +x script.sh</code></p>
+</li>
+<li>
+<p>Acesso negado a diretório? <code>→ chmod o+x pasta/</code></p>
+</li>
+<li>
+<p>Não consegue modificar arquivo? <code>→ chmod u+w arquivo</code></p>
+</li>
+<li>
+<p>Arquivos novos com permissões erradas?<code>→ umask 0077</code></p>
+</li>
+</ul>
+<h3 id="ferramentas-avançadas">Ferramentas Avançadas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Controle granular com ACLs</span>
+</span></span><span style="display:flex;"><span>setfacl -m u:colaborador:rwx projeto/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Visualizar ACLs</span>
+</span></span><span style="display:flex;"><span>getfacl /dados/importantes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configurar permissões padrão</span>
+</span></span><span style="display:flex;"><span>umask <span style="color:#ae81ff">0077</span>  <span style="color:#75715e"># Arquivos: 600, Diretórios: 700</span>
+</span></span></code></pre></div><h3 id="fluxo-de-trabalho-seguro">Fluxo de Trabalho Seguro</h3>
+<ul>
+<li>
+<p>1.Verifique antes de modificar: <code>ls -l</code></p>
+</li>
+<li>
+<p>2.Conceda o mínimo necessário: Evite <code>777</code></p>
+</li>
+<li>
+<p>3.Use grupos estrategicamente: <code>groupadd equipe; chgrp equipe /projeto/</code></p>
+</li>
+<li>
+<p>4.Teste as permissões: <code>su - testuser</code></p>
+</li>
+<li>
+<p>5.Monitore alterações: <code>auditd</code></p>
+</li>
+</ul>
+<h2 id="-referências-técnicas-essenciais">📚 Referências Técnicas Essenciais</h2>
+<h3 id="1-documentação-oficial">1. Documentação Oficial</h3>
+<ul>
+<li>📜 <strong><a href="https://man7.org/linux/man-pages/man1/chmod.1.html">Linux man-pages: chmod(1)</a></strong></li>
+<li>📚 <strong><a href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html">Filesystem Hierarchy Standard</a></strong></li>
+<li>🔍 <strong><a href="https://pubs.opengroup.org/onlinepubs/9699919799/">POSIX.1-2017 Standard</a></strong></li>
+</ul>
+<h3 id="2-segurança-e-conformidade">2. Segurança e Conformidade</h3>
+<ul>
+<li>🛡️ <strong><a href="https://www.cisecurity.org/cis-benchmarks/">CIS Linux Benchmarks</a></strong></li>
+<li>🔐 <strong><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf">NIST SP 800-53: Access Control</a></strong></li>
+<li>⚖️ <strong><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">LGPD Art. 16</a></strong></li>
+</ul>
+<h3 id="3-guias-práticos">3. Guias Práticos</h3>
+<ul>
+<li>🔧 <strong><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_filesystems/managing-file-permissions_managing-file-systems">Red Hat: Managing File Permissions</a></strong></li>
+<li>⚙️ <strong><a href="https://training.linuxfoundation.org/resources/learning-paths/linux-security-and-hardening/filesystem-permissions/">Linux Foundation: Filesystem Permissions</a></strong></li>
+</ul>
+<h3 id="4-tópicos-avançados">4. Tópicos Avançados</h3>
+<ul>
+<li>🔐 <strong><a href="https://www.redhat.com/sysadmin/selinux-apparmor">SELinux vs AppArmor</a></strong></li>
+<li>🛠️ <strong><a href="https://www.ibm.com/docs/en/aix/7.2?topic=files-access-control-lists">Linux ACL Deep Dive</a></strong></li>
+</ul>
+<h3 id="5-boas-práticas">5. Boas Práticas</h3>
+<ul>
+<li>💼 <strong><a href="https://cheatsheetseries.owasp.org/cheatsheets/File_Permission_Cheat_Sheet.html">OWASP File Permissions Cheat Sheet</a></strong></li>
+<li>🏢 <strong><a href="https://www.nsa.gov/Resources/Commercial-Solutions/Commercial-Products/">Enterprise Linux Security Standards</a></strong></li>
+</ul>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2024-10-11-historia-do-codigo-aberto/" data-toggle="tooltip" data-placement="top" title="História do Código Aberto e do Movimento GNU">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

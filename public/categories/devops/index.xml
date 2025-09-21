@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on JPHS</title>
+    <link>http://localhost:1313/categories/devops/</link>
+    <description>Recent content in Devops on JPHS</description>
+    <generator>Hugo</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 12 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Domínio de Logs: Gestão Avançada com journald e syslog-ng no Linux</title>
+      <link>http://localhost:1313/post/2025-07-12-Gest%C3%A3o-de-Logs-com-journald-e-syslog-ng/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-07-12-Gest%C3%A3o-de-Logs-com-journald-e-syslog-ng/</guid>
+      <description>&lt;h1 id=&#34;domínio-de-logs-gestão-avançada-com-journald-e-syslog-ng-no-linux&#34;&gt;Domínio de Logs: Gestão Avançada com journald e syslog-ng no Linux&lt;/h1&gt;&#xA;&lt;h2 id=&#34;o-sistema-nervoso-do-linux&#34;&gt;O Sistema Nervoso do Linux&lt;/h2&gt;&#xA;&lt;p&gt;Os logs são o sistema nervoso de qualquer servidor Linux, registrando:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Atividades do sistema e aplicações&lt;/li&gt;&#xA;&lt;li&gt;Eventos de segurança críticos&lt;/li&gt;&#xA;&lt;li&gt;Desempenho e problemas operacionais&lt;/li&gt;&#xA;&lt;li&gt;Comportamento de usuários e serviços&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;anatomia-dos-logs-modernos&#34;&gt;Anatomia dos Logs Modernos&lt;/h2&gt;&#xA;&lt;h3 id=&#34;journald-o-novo-coração&#34;&gt;journald: O Novo Coração&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Coleta estruturada de logs em binário&lt;/li&gt;&#xA;&lt;li&gt;Metadados ricos (unidades systemd, IDs de processo)&lt;/li&gt;&#xA;&lt;li&gt;Integração nativa com o systemd&lt;/li&gt;&#xA;&lt;li&gt;Consultas avançadas via &lt;code&gt;journalctl&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;syslog-ng-o-encaminhador-poderoso&#34;&gt;syslog-ng: O Encaminhador Poderoso&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Filtragem e roteamento avançados&lt;/li&gt;&#xA;&lt;li&gt;Suporte a múltiplos destinos (arquivos, servidores remotos, bancos de dados)&lt;/li&gt;&#xA;&lt;li&gt;Transformação de dados em tempo real&lt;/li&gt;&#xA;&lt;li&gt;Criptografia de transporte&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;logwatch-o-analista-automático&#34;&gt;Logwatch: O Analista Automático&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Relatórios diários consolidados&lt;/li&gt;&#xA;&lt;li&gt;Detecção de anomalias&lt;/li&gt;&#xA;&lt;li&gt;Sumarização inteligente de eventos&lt;/li&gt;&#xA;&lt;li&gt;Alertas por e-mail&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;decodificando-journald-seu-comando-de-investigação&#34;&gt;Decodificando journald: Seu Comando de Investigação&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Consultas essenciais&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

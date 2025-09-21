@@ -1,0 +1,9 @@
+baseURL: https://joaop9673.github.io
+disablePathToLower: true
+languageCode: "pt-BR"
+title: JPHS
+theme: "cleanwhite"
+
+author:
+name: Joao paulo
+email: joaop9673@gmail.com

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administração De Sistemas on JPHS</title>
+    <link>http://localhost:1313/categories/administra%C3%A7%C3%A3o-de-sistemas/</link>
+    <description>Recent content in Administração De Sistemas on JPHS</description>
+    <generator>Hugo</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/administra%C3%A7%C3%A3o-de-sistemas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoramento de Sistemas Linux: Comandos Essenciais</title>
+      <link>http://localhost:1313/post/2025-01-23-Monitoramento-de-sistemas/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-01-23-Monitoramento-de-sistemas/</guid>
+      <description>&lt;h1 id=&#34;monitoramento-de-sistemas-linux-comandos-essenciais&#34;&gt;Monitoramento de Sistemas Linux: Comandos Essenciais&lt;/h1&gt;&#xA;&lt;p&gt;Dominar ferramentas de monitoramento é crucial para administradores de sistemas Linux. Conheça os comandos fundamentais para diagnosticar desempenho, redes e recursos:&lt;/p&gt;&#xA;&lt;h2 id=&#34;-1-iostat-io-statistics&#34;&gt;🖥️ 1. iostat (I/O Statistics)&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Função&lt;/strong&gt;: Monitora CPU e operações de disco&lt;br&gt;&#xA;&lt;strong&gt;Instalação&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Debian/Ubuntu&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install sysstat&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Red Hat/CentOS&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo yum install sysstat&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Uso&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iostat -x &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;# Detalhes de I/O, atualiza a cada 1s (5 vezes)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;saída-chave&#34;&gt;Saída-chave:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;%util&lt;/strong&gt;: % de tempo do disco ocupado&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

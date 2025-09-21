@@ -1,0 +1,267 @@
+
+### Sugestões de Tópicos:
+
+1. **Gerenciamento de Pacotes (APT/YUM/DNF)**
+
+- Comparação entre gerenciadores de pacotes
+
+- Comandos essenciais para instalação/remoção
+
+- Criação de repositórios locais
+
+2. **Contêineres com Docker/Podman**
+
+- Conceitos básicos de containers
+
+- Comandos docker/podman essenciais
+
+- Construção de imagens personalizadas
+
+3. **Automatização com Shell Scripting**
+
+- Estruturas básicas (loops, conditionais)
+
+- Boas práticas para scripts confiáveis
+
+- Exemplos de scripts úteis para sysadmins
+
+4. **Serviços Essenciais (SSH, Nginx, PostgreSQL)**
+
+- Configuração segura do SSH (chaves, 2FA)
+
+- Virtual hosts no Nginx
+
+- Gerenciamento básico de bancos PostgreSQL
+
+5. **Sistemas de Log (journald, rsyslog, ELK Stack)**
+
+- Configuração do journald
+
+- Encaminhamento de logs com rsyslog
+
+- Introdução ao ELK para análise
+
+6. **Monitoramento Avançado (Prometheus + Grafana)**
+
+- Configuração do Prometheus
+
+- Exportadores para métricas de sistema
+
+- Dashboards no Grafana
+
+7. **Infraestrutura como Código (Ansible/Terraform)**
+
+- Automação de configuração com Ansible
+
+- Provisionamento de infra com Terraform
+
+- Casos de uso práticos
+
+8. **Segurança Avançada (SELinux, Firewalls, Auditing)**
+
+- Fundamentos do SELinux
+
+- Configuração de firewalls com firewalld
+
+- Auditoria do sistema com auditd
+
+9. **Sistemas de Arquivos (Btrfs, ZFS, RAID)**
+
+- Comparação de sistemas de arquivos
+
+- Configuração de RAID software
+
+- Snapshots e gerenciamento de volumes
+
+10. **Cloud Híbrida (Integração On-Premises + Nuvem)**
+
+- Configuração híbrida AWS/Azure/GCP
+
+- Ferramentas de sincronização (rclone, rsync)
+
+- Gerenciamento de identidade federada
+
+### Títulos Sugeridos com Datas:
+
+1. `2025-02-10-Gerenciamento-de-Pacotes.md`
+
+2. `2025-02-17-Containers-Docker-Podman.md`
+
+3. `2025-02-24-Automacao-Shell-Script.md`
+
+4. `2025-03-03-Servicos-Essenciais-Linux.md`
+
+5. `2025-03-10-Gerenciamento-de-Logs.md`
+
+6. `2025-03-17-Monitoramento-Prometheus-Grafana.md`
+
+7. `2025-03-24-Infraestrutura-como-Codigo.md`
+
+8. `2025-03-31-Seguranca-Avancada-Linux.md`
+
+9. `2025-04-07-Sistemas-de-Arquivos-Avancados.md`
+
+10. `2025-04-14-Cloud-Hibrida-OnPrem-Cloud.md`
+
+### Justificativa:
+
+Esta sequência parte de conceitos fundamentais (já abordados nos posts anteriores) 
+para tópicos mais avançados, criando uma jornada de aprendizado coerente:
+
+1. Começa com **operações básicas** (pacotes)
+
+2. Avança para **tecnologias modernas** (containers, automação)
+
+3. Explora **serviços críticos** (web, banco de dados)
+
+4. Aborda **monitoramento/segurança** (tópicos recorrentes em seus posts)
+
+5. Finaliza com **soluções enterprise** (cloud híbrida)
+
+Os intervalos de 1 semana entre posts permitem desenvolvimento consistente sem sobrecarga.
+
+Com base na sua sequência de posts, aqui estão 15 sugestões temáticas para novos artigos, 
+mantendo a coerência com seus tópicos técnicos e históricos:
+
+Segurança e Administração (Continuação)
+Hardening de Sistemas Linux
+2025-02-10-Securing-Linux.md
+
+Configurações essenciais de segurança
+
+Ferramentas: SELinux, AppArmor, fail2ban
+
+Benchmark com CIS-CAT
+
+Gestão de Logs com journald e syslog-ng
+2025-02-18-Log-Management.md
+
+Estrutura de logs no systemd
+
+Encaminhamento e agregação de logs
+
+Análise com Logwatch
+
+Firewalls Modernos: nftables vs iptables
+2025-03-05-Linux-Firewalls.md
+
+Migração para nftables
+
+Regras essenciais para servidores
+
+Ferramentas gráficas (UFW, firewalld)
+
+Desenvolvimento e Compilação
+Build Systems: Make vs CMake vs Meson
+2025-03-12-Build-Systems.md
+
+Comparação de desempenho
+
+Casos de uso para cada ferramenta
+
+Exemplos com C/C++
+
+Conteiners de Desenvolvimento: DevPod e GitHub Codespaces
+2025-03-20-Development-Containers.md
+
+Configuração de ambientes isolados
+
+Integração com VS Code
+
+Templates para linguagens
+
+História e Cultura Open Source
+BSD vs Linux: A Guerra dos Kernels
+2025-04-02-BSD-Linux-Showdown.md
+
+Comparação técnica histórica
+
+Casos de uso atuais (FreeBSD no Netflix)
+
+Licenças: GPL vs BSD
+
+Mulheres no Código Aberto: Pioneiras Esquecidas
+2025-04-15-Women-in-FOSS.md
+
+Perfil de Kathleen Booth, Radia Perlman
+
+Projetos liderados por mulheres
+
+Iniciativas de inclusão atual
+
+Ferramentas Essenciais
+CLI Masters: tmux + zsh + fzf
+2025-04-25-Terminal-Workflow.md
+
+Configuração de ambiente terminal
+
+Workflows avançados
+
+Plugins essenciais
+
+Monitoramento com Prometheus + Grafana
+2025-05-05-Prometheus-Grafana.md
+
+Configuração de exporters
+
+Dashboards para sistemas Linux
+
+Alertas inteligentes
+
+Segurança Avançada
+Autenticação sem Senhas: FIDO2 e Passkeys
+2025-05-15-Passwordless-Auth.md
+
+Implementação em servidores Linux
+
+SSH com hardware security keys
+
+WebAuthn para aplicações web
+
+Auditoria com OpenSCAP
+2025-05-25-OpenSCAP-Guide.md
+
+Scans de conformidade
+
+Remediação automática
+
+Perfils CIS e STIG
+
+Tópicos Emergentes
+Linux no Edge Computing
+2025-06-05-Edge-Linux.md
+
+Otimização para dispositivos IoT
+
+Distros especializadas (Ubuntu Core, Fedora IoT)
+
+Casos industriais
+
+NixOS: Linux Reprodutível
+2025-06-15-NixOS-Introduction.md
+
+Gestão declarativa de sistemas
+
+Rollbacks imutáveis
+
+Ambientes isolados
+
+Miscelânea Técnica
+Btrfs e ZFS: Sistemas de Arquivos Next-Gen
+2025-06-25-Advanced-Filesystems.md
+
+Snapshots automáticos
+
+Deduplicação e compressão
+
+RAID software avançado
+
+### Bastidores do Kernel: Módulos e Syscalls
+```2025-07-05-Kernel-Internals.md```
+
+Desenvolvimento de módulos simples
+
+Chamadas de sistema customizadas
+
+Debugging com ftrace
+

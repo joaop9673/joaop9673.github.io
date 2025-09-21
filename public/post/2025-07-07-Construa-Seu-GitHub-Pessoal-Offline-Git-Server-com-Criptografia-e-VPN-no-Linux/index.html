@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="JPHS">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//">
+    <meta property="twitter:image" content="http://localhost:1313//" />
+    
+
+    
+    <meta name="title" content="Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux" />
+    <meta property="og:title" content="Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux" />
+    <meta property="twitter:title" content="Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/2025-07-07-Construa-Seu-GitHub-Pessoal-Offline-Git-Server-com-Criptografia-e-VPN-no-Linux/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux | </title>
+
+    <link rel="canonical" href="/post/2025-07-07-Construa-Seu-GitHub-Pessoal-Offline-Git-Server-com-Criptografia-e-VPN-no-Linux/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JPHS</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o/">administração</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/administra%C3%A7%C3%A3o-de-sistemas/">administração de sistemas</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/c%C3%B3digo-aberto/">código aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/devops/">devops</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/seguran%C3%A7a/">segurança</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sistemas-operacionais/">sistemas operacionais</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tecnologia/">tecnologia</a>
+                        </li>
+                        
+                    
+                    
+		    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    JPHS
+                             
+                            on 
+                            Monday, July 7, 2025
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="construa-seu-github-pessoal-offline-git-server-com-criptografia-e-vpn-no-linux">Construa Seu GitHub Pessoal Offline: Git Server com Criptografia e VPN no Linux</h1>
+<p>
+  <img src="https://images.unsplash.com/photo-1558494945-7a658f0f6a77?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;h=600&amp;q=80" alt="Servidor Git com VPN e Criptografia">
+
+<br>
+<em>Transforme um HD externo em um servidor Git privado e seguro</em></p>
+<h2 id="materiais-necessários">Materiais Necessários</h2>
+<ul>
+<li>HD externo (500GB+ recomendado)</li>
+<li>Conta Mullvad VPN</li>
+<li>Computador Linux (Fedora XFCE testado)</li>
+</ul>
+<h2 id="passo-1-preparando-o-hd-com-criptografia">Passo 1: Preparando o HD com Criptografia</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Particionar (substitua /dev/sdX pelo seu dispositivo)</span>
+</span></span><span style="display:flex;"><span>sudo fdisk /dev/sdX  <span style="color:#75715e"># Crie uma partição Linux (tipo 83)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Criptografar com LUKS</span>
+</span></span><span style="display:flex;"><span>sudo cryptsetup luksFormat /dev/sdX1
+</span></span><span style="display:flex;"><span>sudo cryptsetup open /dev/sdX1 git_hd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Formatar como ext4 (melhor para Git)</span>
+</span></span><span style="display:flex;"><span>sudo mkfs.ext4 /dev/mapper/git_hd -L <span style="color:#e6db74">&#34;GitSecure&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Montar</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /mnt/git_repos
+</span></span><span style="display:flex;"><span>sudo mount /dev/mapper/git_hd /mnt/git_repos
+</span></span></code></pre></div><h2 id="passo-2-configurando-o-servidor-git">Passo 2: Configurando o Servidor Git</h2>
+<p>Crie um script <code>/mnt/git_repos/init_server.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Criar usuário dedicado</span>
+</span></span><span style="display:flex;"><span>sudo useradd -m -d /mnt/git_repos/git-user git-user
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configurar SSH</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /mnt/git_repos/git-user/.ssh
+</span></span><span style="display:flex;"><span>sudo touch /mnt/git_repos/git-user/.ssh/authorized_keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Permissões seguras</span>
+</span></span><span style="display:flex;"><span>sudo chown -R git-user:git-user /mnt/git_repos/git-user
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">700</span> /mnt/git_repos/git-user/.ssh
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">600</span> /mnt/git_repos/git-user/.ssh/authorized_keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iniciar servidor SSH em porta alternativa</span>
+</span></span><span style="display:flex;"><span>sudo /usr/sbin/sshd -f /mnt/git_repos/sshd_config
+</span></span></code></pre></div><p>Crie <code>/mnt/git_repos/sshd_config</code>:</p>
+<pre tabindex="0"><code>Port 49222
+ListenAddress 10.64.0.1  # IP interno da Mullvad
+PermitRootLogin no
+PasswordAuthentication no
+AuthorizedKeysFile .ssh/authorized_keys
+Subsystem sftp internal-sftp
+AllowUsers git-user
+</code></pre><h2 id="passo-3-integração-com-mullvad-vpn">Passo 3: Integração com Mullvad VPN</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Instalar Mullvad CLI</span>
+</span></span><span style="display:flex;"><span>curl -Lo mullvad.deb https://mullvad.net/download/app/deb/latest
+</span></span><span style="display:flex;"><span>sudo apt install ./mullvad.deb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Conectar e configurar</span>
+</span></span><span style="display:flex;"><span>mullvad account login XXXXXXXX
+</span></span><span style="display:flex;"><span>mullvad relay set location br saw
+</span></span><span style="display:flex;"><span>mullvad lan set allow
+</span></span></code></pre></div><p>Verifique o IP interno:</p>
+<pre tabindex="0"><code>mullvad status
+# Anote o IP (ex: 10.64.0.1)
+</code></pre><h2 id="passo-4-acesso-remoto-seguro">Passo 4: Acesso Remoto Seguro</h2>
+<ol>
+<li>Adicione sua chave SSH:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copiar chave pública para o servidor</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ssh-ed25519 AAAAC3Nz...&#34;</span> | sudo tee -a /mnt/git_repos/git-user/.ssh/authorized_keys
+</span></span></code></pre></div><ol start="2">
+<li>Clonar repositório remotamente:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone ssh://git-user@10.64.0.1:49222/mnt/git_repos/meu-projeto.git
+</span></span></code></pre></div><h2 id="passo-5-startup-automático">Passo 5: Startup Automático</h2>
+<ol>
+<li>Crie um serviço systemd <code>/etc/systemd/system/git-hd.service</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Git Server on External HD</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Requires</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">mullvad-daemon.service</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/bin/bash /mnt/git_repos/init_server.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RemainAfterExit</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><ol start="2">
+<li>Ative com:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable git-hd.service
+</span></span></code></pre></div><h2 id="-recursos-adicionais">💡 Recursos Adicionais</h2>
+<ol>
+<li>Monitoramento:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch -n <span style="color:#ae81ff">5</span> <span style="color:#e6db74">&#34;mullvad status; sudo du -sh /mnt/git_repos/*&#34;</span>
+</span></span></code></pre></div><ol start="2">
+<li>Backup Incremental:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Usar borgbackup com criptografia</span>
+</span></span><span style="display:flex;"><span>borg init --encryption<span style="color:#f92672">=</span>repokey /backup/git-repos
+</span></span><span style="display:flex;"><span>borg create /backup/git-repos::<span style="color:#e6db74">&#39;{now}&#39;</span> /mnt/git_repos
+</span></span></code></pre></div><ol start="3">
+<li>Acesso via Mobile:
+Use Termux + Mullvad App para git pull no celular</li>
+</ol>
+<h2 id="-dicas-de-segurança">⚠️ Dicas de Segurança</h2>
+<p>Sempre desmonte antes de remover o HD:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /mnt/git_repos
+</span></span><span style="display:flex;"><span>sudo cryptsetup close git_hd
+</span></span></code></pre></div><ol>
+<li>Configure firewall básico:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow from 10.64.0.0/10 to any port <span style="color:#ae81ff">49222</span>
+</span></span><span style="display:flex;"><span>sudo ufw deny 22/tcp
+</span></span></code></pre></div><ol start="2">
+<li>Ative auditoria:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo auditctl -w /mnt/git_repos -p war -k git_hd_access
+</span></span></code></pre></div><p>Aviso Legal: Tutorial para fins educacionais. Verifique leis locais antes de implementar.</p>
+<h2 id="referências-técnicas-essenciais">Referências Técnicas Essenciais</h2>
+<h3 id="1-criptografia-e-segurança">1. Criptografia e Segurança</h3>
+<ul>
+<li>📚 <strong><a href="https://gitlab.com/cryptsetup/cryptsetup/-/wikis/home">LUKS Documentation</a></strong><br>
+Guia oficial de criptografia de disco no Linux</li>
+<li>🔐 <strong><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-111.pdf">NIST Special Publication 800-111</a></strong><br>
+Padrões de criptografia para armazenamento de dados</li>
+</ul>
+<h3 id="2-git-e-versionamento">2. Git e Versionamento</h3>
+<ul>
+<li>💻 <strong><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></strong><br>
+Referência completa sobre servidores Git e workflows</li>
+<li>⚙️ <strong><a href="https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols">Git Protocols Deep Dive</a></strong><br>
+Explicação técnica dos protocolos SSH para Git</li>
+</ul>
+<h3 id="3-vpn-e-segurança-de-rede">3. VPN e Segurança de Rede</h3>
+<ul>
+<li>🌐 <strong><a href="https://mullvad.net/en/help/">Mullvad VPN Documentation</a></strong><br>
+Configuração avançada e recursos de segurança</li>
+<li>🛡️ <strong><a href="https://www.wireguard.com/papers/wireguard.pdf">WireGuard Protocol White Paper</a></strong><br>
+Fundamentos do protocolo VPN usado pelo Mullvad</li>
+</ul>
+<h3 id="4-automação-e-serviços-linux">4. Automação e Serviços Linux</h3>
+<ul>
+<li>⚡ <strong><a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">Systemd Service Units</a></strong><br>
+Documentação oficial para criação de serviços</li>
+<li>🔥 <strong><a href="https://man.openbsd.org/sshd_config">Advanced SSH Configuration</a></strong><br>
+Manual completo do OpenSSH Server</li>
+</ul>
+<h3 id="5-backup-e-recuperação">5. Backup e Recuperação</h3>
+<ul>
+<li>💾 <strong><a href="https://borgbackup.readthedocs.io/">BorgBackup Documentation</a></strong><br>
+Guia de backup criptografado com deduplicação</li>
+<li>🚨 <strong><a href="https://csrc.nist.gov/publications/detail/sp/800-34/rev-1/final">Disaster Recovery Best Practices</a></strong><br>
+Padrões NIST para recuperação de dados</li>
+</ul>
+<h3 id="6-firewall-e-monitoramento">6. Firewall e Monitoramento</h3>
+<ul>
+<li>🔥 <strong><a href="https://help.ubuntu.com/community/UFW">UFW Master Guide</a></strong><br>
+Firewall simplificado para Linux</li>
+<li>👁️ <strong><a href="https://linux-audit.com/">Linux Audit Framework</a></strong><br>
+Monitoramento de segurança empresarial</li>
+</ul>
+<h3 id="7-padrões-de-conformidade">7. Padrões de Conformidade</h3>
+<ul>
+<li>📜 <strong><a href="https://www.iso.org/standard/27001">ISO/IEC 27001:2022</a></strong><br>
+Padrão internacional para segurança da informação</li>
+<li>🔍 <strong><a href="https://www.cisecurity.org/cis-benchmarks/">CIS Linux Benchmarks</a></strong><br>
+Configurações seguras para servidores Linux</li>
+</ul>
+<blockquote>
+<p><strong>Nota</strong>: Todas referências foram verificadas em Junho/2025. Links sujeitos a alterações futuras.</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2025-06-25-Hardeninge-Sistemas-Linux-Fortalecendo-Sua-Defesa/" data-toggle="tooltip" data-placement="top" title="Hardening de Sistemas Linux: Fortalecendo Sua Defesa">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/2025-07-12-Gest%C3%A3o-de-Logs-com-journald-e-syslog-ng/" data-toggle="tooltip" data-placement="top" title="Domínio de Logs: Gestão Avançada com journald e syslog-ng no Linux">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; JPHS 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
