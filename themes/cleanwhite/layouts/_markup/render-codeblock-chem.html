@@ -1,9 +1,11 @@
 {{ $opts := dict "output" "htmlAndMathml" "displayMode" (not (eq ($.Type) "inline")) -}}
-{{ with try (transform.ToMath .Inner $opts) -}}
-  {{ with .Err -}}
-    {{ errorf "Unable to render mathematical markup to HTML using the transform.ToMath function. The KaTeX display engine threw the following error: %s: see %s." . $.Position -}}
-  {{ else -}}
-    {{ .Value -}}
-    {{ $.Page.Store.Set "hasMath" true -}}
+
+{{ with transform.ToMath .Inner $opts -}} 
+  {{ if .Err -}}  <!-- Verifica se houve erro na transformação -->
+    {{ errorf "Unable to render mathematical markup to HTML using the transform.ToMath function. The KaTeX display engine threw the following error: %s: see %s." .Err $.Position -}}
+  {{ else -}}  <!-- Se não houver erro -->
+    {{ .Value -}}  <!-- Exibe o valor transformado -->
+    {{ $.Page.Store.Set "hasMath" true -}}  <!-- Marca a página como contendo matemática -->
   {{ end -}}
 {{ end -}}
+
