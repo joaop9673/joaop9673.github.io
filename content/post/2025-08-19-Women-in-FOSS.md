@@ -5,6 +5,7 @@ tags:
 - mulheres na tecnologia
 - inclusão
 - FOSS
+- description: Neste post, celebramos mulheres pioneiras no código aberto, como Kathleen Booth e Radia Perlman, e destacamos projetos e iniciativas que promovem diversidade no ecossistema FOSS. Uma homenagem às contribuições muitas vezes esquecidas — e um convite à inclusão no futuro da tecnologia.
 title: 'Mulheres no Código Aberto: Pioneiras Esquecidas'
 ---
 
